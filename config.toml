@@ -1,3 +1,9 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://quobix.com/'
 languageCode = 'en-us'
 title = 'quobix.com'
+enableGitInfo = true
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']

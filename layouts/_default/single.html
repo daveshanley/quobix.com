@@ -3,7 +3,8 @@
      <section class="content-container">
           <h1 class="article-title">{{.Title}}</h1>
           <article class="article-content">
-               <time datetime="{{ .Date}}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
+               <time datetime="{{ .Date}}">{{ dateFormat "Monday, Jan 2, 2006 at 15:04 MST" .Date }}</time>
+               <p>Last Modified: {{ .Lastmod.Format "Monday, Jan 2, 2006 at 15:04 MST" }}</p>
                <div>{{.Content}}</div>
           </article>
      </section>
