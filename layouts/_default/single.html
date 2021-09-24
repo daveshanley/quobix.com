@@ -1,12 +1,20 @@
 {{ define "main" }}
 <div class="main-container">
      <section class="content-container">
-          <h1 class="article-title">{{.Title}}</h1>
           <article class="article-content">
-               <time datetime="{{ .Date}}">{{ dateFormat "Monday, Jan 2, 2006 at 15:04 MST" .Date }}</time>
-               <p>Last Modified: {{ .Lastmod.Format "Monday, Jan 2, 2006 at 15:04 MST" }}</p>
-               <div>{{.Content}}</div>
-          </article>
+
+               <time datetime="{{ .Date}}">{{ dateFormat "January 2, 2006" .Date }}</time>
+               <h1 class="article-title">{{.Title}}</h1>
+               <div class="article-strapline">
+                    <em>{{ .Params.strapline }}</em>
+               </div>
+               <hr />
+               <section class="article-body">
+               {{.Content}}
+               </section>
      </section>
- </div>
+
+     </article>
+     </section>
+</div>
 {{end}}
