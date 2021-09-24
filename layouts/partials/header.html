@@ -1,15 +1,21 @@
-<div class="terminal-nav">
+<section class="terminal-nav">
     <header class="terminal-logo">
-        <div class="logo terminal-prompt"><a href="https://quobix.com">{{ .Site.Title }}</a></div>
+        <div class="logo terminal-prompt"><a href="/">{{ .Site.Title }}</a></div>
     </header>
-    <div class="terminal-menu">
+    <nav class="terminal-menu">
         <ul vocab="https://schema.org/" typeof="BreadcrumbList">
-            <li><a href="https://terminalcss.xyz" class="menu-item"><span>Light</span></a><meta property="position"></li>
-            <li property="itemListElement" typeof="ListItem"><a href="https://terminalcss.xyz/dark/" property="item" typeof="WebPage" class="menu-item active"><span property="name">Dark</span></a><meta property="position" content="1"></li>
-            <li property="itemListElement" typeof="ListItem"><a href="https://terminalcss.xyz/sans-serif/" property="item" typeof="WebPage" class="menu-item"><span property="name">Sans</span></a><meta property="position" content="2"></li>
-            <li property="itemListElement" typeof="ListItem"><a href="https://terminalcss.xyz/sans-serif-dark/" property="item" typeof="WebPage" class="menu-item"><span property="name">Sans Dark</span></a><meta property="position" content="3"></li>
-            <li style="height: 28px;"><span></span></li>
-          </ul>
-    </div>
-</div>
-<hr/ class="top-nav-divider">
+            {{- $current := . }}
+            {{- range .Site.Menus.main}}
+            {{- $active := eq .Name $current.Name}}
+           
+            
+            <li property="itemListElement" typef="ListItemElement">
+                <a href="{{ .URL }}" property="item" typeof="WebPage" class="menu-item {{ if $active }}active{{end}}">
+                    <span property="name" class="{{ if $active }}active{{end}} {{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{.Name}}</span>
+                </a>
+            </li>
+            {{- end}}
+        </ul>
+    </nav>
+</section>
+<hr / class="top-nav-divider"> 

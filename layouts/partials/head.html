@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta name="description" content="quobix.com, home of dave shanley">
+<meta name="keywords" content="dave shanley, shanley, code, golang, java, typescript, quobix, engineer">
+<meta name="author" content="dave shanley">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+<script src="/assets/bundle.js"></script>
+<link rel="stylesheet" href="/assets/app.css" />
+<style>
+    :root {
+        --global-font-size: 15px;
+        --global-line-height: 1.4em;
+        --global-space: 10px;
+        --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+            serif;
+        --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+            serif;
+        --background-color: #0d1117;
+        --page-width: 100em;
+        --font-color: #e8e9ed;
+        --invert-font-color: #222225;
+        --secondary-color: #de7dfc;
+        --tertiary-color: #a3abba;
+        --primary-color: #62c4ff;
+        --error-color: #ff3c74;
+        --progress-bar-background: #3f3f44;
+        --progress-bar-fill: #62c4ff;
+        --code-bg-color: #3f3f44;
+        --input-style: solid;
+        --display-h1-decoration: none;
+    }
+</style>
+
+<!-- OG data -->
+<meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description}}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ $.Site.Title }}" />
+{{ if and (not .IsHome) (isset .Params "cover") -}}
+<meta property="og:image" content="{{ .Param " cover" | absURL }}">
+{{ else -}}
+    {{- if isset $.Site.Params "favicon" }}
+    <meta property="og:image" content="{{ $.Site.Params.favicon | absURL }}">
+    {{- else -}}
+    <meta property="og:image" content="{{ printf " img/favicon/%s.png" $.Site.Params.ThemeColor | absURL }}">
+    {{- end -}}
+{{- end -}}
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+{{- range .Params.categories }}
+<meta property="article:section" content="{{ . }}" />
+{{ end }}
+{{- if isset .Params "date" }}
+<meta property="article:published_time" content="{{ time .Date }}" />
+{{ end }}
