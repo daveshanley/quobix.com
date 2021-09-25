@@ -5,9 +5,10 @@ date: 2021-09-23T19:00:08-04:00
 draft: false
 menu: "articles"
 strapline: "My black box of wonder and joy that never lets me down."
+hero: "/images/articles/trashbox/hero2.png"
+heroTitle: "This is trashbox"
+heroAlt: "this is a picture of trashbox that I made with my own two hands!"
 ---
-
-{{< figure src="/images/articles/trashbox/hero.png" alt="the alt text" title="The title text" >}}
 
 ## What is TrashBox?
 
@@ -40,6 +41,34 @@ func ohManThisIsGreat() error {
 
 {{< /highlight >}}
 
+{{< card "this is lovely right?" >}}
+oh I do love watching pizza in the oven at night.
+{{< /card >}}
+
+### Does this include any thing?
+it gets even better, lets add some JSON
+
+{{< info-box >}}
+Oh man, this is really important **DO NOT** forget to eat veg.
+{{< /info-box >}}
+
+and some text inbetween
+
+{{< error-box >}}
+Did I do something wrong?
+{{< /info-box >}}
+
+oh no? did we? 
+
+{{< warn-box >}}
+Did I do something wrong? what is wrong here?
+{{< /warn-box >}}
+
+{{< highlight json >}}
+{
+    nameOfPizza: "the nice one with pineapple please!"
+}
+{{< /highlight >}}
 
 
 > a lovely quote goes in here, it could be funny, it could be boring.

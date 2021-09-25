@@ -1,21 +1,22 @@
-<section class="terminal-nav">
-    <header class="terminal-logo">
-        <div class="logo terminal-prompt"><a href="/">{{ .Site.Title }}</a></div>
-    </header>
-    <nav class="terminal-menu">
-        <ul vocab="https://schema.org/" typeof="BreadcrumbList">
-            {{- $current := . }}
-            {{- range .Site.Menus.main}}
-            {{- $active := eq .Name $current.Name}}
-           
-            
-            <li property="itemListElement" typef="ListItemElement">
-                <a href="{{ .URL }}" property="item" typeof="WebPage" class="menu-item {{ if $active }}active{{end}}">
-                    <span property="name" class="{{ if $active }}active{{end}} {{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{.Name}}</span>
-                </a>
-            </li>
-            {{- end}}
-        </ul>
-    </nav>
-</section>
-<hr / class="top-nav-divider"> 
+<div class="quobix-header">
+    <section class="terminal-nav">
+        <header class="terminal-logo">
+            <div class="logo terminal-prompt"><a href="/">{{ .Site.Title }}</a></div>
+        </header>
+        <nav class="terminal-menu">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                {{- $current := . }}
+                {{- range .Site.Menus.main}}
+                {{- $active := eq .Name $current.Name}}
+                <li property="itemListElement" typef="ListItemElement">
+                    <a href="{{ .URL }}" property="item" typeof="WebPage"
+                        class="menu-item {{ if $active }}active{{end}}">
+                        <span property="name" class="{{ if $active }}active{{end}} {{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{.Name}}</span>
+                    </a>
+                </li>
+                {{- end}}
+            </ul>
+        </nav>
+    </section>
+    <hr / class="top-nav-divider">
+</div>

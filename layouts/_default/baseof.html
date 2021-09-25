@@ -6,9 +6,9 @@
 </head>
 
 <body class="terminal">
+    {{ partial "header" . }}
     <div class="container">
-        {{ partial "header" . }}
-        {{ block "main" . }}
+        {{ block "mainblock" . }}
         {{ end }}
         {{ partial "footer" . }}
     </div>

@@ -1,17 +1,58 @@
-{{ define "main" }}
+{{ define "mainblock" }}
 <div class="main-container">
-    <section class="content-container">
-        <h1>{{ .Title }} </h1>
-        {{ with .Content }}
-        <div class="index-content">
-            {{ . }}
-        </div>
-        {{ end }}
-        {{ range .Pages}}
-            <section>
-               <h3><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h3>
+    <main class="content-container">
+        <article class="framed-content">
+            <h1 class="list-title">{{ .Title }} </h1>
+            {{ with .Content }}
+            <div class="index-content">
+                {{ . }}
+            </div>
+            {{ end }}
+            {{ range first 1 .Pages}}
+            <section class="latest-page-item">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ .Params.hero }}" class="article-hero-thumb" alt="{{ .Params.heroAlt }}" title="{{ .Params.heroTitle }}"/>
+                    <span class="screen-reader">
+                        {{ .Title}}
+                    </span>
+                </a>
+                <section>
+                <h3><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h3>
+                <p>
+                    {{ .Description}}
+                </p>
+                <sub>
+                    {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
+                </sub>
+                </section>
+
             </section>
-        {{ end}}
-    </section>
+            {{end}}
+          
+            <ul class="page-list">
+
+                {{ range $key, $value := .Pages}}
+                {{ if gt $key 0 }}
+                <li class="page-list-item">
+                    <a href="{{ $value.Permalink }}" class="article-hero-thumb">
+                        <img src="{{ $value.Params.hero }}" class="article-hero-thumb" alt="{{ $value.Params.heroAlt }}" title="{{ $value.Params.heroTitle }}"/>
+                        <span class="screen-reader">
+                            {{ $value.Title}}
+                        </span>
+                    </a>
+                    <h3 class="page-list-title"><a href="{{ $value.Permalink }}">{{ $value.Title | markdownify }}</a></h3>
+                    <p>
+                        {{ $value.Description}}
+                    </p>
+                    <sub>
+                        {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
+                    </sub>
+
+                </li>
+                {{ end}}
+                {{ end}}
+            </ul>
+        </article>
+    </main>
 </div>
 {{end}}

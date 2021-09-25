@@ -5,5 +5,6 @@ draft: false
 menu: "main"
 ---
 
-Here are all my articles. 
+I think this is what the internet calls a blog. That term is too late 90's for me, so let's call this a **thought bucket**. 
+
 
