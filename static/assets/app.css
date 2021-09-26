@@ -292,7 +292,7 @@ ul.page-list {
     /* display: flex;
     flex-flow: row wrap; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 365px));
     grid-gap: 2rem;
     list-style: none; 
     list-style-type: none;    
@@ -365,6 +365,7 @@ hr.about-header-divider {
 
 li.page-list-item {
     margin-bottom: 40px;
+    max-width: 365px;
 }
 
 

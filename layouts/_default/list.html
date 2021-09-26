@@ -19,7 +19,7 @@
                 <section>
                 <h2><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
                 <p>
-                    {{ .Description}}
+                    {{ .Description | markdownify }}
                 </p>
                 <sub>
                     {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
@@ -42,7 +42,7 @@
                     </a>
                     <h3 class="page-list-title"><a href="{{ $value.Permalink }}">{{ $value.Title | markdownify }}</a></h3>
                     <p>
-                        {{ $value.Description}}
+                        {{ $value.Description | markdownify }}
                     </p>
                     <sub>
                         {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
