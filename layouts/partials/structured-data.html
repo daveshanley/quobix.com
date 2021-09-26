@@ -4,14 +4,14 @@
       "@type": "NewsArticle",
       "headline": "{{ .Title }}",
       "image": [
-        "{{ .Site.BaseURL }}{{ .Params.hero }}",
+        "{{ .Site.BaseURL }}{{ .Params.hero }}"
        ],
       "datePublished": "{{ .PublishDate }}",
-      "author": [{
+      "author": {
           "@type": "Person",
           "name": "Dave Shanley",
           "url": "https://quobix.com/author"
         }
-      }]
-    }
+      }
+  
 </script>
