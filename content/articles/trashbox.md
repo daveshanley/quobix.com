@@ -1,5 +1,5 @@
 ---
-title: "Introducing TrashBox"
+title: "Introducing TrashBox, the box that keeps on giving and giving."
 description: "This is a story of trashbox, my little black box of magic that makes me happy."
 date: 2021-09-23T19:00:08-04:00
 draft: false
