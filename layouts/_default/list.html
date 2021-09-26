@@ -11,7 +11,7 @@
             {{ range first 1 .Pages}}
             <section class="latest-page-item">
                 <a href="{{ .Permalink }}">
-                    <img src="{{ .Params.hero }}" class="article-hero-thumb" alt="{{ .Params.heroAlt }}" title="{{ .Params.heroTitle }}"/>
+                    <img src="{{ .Site.BaseURL }}{{ .Params.hero }}" class="article-hero-thumb" alt="{{ .Params.heroAlt }}" title="{{ .Params.heroTitle }}"/>
                     <span class="screen-reader">
                         {{ .Title}}
                     </span>
@@ -35,7 +35,7 @@
                 {{ if gt $key 0 }}
                 <li class="page-list-item">
                     <a href="{{ $value.Permalink }}" class="article-hero-thumb">
-                        <img src="{{ $value.Params.hero }}" class="article-hero-thumb" alt="{{ $value.Params.heroAlt }}" title="{{ $value.Params.heroTitle }}"/>
+                        <img src="{{ .Site.BaseURL }}{{ $value.Params.hero }}" class="article-hero-thumb" alt="{{ $value.Params.heroAlt }}" title="{{ $value.Params.heroTitle }}"/>
                         <span class="screen-reader">
                             {{ $value.Title}}
                         </span>

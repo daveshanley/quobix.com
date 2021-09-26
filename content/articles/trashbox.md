@@ -5,7 +5,7 @@ date: 2021-09-23T19:00:08-04:00
 draft: false
 menu: "articles"
 strapline: "My black box of wonder and joy that never lets me down."
-hero: "/images/articles/trashbox/hero2.png"
+hero: "images/articles/trashbox/hero2.png"
 heroTitle: "This is trashbox"
 heroAlt: "this is a picture of trashbox that I made with my own two hands!"
 ---
