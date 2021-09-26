@@ -1,11 +1,10 @@
-<base href="https://daveshanley.github.io/quobix.com/">
 <meta charset="utf-8">
 <meta name="description" content="quobix.com, home of dave shanley">
 <meta name="keywords" content="dave shanley, shanley, code, golang, java, typescript, quobix, engineer">
 <meta name="author" content="dave shanley">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-<script src="/assets/bundle.js"></script>
+<script src="{{ .Site.BaseURL }}assets/bundle.js"></script>
 <style>
     :root {
         --global-font-size: 15px;
@@ -36,8 +35,8 @@
         
     }
 </style>
-<link rel="stylesheet" href="/assets/syntax.css" />
-<link rel="stylesheet" href="/assets/app.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/syntax.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/app.css" />
 <!-- OG data -->
 <meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />

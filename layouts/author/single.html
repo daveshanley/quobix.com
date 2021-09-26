@@ -6,9 +6,9 @@
                <div class="about-strapline">
                     <em>{{ .Params.strapline }}</em>
                </div>
-               <hr class="about-header-divider"/>
+               <hr class="about-header-divider"/> 
                <div class="profile-crop">
-                    <img src="/images/about/dave-shanley-headshot.jpg" class="profile-shot" />
+                    <img src="{{ .Site.BaseURL }}images/about/dave-shanley-headshot.jpg" class="profile-shot" />
                </div>
                <section class="about-body">
                     {{.Content}}
