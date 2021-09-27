@@ -253,8 +253,13 @@ figure>figcaption {
     margin-bottom: 60px;
 }
 
+.terminal-card {
+    margin-bottom: 50px;
+}
+
 .terminal-card>header {
     font-weight: bolder;
+    font-size: 1.1rem;
 }
 
 

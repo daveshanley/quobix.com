@@ -6,7 +6,7 @@ draft: false
 menu: "articles"
 strapline: "Sounds made up right? Well, it's not and you're already familiar with what we do."
 hero: "images/articles/trashbox/hero2.png"
-heroTitle: ""
+heroTitle: "It's all about the eggs."
 heroAlt: ""
 ---
 
@@ -29,3 +29,4 @@ Before writing a line of code, it's critical to map out **outcomes** and the bes
 Only then can you move onto thinking about technology.
 {{< /card >}}
 
+this is obviously a draft, please ignore all this.
