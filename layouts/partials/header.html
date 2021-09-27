@@ -8,7 +8,7 @@
                 {{- $current := . }}
                 {{- range .Site.Menus.main}}
                 {{- $active := eq .Name $current.Name}}
-                <li property="itemListElement" typeof="ListItemElement">
+                <li property="itemListElement" typeof="ListItem">
                     <a href="{{ .URL }}" property="item" typeof="WebPage"
                         class="menu-item {{ if $active }}active{{end}}">
                         <span property="name" class="{{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{.Name}}</span>
