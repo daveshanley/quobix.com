@@ -1,3 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    word-spacing: -0.1rem;
+}
+
 .container, .container-fluid {
     margin: 0 auto;
     /* padding: 0 calc(var(--global-space) * 2); */
@@ -234,6 +242,12 @@ blockquote::after {
 
 }
 
+.homepage-link-title {
+    font-size: 20px!important;
+    margin: 0;
+    padding: 0;
+}
+
 
 .generated-timestamp {
     color: #a2a2af;
@@ -339,6 +353,11 @@ ul.page-list>li {
     margin-top: 10px;
     font-size: 20px;
     margin-bottom: 20px;
+}
+
+.latest-page-item.homepage-item {
+    margin-top: 10px;
+    padding-top: 0;
 }
 
 

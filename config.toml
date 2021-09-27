@@ -1,6 +1,6 @@
 baseURL = 'https://daveshanley.github.io/quobix.com/'
 languageCode = 'en-us'
-title = 'quobix.com'
+title = 'quobix'
 enableGitInfo = true
 [markup]
     [markup.highlight]
