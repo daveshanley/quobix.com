@@ -15,7 +15,7 @@ I have about 25 years of experience with designing and building software, across
 
 My speciality is **Experience Engineering**, which _generally means_ that I design and build technology that you **_engage with_** as a consumer.
 
-[VMware](https://vmware.com) is where I work, as **Sr. Staff Engineer**.
+[VMware](https://vmware.com) is where I work, as **Sr. Staff Engineer**. I am currently Architect of Developer Experience (DX).
 
 
 ## Making complex things feel simple and intuitive.
@@ -27,7 +27,7 @@ The easy button means abstracting away a lot of different technology. This is pr
 I specialize in UI, CLI API and *developer experience* in general, however I've designed and built entire platforms, SaaS products, developer tools, text compilers, enterprise recruitment and content management systems, games, messaging frameworks, interactive art as well as a billion+ dollar product.
 
 {{< default-box >}}
-In case you're interested in learning more, I have written an **[article on experience engineering](http://pizza.com)**.
+In case you're interested in learning more, I have written an **[article on experience engineering]({{< ref "articles/experience-engineering" >}})**.
 {{< /default-box >}}
 
 ## Contact

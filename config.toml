@@ -4,7 +4,11 @@ title = 'quobix'
 enableGitInfo = true
 enableEmoji = true
 enableInlineShortcodes = true
+canonifyURLs = true   
 [markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
     [markup.highlight]
         codeFences = true
         guessSyntax = false
