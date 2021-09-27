@@ -1,5 +1,5 @@
 <div class="quobix-header">
-    <section class="terminal-nav">
+    <section class="terminal-nav" id="main-navigation">
         <header class="terminal-logo">
             <div class="logo terminal-prompt"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
         </header>
@@ -9,8 +9,7 @@
                 {{- range $k, $v := .Site.Menus.main }}
                 {{- $active := eq .Name $current.Name}}
                 <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                    <a href="{{ $v.URL }}" itemprop="item" typeof="WebPage"></a>
-                        class="menu-item {{ if $active }}active{{end}}">
+                    <a href="{{ $v.URL }}" itemprop="item" class="menu-item {{ if $active }}active{{end}}">
                         <span itemprop="name" class="{{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{ $v.Name}}</span>
                         <meta itemprop="position" content="{{ add $k 1 }}">
                     </a>
@@ -19,5 +18,5 @@
             </ul>
         </nav>
     </section>
-    <hr / class="top-nav-divider">
+    <hr id="top-nav-divider">
 </div>

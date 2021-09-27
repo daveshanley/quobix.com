@@ -19,17 +19,11 @@
     top: 0%;
     transform: translateX(-50%);
 
-    
-
-
-
 }
 
-#header-menu {
+#main-navigation {
     overflow-y: hidden;
     position: relative;
-    transition: height 0.5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 
@@ -37,9 +31,10 @@
     font-size: 1.4rem;
 }
 
-.top-nav-divider {
+#top-nav-divider {
     margin-top: 5px;
     margin-bottom: 0;
+
 }
 
 .main-container {
@@ -478,18 +473,26 @@ li.page-list-item sub {
         padding-bottom: 10px;
     }
     
-    #header-menu {
+    #main-navigation {
         overflow-y: hidden;
         position: relative;
-        transition: height 0.4s;
+        transition: height 0.6s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-        height: 88px;
+        height: 150px;
     }
     
+    #top-nav-divider {
+        opacity: 1;
+        transition: opacity 0.9s;
+        
+    }
     
-    #header-menu.hide { 
+    #main-navigation.hide { 
         height: 0px;
     }
     
+    #top-nav-divider.hide {
+        opacity: 0;
+    }
     
 }

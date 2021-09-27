@@ -1,4 +1,4 @@
-/* this has been copied verbatim from: https://codingreflections.com/hide-header-on-scroll-down/ */
+/* this has been copied from: https://codingreflections.com/hide-header-on-scroll-down/ */
 export function listenForScrolling() {
     var doc = document.documentElement;
     var w = window;
@@ -7,10 +7,12 @@ export function listenForScrolling() {
     var direction = 0;
     var prevDirection = 0;
 
-    var header = document.getElementById('header-menu');
+    var header = document.getElementById('main-navigation');
+    var hr = document.getElementById('top-nav-divider');
 
     var checkScroll = function () {
         curScroll = w.scrollY || doc.scrollTop;
+      
         if (curScroll > prevScroll) {
             //scrolled up
             direction = 2;
@@ -28,11 +30,14 @@ export function listenForScrolling() {
     };
 
     var toggleHeader = function (direction: number, curScroll: number) {
-        if (direction === 2 && curScroll > 88) {
+        console.log('direction and scroll', direction, curScroll)
+        if (direction === 2 && curScroll > 80) {
+            hr.classList.add('hide');
             header.classList.add('hide');
             prevDirection = direction;
         }
-        else if (direction === 1) {
+        else if (direction === 1 && curScroll < 80) {
+            hr.classList.remove('hide');
             header.classList.remove('hide');
             prevDirection = direction;
         }
