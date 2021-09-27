@@ -9,7 +9,7 @@
                 {{- range $k, $v := .Site.Menus.main }}
                 {{- $active := eq .Name $current.Name}}
                 <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                    <a href="{{ $v.URL }}" itemprop="item"></a>
+                    <a href="{{ $v.URL }}" itemprop="item" typeof="WebPage"></a>
                         class="menu-item {{ if $active }}active{{end}}">
                         <span itemprop="name" class="{{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{ $v.Name}}</span>
                         <meta itemprop="position" content="{{ add $k 1 }}">
