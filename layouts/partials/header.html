@@ -4,15 +4,15 @@
             <div class="logo terminal-prompt"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
         </header>
         <nav class="terminal-menu" id="header-menu">
-            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+            <ul itemscope="" itemtype="http://schema.org/BreadcrumbList">
                 {{- $current := . }}
                 {{- range $k, $v := .Site.Menus.main }}
                 {{- $active := eq .Name $current.Name}}
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="{{ $v.URL }}" property="item" typeof="WebPage"
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a href="{{ $v.URL }}" itemprop="item"></a>
                         class="menu-item {{ if $active }}active{{end}}">
-                        <span property="name" class="{{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{ $v.Name}}</span>
-                        <meta property="position" content="{{ add $k 1 }}">
+                        <span itemprop="name" class="{{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{ $v.Name}}</span>
+                        <meta itemprop="position" content="{{ add $k 1 }}">
                     </a>
                 </li>
                 {{- end}}
