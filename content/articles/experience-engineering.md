@@ -1,6 +1,6 @@
 ---
 title: "What is Experience Engineering?"
-description: "The art of creating the **big red easy button**. Is **_experience engineering_** even a real thing? Let's talk about what it means to _engineer experiences_."
+description: "The art of creating the big red easy button. Is experience engineering even a real thing? Let's talk about what it means to engineer experiences."
 date: 2021-09-26T13:07:35-04:00
 draft: false
 menu: "articles"

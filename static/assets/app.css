@@ -32,7 +32,7 @@
 }
 
 #top-nav-divider {
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 0;
 
 }
@@ -482,6 +482,7 @@ li.page-list-item sub {
     }
     
     #top-nav-divider {
+        margin-top: 2px;
         opacity: 1;
         transition: opacity 0.9s;
         

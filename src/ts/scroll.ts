@@ -11,8 +11,8 @@ export function listenForScrolling() {
     var hr = document.getElementById('top-nav-divider');
 
     var checkScroll = function () {
+    
         curScroll = w.scrollY || doc.scrollTop;
-      
         if (curScroll > prevScroll) {
             //scrolled up
             direction = 2;
@@ -30,7 +30,6 @@ export function listenForScrolling() {
     };
 
     var toggleHeader = function (direction: number, curScroll: number) {
-        console.log('direction and scroll', direction, curScroll)
         if (direction === 2 && curScroll > 80) {
             hr.classList.add('hide');
             header.classList.add('hide');
@@ -42,6 +41,7 @@ export function listenForScrolling() {
             prevDirection = direction;
         }
     };
-
+    //  run scroll check on load (make sure we're not half way down the page)
+    toggleHeader(2, w.scrollY || doc.scrollTop)
     window.addEventListener('scroll', checkScroll);
 }
