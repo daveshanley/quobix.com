@@ -4,7 +4,7 @@ date: 2021-09-27T11:14:19-04:00
 draft: false
 menu: "sorry"
 strapline: "Causing hurt and distress is not my game."
-hero: "images/sorry.svg"
+hero: "images/sorry.png"
 heroTitle: "I am not trying to be an ass."
 heroAlt: "A pixelated heart, with the work 'sorry'"
 ---
