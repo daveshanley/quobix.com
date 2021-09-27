@@ -255,8 +255,8 @@ blockquote::after {
     float: right;
 }
 
-figure {
-    width: 90% !important;
+section.article-body figure {
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -448,6 +448,11 @@ li.page-list-item sub {
     }
     article time {
         padding-top: 0;
+    }
+
+    figure {
+        width: 100vw !important;
+        margin-left: -20px!important;
     }
 
     .quobix-header {

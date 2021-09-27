@@ -3,33 +3,7 @@
     <main class="content-container">
         <article class="framed-content">
             <h1 class="list-title">code is art.</h1>
-
-            <h2 class="homepage-link-title">Latest Article</h2>
-            {{ range first 1 (where .Site.Pages ".Params.menu" "articles") }}
-            <section class="latest-page-item homepage-item">
-                <a href="{{ .Permalink }}">
-                    <img src="{{ .Site.BaseURL }}{{ .Params.hero }}" class="article-hero-thumb"
-                        alt="{{ .Params.heroAlt }}" title="{{ .Params.heroTitle }}" />
-                    <span class="screen-reader">
-                        {{ .Title}}
-                    </span>
-                </a>
-                <section>
-                    <h3><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
-                    <p>
-                        {{ .Description | markdownify }}
-                    </p>
-                    <sub>
-                        {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute
-                        read
-                    </sub>
-                </section>
-            </section>
-            {{end}}
-
-            <h2 class="homepage-link-title">Latest Project</h2>
-
-
+           {{ partial "latest" .}}
         </article>
     </main>
 </div>

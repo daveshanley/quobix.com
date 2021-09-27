@@ -32,7 +32,6 @@ In case you're interested in learning more, I have written an **[article on expe
 
 ## Contact
 
-- LinkedIn
-- Twitter
-- GitHub
-
+- [LinkedIn Profile](https://www.linkedin.com/in/daveshanley/)
+- [Twitter (@daveshanley)](https://twitter.com/daveshanley)
+- [GitHub](https://github.com/daveshanley)

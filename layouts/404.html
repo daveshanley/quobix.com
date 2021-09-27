@@ -1,0 +1,15 @@
+{{ define "mainblock" }}
+<div class="main-container">
+    <main class="content-container">
+        <article class="framed-content">
+            <h1 class="about-title">404 My Friend.</h1>
+               <div class="about-strapline">
+                    <em>What you're looking for, cannot be found here.</em>
+               </div>
+               <hr/>
+               <p>Instead, why not check out some other content instead, or you can <a href="{{ "/" | relURL }}">head to the homepage.</a></p>
+           {{ partial "latest" .}}
+        </article>
+    </main>
+</div>
+{{end}}
