@@ -26,11 +26,12 @@ The reality is that however that the term 'UI' means so **very much more**. UI g
 
 The term 'UI', could in fact be a reference to one of the following: 
 
-- **_Graphical User Interface_** (GUI)
-- **_Command Line Interface_** (CLI)
-- **_Application Programming Interface_** (API)
+- [Graphical User Interface](https://en.wikipedia.org/wiki/Graphical_user_interface) _(GUI)_
+- [Command Line Interface](https://en.wikipedia.org/wiki/Command-line_interface) _(CLI)_
+- [Application Programming Interface](https://en.wikipedia.org/wiki/API) _(API)_
+- [Conversational UI](https://chatbotsmagazine.com/what-is-a-conversational-ui-and-why-it-matters-de358507b9a2)[^1] 
 
-Let's take a look at examples of each of these. 
+Let's take a look at examples of the first three of these.[^1]
 
 {{< image-grid >}}
     {{< image-grid-item "*gui*" "GUI (Graphical User Interface)" "Image of a GUI" >}}
@@ -42,19 +43,33 @@ Creating compelling experiences around these interfaces requires mastering a wid
 
 ### The art of interfaces.
 
-A key part of any experience we haveis engaging with technology through
-#### So what is User Experience (UX)?
+An interface is the only way we _(as humans)_ can interact with software. We do this via a graphical interface (incl. AR/VR & Gesture), or by a command/text driven interface (this also includes menu driven interfaces). We execute these these graphical, textual or conversational driven commands via physical input (_pressing physical buttons, moving a mouse or speaking_). 
 
+Understanding [Human Computer Interaction](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) _(HCI)_ is a key skill to understanding the **art** of interfaces. 
 
- {{< inline-figure "*cli*" "CLI (Command Line Interface)" "Image of a CLI" >}}
+It's an art, because humans engage in dialogue that is often unpredictable, open-ended and flexible. There is no fixed set of hard rules on having a conversation, we expect the same from computers. We want them to understand us, rather than the other way around.
 
-Here is a one of my favoite ways to des
-
-
+> At the end of the day, Experience Engineering is the **_facilitator_** of great UX (User Experience) or DX (Developer Experience).
 
 {{< default-box >}}
 Have you have ever used a UI, API or A CLI and thought to yourself "**that was easy, I _enjoyed_ that**"?
 {{< /default-box >}}
+
+### So what is User Experience (UX)?
+
+Over the years, the question of **_"What is the difference between UI and UX?_** has popped up more than once. It's actually more mis-understood than you would think, so here is how I define what both mean.
+
+**UX (User Experience)**:
+: _This is what we want a consumer to -**_feel_**- as a **result** of engaging with a product_.
+
+**UI (User Interface)**:
+: _This is what **facilitates** the -**_feeling_**- you want the consumer to experience, allowing engagement with a product_.
+
+Actually, let's use a visual aid to help explain this...
+
+{{< inline-figure "*cli*" "CLI (Command Line Interface)" "Image of a CLI" >}}
+
+
 
 ---
 
@@ -68,3 +83,5 @@ Only then can you move onto thinking about technology.
 {{< /card >}}
 
 this is obviously a draft, please ignore all this.
+
+[^1]: whilst I have used many conversational UI's, I have not yet designed or built any.

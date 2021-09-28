@@ -15,8 +15,7 @@ I have about 25 years of experience with designing and building software, across
 
 My speciality is **Experience Engineering**, which _generally means_ that I design and build technology that you **_engage with_** as a consumer.
 
-[VMware](https://vmware.com) is where I work, as **Sr. Staff Engineer**. I am currently Architect of Developer Experience (DX).
-
+[VMware](https://vmware.com) is where I work, as a **Sr. Staff Engineer**. I am Architect of Developer Experience (DX).
 
 ## Making complex things feel simple and intuitive.
 

@@ -475,6 +475,18 @@ figure.inline-figure figcaption {
     clear: both;
 }
 
+.footnotes {
+    font-size: 0.9rem;
+}
+
+dt {
+    margin-top: 30px; 
+    margin-bottom: 10px;
+}
+dl {
+    margin-bottom: 50px;
+}
+
 /** mobile stuff */
 
 @media only screen and (max-width: 600px) {
@@ -539,26 +551,21 @@ figure.inline-figure figcaption {
     
     .quobix-header {
         overflow-y: hidden;
-        transition: top 0.2s;
+        transition: top 0.3s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
         height: 180px;
     }
     
     #top-nav-divider {
         margin-top: 2px;
-        opacity: 1;
-        transition: opacity 0.9s;
-        
+    
     }
     
     .quobix-header.hide { 
         top: -185px;
     }
     
-    #top-nav-divider.hide {
-        opacity: 0;
-    }
-
+ 
     
     .image-grid img {
        

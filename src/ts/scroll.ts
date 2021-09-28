@@ -8,10 +8,6 @@ export function listenForScrolling() {
     var prevDirection = 0;
 
     var header = document.querySelector('.quobix-header');
-    var hr = document.getElementById('top-nav-divider');
-
-    console.log(header);
-
     var checkScroll = function () {
     
         curScroll = w.scrollY || doc.scrollTop;
@@ -32,13 +28,11 @@ export function listenForScrolling() {
     };
 
     var toggleHeader = function (direction: number, curScroll: number) {
-        if (direction === 2 && curScroll > 70) {
-            hr.classList.add('hide');
+        if (direction === 2 && curScroll > 60) {
             header.classList.add('hide');
             prevDirection = direction;
         }
-        else if (direction === 1 && curScroll < 80) {
-            hr.classList.remove('hide');
+        else if (direction === 1 && curScroll < 60) {
             header.classList.remove('hide');
             prevDirection = direction;
         }
