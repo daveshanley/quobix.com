@@ -1,4 +1,4 @@
-baseURL = 'https://www.quobix.com/'
+baseURL = 'https://quobix.com/'
 languageCode = 'en-us'
 title = 'quobix'
 enableGitInfo = true
