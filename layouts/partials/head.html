@@ -5,7 +5,9 @@
 <link rel="manifest" href="{{ .Site.BaseURL }}site.webmanifest">
 <meta name="description" content="quobix.com, home of dave shanley">
 <meta name="keywords" content="dave shanley, shanley, code, golang, java, typescript, quobix, engineer">
-<meta name="author" content="dave shanley">
+<!-- use creds whilst protected -->
+<link crossorigin="use-credentials" rel="manifest" href="/site.webmanifest" />
+<meta name="author" content="Dave Shanley">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ block "title" . }}{{ if .IsHome }}{{ .Site.Title }}: code is art{{ else }}quobix: {{ .Title }}{{ end }}{{ end }}</title>
 <script src="{{ .Site.BaseURL }}assets/bundle.js"></script>
