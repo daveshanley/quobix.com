@@ -439,7 +439,7 @@ li.page-list-item sub {
 .image-grid {
    
  display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 365px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 320px));
     grid-gap: 2rem;
     margin-bottom: 30px;
 
@@ -485,6 +485,10 @@ dt {
 }
 dl {
     margin-bottom: 50px;
+}
+
+hr.article-title-divider {
+    margin-bottom: 5px;
 }
 
 /** mobile stuff */
