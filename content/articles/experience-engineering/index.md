@@ -71,6 +71,26 @@ The man loves to **_recline_** in his ugly [^2] chair. To facilitate this experi
 
 ---
 
+## What about Developer Experience (DX)?
+
+DX is the sibling to UX and UI. The focus of which is developers and the experience they have whilst building applications on top of (or using) your product. 
+
+**Developers want simple tools** that **_just work and then get out of the way_**. They have little time for _'yet another learning curve'_. A developer wants a tool to feel familiar and intutive, like picking up a screwdriver.
+
+Developer tools need to **fit** into existing workflows, or development environments.
+
+{{< inline-figure "*dx-ux-ui*" "DX (Developer Experience) vs UX vs UI and the epicenter of Experience Engineering " "diagram showing the relationship between UX, UI and DX." >}}
+
+The **Experience Engineering Epicenter** is where all sides of the spectrum meet and experiences converge. It's the **_most interesting space for creative engineers I can think of_**. The challenges are complex and the problem space is large.
+
+In her excellent article [The Case for Developer Experience](https://future.a16z.com/the-case-for-developer-experience/), Jean Yang states:
+
+> No matter what, developer experience for such tools is going to be **_the_** thing. Having good complexity-exploring tools is going to be a crucial competitive advantage — and having good developer experience for exploring complexity will be a key advantage for developer tools. These tools will may change how software gets made…
+
+In my [personal opinion]({{< ref "disclaimer">}}), **Good DX** can make a **_million_** dollar company, a **billion** dollar one.
+
+---
+
 ## Experience Engineering is Industrial Design for Interfaces.
 
 > "_[Industrial design](https://en.wikipedia.org/wiki/Industrial_design) is a process of design applied to physical products that are to be manufactured by mass production. 
@@ -140,15 +160,15 @@ or a sea of buttons, dials and options, steps and broken state. The end-to-end e
 
 {{< /card >}}
 
-## What technologies are used?
+## What technologies are used in Experience Engineering?
 
-To [master the art of interfaces](#the-art-of-interfaces), one must become proficient with a wide set of technologies, Here is a sample:
+To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a wide set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires some broad and deep knowledge, Here is a sample:
 
 ### Front-end / browser based engineering
 
 - [languages/markup] [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/) (recommended), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
 - [frameworks] [Angular](https://angular.io/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5]
-- [browser technology] WebAssembly (WASM), WebRTC, WebWorkers, IndexDB, WebSockets, Progressive Web Applications
+- [browser technology] [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 ### Middleware, daemon, CLI or platform based engineering
 
@@ -160,8 +180,7 @@ To [master the art of interfaces](#the-art-of-interfaces), one must become profi
 - [OpenAPI](https://www.openapis.org/), [AsyncAPI](https://www.asyncapi.com/), [GraphQL](https://graphql.org/), [Protobuf](https://developers.google.com/protocol-buffers), [RabbitMQ](https://www.rabbitmq.com/), [Kafka](https://kafka.apache.org/)
 
 
-
-[^1]: wWilst I have used many conversational UI's, I have not yet designed or built any.
+[^1]: Whilst I have used many conversational UI's, I have not yet designed or built any.
 [^2]: This is not an attractive chair, would you buy it? if so, why?
 [^3]: Unless you hold a monopoly position due to niche market and a lack of competition.
 [^4]: This could be a desktop or mobile UI, native or web/browser based.
