@@ -87,7 +87,9 @@ In her excellent article [The Case for Developer Experience](https://future.a16z
 
 > No matter what, developer experience for such tools is going to be **_the_** thing. Having good complexity-exploring tools is going to be a crucial competitive advantage — and having good developer experience for exploring complexity will be a key advantage for developer tools. These tools will may change how software gets made…
 
+{{< error-box >}}
 In my [personal opinion]({{< ref "disclaimer">}}), **Good DX** can make a **_million_** dollar company, a **billion** dollar one.
+{{< /error-box >}}
 
 ---
 
@@ -178,6 +180,7 @@ To become fluent in [the art of interfaces](#the-art-of-interfaces), one must be
 ### API & messaging based engineering
 
 - [OpenAPI](https://www.openapis.org/), [AsyncAPI](https://www.asyncapi.com/), [GraphQL](https://graphql.org/), [Protobuf](https://developers.google.com/protocol-buffers), [RabbitMQ](https://www.rabbitmq.com/), [Kafka](https://kafka.apache.org/)
+
 
 
 [^1]: Whilst I have used many conversational UI's, I have not yet designed or built any.
