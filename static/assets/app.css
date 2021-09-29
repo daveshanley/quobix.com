@@ -557,7 +557,7 @@ hr.article-title-divider {
         overflow-y: hidden;
         transition: top 0.3s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-        height: 180px;
+        height: 150px;
     }
     
     #top-nav-divider {
@@ -578,3 +578,13 @@ hr.article-title-divider {
     }
     
 }
+
+.u-hidden-visually {
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }

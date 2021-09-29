@@ -6,6 +6,7 @@ draft: false
 menu: "articles"
 strapline: "Sounds made up right? Well, it's not and you're already familiar with it."
 hero: "images/hero-images/experience-engineering.png"
+heroSVG: "images/hero-images/experience-engineering.svg"
 heroTitle: "When it's so easy to use, you don't even know it exists."
 heroAlt: ""
 resources:
