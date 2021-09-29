@@ -11,9 +11,9 @@
                <section class="article-body">
                     {{ if (isset .Params "hero")}}
                     <figure>
-                         <img src="{{ .Site.BaseURL }}{{ .Params.hero }}" alt="{{ .Params.heroAlt }}">
+                         <img width="960" src="{{ .Site.BaseURL }}{{ .Params.hero }}" alt="{{ .Params.heroAlt }}">
                          <figcaption>
-                              <h4>{{ .Params.heroTitle }}</h4>
+                              {{ .Params.heroTitle }}
                          </figcaption>
                     </figure>
                     {{end}}

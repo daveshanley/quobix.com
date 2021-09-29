@@ -65,7 +65,7 @@ Over the years, the question of **_"What is the difference between UI and UX?_**
 
 Actually, let's use a visual aid to help explain this...
 
-{{< inline-figure "*ux-vs-ui-8bit*" "User Experience (UX) vs User Interface (UI)" "Image of a man reclining on an ugly chair using a handle to operate it" >}}
+{{< inline-figure "*ux-vs-ui-8bit*" "User Experience (UX) vs User Interface (UI)" "Image of a man reclining on an ugly chair using a handle to operate it" "960" "811">}}
 
 The man loves to **_recline_** in his ugly [^2] chair. To facilitate this experience (UX), he uses a handle (UI) to pull out the foot rest and shift the chair mechanism into a reclined position.    
 
