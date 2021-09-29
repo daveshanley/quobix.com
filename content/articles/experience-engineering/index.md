@@ -5,8 +5,8 @@ date: 2021-09-26T13:07:35-04:00
 draft: false
 menu: "articles"
 strapline: "Sounds made up right? Well, it's not and you're already familiar with it."
-hero: "images/articles/trashbox/hero2.png"
-heroTitle: "It's all about the eggs."
+hero: "images/hero-images/experience-engineering.png"
+heroTitle: "When it's so easy to use, you don't even know it exists."
 heroAlt: ""
 resources:
 - name: gui
@@ -22,9 +22,7 @@ OK, so I know I just said that it's not made up. Well, to be honest it's a term 
 
 It's easy to default to "_oh you mean UI, right?_" when talking about engineering experiences.
 
-The reality is that however that the term 'UI' means so **very much more**. UI goes _way beyond_ browser based applications.
-
-The term 'UI', could in fact be a reference to one of the following: 
+The reality is that however that the term 'UI' means so **very much more**. UI goes _way beyond_ browser based applications. The term 'UI', could in fact be a reference to one of the following: 
 
 - [Graphical User Interface](https://en.wikipedia.org/wiki/Graphical_user_interface) _(GUI)_
 - [Command Line Interface](https://en.wikipedia.org/wiki/Command-line_interface) _(CLI)_
@@ -43,16 +41,16 @@ Creating compelling experiences around these interfaces requires mastering a wid
 
 ### The art of interfaces.
 
-An interface is the only way we _(as humans)_ can interact with software. We do this via a graphical interface (incl. AR/VR & Gesture), or by a command/text driven interface (this also includes menu driven interfaces). We execute these these graphical, textual or conversational driven commands via physical input (_pressing physical buttons, moving a mouse or speaking_). 
+An interface is the only way we _(as humans)_ can interact with software. We do this via a graphical interface (incl. AR/VR & Gesture), or by a command/text driven interface (this also includes menu driven interfaces). We execute these these graphical, textual or conversational driven commands via physical input in some form of _pressing or moving physical buttons/controls, brain waves, eye tracking or speech_. 
 
-Understanding [Human Computer Interaction](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) _(HCI)_ is a key skill to understanding the **art** of interfaces. 
+Understanding [Human Computer Interaction](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) _(HCI)_ is a key skill to understanding the **art** of interfaces. Understanding what someone **_would expect to see, and how they would react_** when thinking about how to achive a goal using a computer
 
-It's an art, because humans engage in dialogue that is often unpredictable, open-ended and flexible. There is no fixed set of hard rules on having a conversation, we expect the same from computers. We want them to understand us, rather than the other way around.
+It's an art, because humans engage in dialogue that is often unpredictable, open-ended and flexible. There is no fixed set of hard rules on having a conversation, we expect the same from computers. **_We want them to understand us_**, rather than the _other way around_.
 
 > At the end of the day, Experience Engineering is the **_facilitator_** of great UX (User Experience) or DX (Developer Experience).
 
 {{< default-box >}}
-Have you have ever used a UI, API or A CLI and thought to yourself "**that was easy, I _enjoyed_ that**"?
+Have you have ever used a UI, API, SDK or CLI and thought to yourself "**that was easy, I _enjoyed_ that**"?
 {{< /default-box >}}
 
 ### So what is User Experience (UX)?
@@ -67,21 +65,104 @@ Over the years, the question of **_"What is the difference between UI and UX?_**
 
 Actually, let's use a visual aid to help explain this...
 
-{{< inline-figure "*cli*" "CLI (Command Line Interface)" "Image of a CLI" >}}
+{{< inline-figure "*ux-vs-ui*" "User Experience (UX) vs User Interface (UI)" "Image of a man reclining on an ugly chair using a handle to operate it" >}}
 
-
+The man loves to **_recline_** in his ugly [^2] chair. To facilitate this experience (UX), he uses a handle (UI) to pull out the foot rest and shift the chair mechanism into a reclined position.    
 
 ---
 
-{{< card "The art of starting backwards." >}}
-Imagine what your new application would be like to use, or consume. How would someone install it? What about the first run? What is the 
-journey through the application workflow? What would the API look like? The CLI? How would they upgrade it? What about the documentation? 
+## Experience Engineering is Industrial Design for Interfaces.
 
-Before writing a line of code, it's critical to map out **outcomes** and the best **experience** that would facilitate it. 
+> "_[Industrial design](https://en.wikipedia.org/wiki/Industrial_design) is a process of design applied to physical products that are to be manufactured by mass production. 
+It is the **_creative act_** of determining and defining a **_product's form and features_**..._"
 
-Only then can you move onto thinking about technology.
+To a user of your software, **the interface is what takes the form of the product.**
+
+If your application features are clever, but your interfaces are clunky, inconsistent and hard to consume - you won't have any consumers of your product.[^3]
+
+An application developer experiences your application **though your API or SDK**. A DevSecOps or Automation Engineer experiences it **through your CLI**. An end
+user of your application will most likey experience it **through your UI**.[^4]
+
+However **_all three types_**  can _mix-and-match_ experiences at any time. **Consistency** across all interfaces is essential. No-one wants to have learn one set of behaviors and terms, only to have a completely different set thrown at them when shifting from API to CLI consumption.
+
+---
+
+## Experience is a differentiator when Crossing the Chasm.
+
+In case you're not familiar with the book [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore, it talks about the _chasm_ that exists when taking a product from the _'early adopter'_ phase to the **_'early majority'_**, during the **technology adoption lifecycle**:
+
+{{< inline-figure "*chasm*" "The chasm is the most dangerous place to be (if you're a technology product)" "illustration of the chasm, part of the technology life cycle" >}}
+
+The chasm exists because a product or interface experience cannot move past the eager early adopters who are willing to put up with glitches and hacks. The 
+early majority are **pragmatists** and will be looking for a _polished, consistent, reliable and functional_ experience.  
+
+{{<info-box >}}
+Have you have ever gone looking for a feature, without knowing where it would be and '**_just found it_**'?
+{{< /info-box >}}
+
+### Consistenty, Accessibility, Simplicity, Convenience and Self-Service
+
+By focusing on these five principals when building a modern SaaS based application or service, a new product's chances of crossing the chasm **improve significantly**. 
+
+The early majority are not going to accept a clunky and complex out of the box experience, they won't tolerate things like a half cooked API that is not backwards compatible. 
+
+> If a product is composed of closed source SDKs, single platform CLIs, slow and _desktop only_ (non responsive) GUIs, weak or non mobile experiences, crappy docs or non-functional sample code... 
+> ...chances are it's going to **_sink into that chasm_**, like so many before it.
+
+**Consistency**
+: **_A GUI, CLI, SDK and API should all work along side each other_**. All using the same verbage and design patterns across every touch point.
+
+**Accessibility**
+: **_[a11y](https://www.a11yproject.com/) is not something you think about at the end_**. It's something that needs to be baked into very core from the start.
+
+**Simplicity**
+: **_Don't make consumers think_**. Have you ever been embarassed trying to figure out how to fold a kids push chair? Interfaces should feel intrinsic and intuitive. Cognitive load is a bad thing in this case.
+
+**Convenience**
+: **_Make it easy to join, install, upgrade and operate from (and on) any device_**. A SaaS product needs to consumable from a smart fridge or a micro controller. 
+
+**Self-Service**
+: **_Banks < ATMs < Apple Pay_**. Super fast time to value without a barrier to entry.
+
+---
+
+{{< card "Thinking backwards is the way forward." >}}
+Experience **should always come first** in any new software product or technology development idea. Before writing a single line of code, it should be possible to roughly articulate the end-to-end experiences of a minimum viable product (MVP). 
+
+These experiences need to consider multiple personas, like _admins, operators, end users, developers, automation_ etc.
+
+When architecting software from an experience first perspective, it **opens up many more technology paths for potential solutions**. Starting with technology first is **_always going to limit_** interface options and **_reduce_** the number of experiences that can be created.
+
+A bottoms up (engineering first) approach, often results in interfaces being shoe-horned in or '**_slapped_**' on at the end. Resulting in long complex wizards, 
+or a sea of buttons, dials and options, steps and broken state. The end-to-end experience for a consumer is what **really matters**. Not how clever the tech is underneath.
+
+> **_Draw the road_**, **before laying the code**.
+
 {{< /card >}}
 
-this is obviously a draft, please ignore all this.
+## What technologies are used?
 
-[^1]: whilst I have used many conversational UI's, I have not yet designed or built any.
+To [master the art of interfaces](#the-art-of-interfaces), one must become proficient with a wide set of technologies, Here is a sample:
+
+### Front-end / browser based engineering
+
+- [languages/markup] [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/) (recommended), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
+- [frameworks] [Angular](https://angular.io/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5]
+- [browser technology] WebAssembly (WASM), WebRTC, WebWorkers, IndexDB, WebSockets, Progressive Web Applications
+
+### Middleware, daemon, CLI or platform based engineering
+
+- [languages] [Golang](https://golang.org/) (recommended), [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
+- [frameworks/runtime] [Spring Framework](https://spring.io/), [Spring Boot](https://spring.io/guides/gs/spring-boot/), [Gorilla Web Toolkit](https://github.com/gorilla), [Cobra](https://github.com/spf13/cobra), [Transport](https://transport-bus.io), [Node](https://nodejs.org/en/)
+
+### API & messaging based engineering
+
+- [OpenAPI](https://www.openapis.org/), [AsyncAPI](https://www.asyncapi.com/), [GraphQL](https://graphql.org/), [Protobuf](https://developers.google.com/protocol-buffers), [RabbitMQ](https://www.rabbitmq.com/), [Kafka](https://kafka.apache.org/)
+
+
+
+[^1]: wWilst I have used many conversational UI's, I have not yet designed or built any.
+[^2]: This is not an attractive chair, would you buy it? if so, why?
+[^3]: Unless you hold a monopoly position due to niche market and a lack of competition.
+[^4]: This could be a desktop or mobile UI, native or web/browser based.
+[^5]: Retired from service, these tools used to be part of my arsenal, they are no-longer the right tools (PHP in particular)
