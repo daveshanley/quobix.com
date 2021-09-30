@@ -118,7 +118,7 @@ The chasm exists because a product or interface experience cannot move past the 
 
 The early majority are **pragmatists** and will be looking for a _polished, consistent, reliable, and functional_ experience.  
 
-{{<info-box >}}
+{{< info-box >}}
 Have you have ever gone looking for a feature without knowing where it would be and '**_just found it_**'?
 {{< /info-box >}}
 
@@ -128,8 +128,10 @@ By focusing on these five principles when building a modern SaaS-based applicati
 
 The early majority will not accept a clunky and complex out-of-the-box experience; they won't tolerate things like a half-cooked API that is not backward compatible. 
 
-> If a product is composed of closed source SDKs, single platform CLIs, slow and _desktop only_ (non-responsive) GUIs, weak or non-mobile experiences, crappy docs, or non-functional sample code 
-> chances are it's going to **_sink into that chasm_**, like so many before it.
+{{< warn-box >}}
+If a product is composed of closed source SDKs, single platform CLIs, slow and _desktop only_ (non-responsive) GUIs, weak or non-mobile experiences, crappy docs, or non-functional sample code - chances are it's going to **_sink into that chasm_**, like so many before it.
+{{< /warn-box >}}
+
 
 **Consistency**
 : **_A GUI, CLI, SDK, and API should all work alongside each other_**. All are using the same vocabulary and design patterns across every touchpoint.
