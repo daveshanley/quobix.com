@@ -168,7 +168,19 @@ Amazon uses this technique with new product development via the [PR FAQ strategy
 
 ## Some technologies used in experience engineering
 
-To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a comprehensive set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires some broad and deep knowledge; here is a sample:
+
+To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a comprehensive set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires some broad and deep knowledge; 
+
+
+[Scott Mathis](https://github.com/mathisscott), Architect of [Clarity](https://clarity.design/) says: 
+
+> Most front end engineers are still generalists expected to be experts in 7-10 different technologies or libraries, while UX has splintered into a half dozen different fields (content designers, interaction designers, motion designers, visual designers, etc.). IMO, this is one of the reasons why engineering experience is so important. If you had the CSS person and the middleware person and the animations dev and all that, then the tolerance for having to learn something new I think would be higher. This is also a reason why I think libraries and frameworks are on the decline and ecosystems are on the come up.
+
+And goes on to say:
+
+> We’ve gone through a period of rapid expansion of libraries and frameworks. By natural order, I expect us to see a contraction over the next decade. And projects like Blazor and (yes) Elm are the form that contraction will take. Again, IMO. This is a big controversy all at the moment because people can’t see beyond the trees. I’m fun at a UI conference. I could start a Western movie saloon brawl in less than 30 minutes.
+
+Here is a sample of the scope Scott is talking about:
 
 ### Front-end and browser based engineering
 
