@@ -169,10 +169,10 @@ Amazon uses this technique with new product development via the [PR FAQ strategy
 ## Some technologies used in experience engineering
 
 
-To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a comprehensive set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires some broad and deep knowledge; 
+To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a comprehensive set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires broad and deep knowledge, across a wide spectrum; 
 
 
-[Scott Mathis](https://github.com/mathisscott), Architect of [Clarity](https://clarity.design/) says: 
+[Scott Mathis](https://github.com/mathisscott), Architect of [Clarity](https://clarity.design/) talks about this scope: 
 
 > Most front end engineers are still generalists expected to be experts in 7-10 different technologies or libraries, while UX has splintered into a half dozen different fields (content designers, interaction designers, motion designers, visual designers, etc.). IMO, this is one of the reasons why engineering experience is so important. If you had the CSS person and the middleware person and the animations dev and all that, then the tolerance for having to learn something new I think would be higher. This is also a reason why I think libraries and frameworks are on the decline and ecosystems are on the come up.
 
@@ -188,7 +188,7 @@ Here is a sample of the scope Scott is talking about:
 : [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
 
 [frameworks]
-: [Angular](https://angular.io/), [Preact](https://preactjs.com/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), [Webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [Rails](https://rubyonrails.org/), [Phoenix](https://www.phoenixframework.org/), [Laravel](https://laravel.com/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5], [Struts](https://struts.apache.org/)[^5], [Zend](https://framework.zend.com/)[^5],
+: [Angular](https://angular.io/), [Preact](https://preactjs.com/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), [Webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [Elm](https://elm-lang.org/), [Rails](https://rubyonrails.org/), [Phoenix](https://www.phoenixframework.org/), [Laravel](https://laravel.com/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5], [Struts](https://struts.apache.org/)[^5], [Zend](https://framework.zend.com/)[^5],
 
 [browser technology]
 : [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
