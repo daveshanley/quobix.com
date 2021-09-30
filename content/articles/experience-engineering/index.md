@@ -110,7 +110,7 @@ Early-stage / innovative users of a product will put up with clunky, inconsisten
 
 ## Experience is a differentiator when Crossing the Chasm.
 
-The excellent hit tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the **_'early majority'_**, during the **technology adoption lifecycle:**:
+The excellent hit tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the **_'early majority'_**, during the **technology adoption lifecycle**:
 
 {{< inline-figure "*chasm*" "The chasm is the most dangerous place to be (if you're a technology product)" "illustration of the chasm, part of the technology life cycle" >}}
 
