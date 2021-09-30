@@ -23,9 +23,9 @@ My **ultimate goal**, Creating the **_big red 'easy' button_**.
 
 The easy button means abstracting away a lot of different technological complexities.
 
-All those complexities are **_pretty cool_** because it means I get to touch a lot of *fast-moving* tech. 
+All those complexities are **pretty cool** because it means I get to touch a lot of *fast-moving* tech. 
 
-I generally specialize in UI, CLI, API, and *developer experience*; however, I've designed and built across a large landscape. 
+I _generally_ specialize in UI, CLI, API, and **_developer experience_**; however, I've designed and built across a **large landscape**. 
 
 I've had the pleasure of architecting and building multiple platforms, SaaS products, developer tools, frameworks, games, and enterprise-scale management systems.
 
