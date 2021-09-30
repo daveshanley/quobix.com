@@ -174,7 +174,7 @@ Amazon uses this technique with new product development via the [PR FAQ strategy
 To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a comprehensive set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires broad and deep knowledge, across a wide spectrum; 
 
 
-[Scott Mathis](https://github.com/mathisscott), Architect of [Clarity](https://clarity.design/) talks about this scope: 
+[Scott Mathis](https://github.com/mathisscott), co-architect of [Clarity](https://clarity.design/) talks about this scope: 
 
 > Most front end engineers are still generalists expected to be experts in 7-10 different technologies or libraries, while UX has splintered into a half dozen different fields (content designers, interaction designers, motion designers, visual designers, etc.). IMO, this is one of the reasons why engineering experience is so important. If you had the CSS person and the middleware person and the animations dev and all that, then the tolerance for having to learn something new I think would be higher. This is also a reason why I think libraries and frameworks are on the decline and ecosystems are on the come up.
 
