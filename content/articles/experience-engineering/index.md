@@ -13,7 +13,8 @@ heroAlt: "UX, UI, and DX are all a part of experience engineering"
 
 ## What is Experience Engineering?
 
-OK, so I know I just said that it's an actual term. It's a term that I've _ kind of_ made up. It is, however, composed of real things that all revolve around **experience**.
+OK, so I know I just said that it's an actual term. It's a term that I've _kind of_ made up. It is, however, composed of real things that all revolve around designing
+and building **experiences**.
 
 ### More than just User Interface.
 
@@ -72,7 +73,7 @@ The man loves to **_recline_** in his ugly [^2] chair. To facilitate this experi
 
 DX is a **_sibling_** to UX and UI. The focus is on developers and their experience while building applications on top of (or using) a product. 
 
-**Developers want simple tools** that **_' just work ' and then get out of the way_**. They have little time for '_yet another learning curve_.' A developer wants a tool to feel familiar and intuitive, like picking up a screwdriver. 
+**Developers want simple tools** that **_'just work' and then get out of the way_**. They have little time for '_yet another learning curve_.' A developer wants a tool to feel familiar and intuitive, like picking up a screwdriver. 
 
 Developer tools need to **fit** into existing workflows or existing development environments. 
 
@@ -99,7 +100,7 @@ To any software user, **the interface is what takes the form of the product**.
 
 If an application's features are clever, but the interfaces are clunky, inconsistent, and hard to consume - that product won't have any consumers.[^3]
 
-An application developer experiences a product ** through an API or SDK**. A DevSecOps or Automation Engineer does the same **through an API or CLI**. An end-user of a product will most likely experience it **through a UI**.[^4]
+An application developer experiences a product **through an API or SDK**. A DevSecOps or Automation Engineer does the same **through an API or CLI**. An end-user of a product will most likely experience it **through a UI**.[^4]
 
 However **_all three types_**  can _mix-and-match_ experiences at any time. **Consistency** across all interfaces is essential. No one wants to learn one set of behaviors and terms, only to have a completely different set thrown at them when shifting from API to CLI consumption.
 
@@ -109,7 +110,7 @@ Early-stage / innovative users of a product will put up with clunky, inconsisten
 
 ## Experience is a differentiator when Crossing the Chasm.
 
-The excellent hit tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the '**_early majority_**', during the **technology adoption lifecycle**:
+The excellent hit tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the **_'early majority'_**, during the **technology adoption lifecycle:**:
 
 {{< inline-figure "*chasm*" "The chasm is the most dangerous place to be (if you're a technology product)" "illustration of the chasm, part of the technology life cycle" >}}
 
@@ -157,7 +158,7 @@ Architecting software from an experience first perspective **opens up many more 
 Bottom-up (engineering first) often results in interfaces being shoe-horned in, or '**_slapped_**' on at the end. Resulting in long, complex wizards, 
 or a sea of buttons, dials and options, steps, and a broken application state.
 
-The end-to-end experience for a consumer is what ** matters**. _Not_ how clever the tech is underneath.
+The end-to-end experience for a consumer is what **matters**. _Not_ how clever the tech is underneath.
 
 Amazon uses this technique with new product development via the [PR FAQ strategy](https://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management).
 
