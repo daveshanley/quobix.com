@@ -198,7 +198,7 @@ Here is a sample of the scope Scott is talking about:
 ### Middleware, daemon, CLI, and platform-based engineering
 
 [languages]
-: [Golang](https://golang.org/), [Rust](https://www.rust-lang.org/) [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Ruby](https://www.ruby-lang.org/en/), [elixir](https://elixir-lang.org/), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
+: [Golang](https://golang.org/), [Rust](https://www.rust-lang.org/), [Kotlin](https://kotlinlang.org/), [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Swift](https://developer.apple.com/swift/), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Ruby](https://www.ruby-lang.org/en/), [elixir](https://elixir-lang.org/), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
 
 [frameworks/runtime]
 : [Spring Framework](https://spring.io/), [Spring Boot](https://spring.io/guides/gs/spring-boot/), [Gorilla Web Toolkit](https://github.com/gorilla), [Cobra](https://github.com/spf13/cobra), [Transport](https://transport-bus.io), [Node](https://nodejs.org/en/)
@@ -207,7 +207,9 @@ Here is a sample of the scope Scott is talking about:
 
 [OpenAPI](https://www.openapis.org/), [AsyncAPI](https://www.asyncapi.com/), [GraphQL](https://graphql.org/), [Protobuf](https://developers.google.com/protocol-buffers), [RabbitMQ](https://www.rabbitmq.com/), [Kafka](https://kafka.apache.org/)
 
-
+{{< default-box >}}
+[Let me know](https://twitter.com/daveshanley) if you think a key technology above is missing.
+{{< /default-box >}}
 
 [^1]: while I have used many conversational UI's, I have not yet designed or built any.
 [^2]: This is not an attractive chair, would you buy it? If so, why?
