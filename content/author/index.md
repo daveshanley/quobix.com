@@ -11,7 +11,7 @@ type: "author"
 
 I'm a software architect, inventor, technical leader and failed musician.
 
-I have about 25 years of experience with designing and building software, across a variety of industries and businesses.
+I have about twenty five years of experience with designing and building software, across a variety of industries and businesses.
 
 My speciality is **Experience Engineering**, which _generally means_ that I design and build technology that you **_engage with_** as a consumer.
 
