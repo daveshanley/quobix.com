@@ -23,7 +23,7 @@ My **ultimate goal**, Creating the **_big red 'easy' button_**.
 
 The easy button means abstracting away a lot of different technological complexities.
 
-All those complexities are pretty cool because it means I get to touch a lot of * fast-moving* tech. 
+All those complexities are **_pretty cool_** because it means I get to touch a lot of *fast-moving* tech. 
 
 I generally specialize in UI, CLI, API, and *developer experience*; however, I've designed and built across a large landscape. 
 
