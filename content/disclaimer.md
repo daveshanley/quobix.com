@@ -5,6 +5,7 @@ draft: false
 menu: "disclaimer"
 strapline: "In case you're interested."
 hero: "images/disclaimer.png"
+heroSVG: "images/disclaimer.png"
 heroTitle: "The important legal things."
 heroAlt: "image of disclaimer for quobix.com"
 ---

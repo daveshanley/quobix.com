@@ -54,6 +54,7 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:title" content="{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+<meta property="og:publish_date" content="{{ time .Date }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ $.Site.Title }}" />
 <meta property="og:image" content="{{ .Params.hero | absURL }}">
@@ -67,6 +68,7 @@
 <meta property="article:section" content="Software" />
 <meta property="article:published_time" content="{{ time .Date }}" />
 <meta property="article:modified_time" content="{{ time .Date }}" />
+
 
 
 
