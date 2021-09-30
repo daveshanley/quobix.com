@@ -1,6 +1,6 @@
 ---
 title: "What is Experience Engineering?"
-description: "The art of creating the big red easy button. Is experience engineering even a real thing? Let's talk about what it means to engineer experiences."
+description: "Building the big red easy button, UI, UX, DX, API, CLI SDK all have experience engineering in common, but what exactly is it?"
 date: 2021-09-26T13:07:35-04:00
 draft: false
 menu: "articles"
@@ -8,7 +8,7 @@ strapline: "Sounds made up right? Well, it's not and you're already familiar wit
 hero: "images/hero-images/experience-engineering.png"
 heroSVG: "images/hero-images/experience-engineering.svg"
 heroTitle: "When it's so easy to use, you don't even know it exists."
-heroAlt: ""
+heroAlt: "UX, UI and DX"
 resources:
 - name: gui
   src: images/gui.jpg
@@ -17,20 +17,20 @@ resources:
 
 ## What is Experience Engineering?
 
-OK, so I know I just said that it's not made up. Well, to be honest it's a term that I've kinda made up (mostly), because until recently there hasn't been a good way to describe what it is that I specialize in. 
+OK, so I know I just said that it's not made up. To be honest it's a term that I've _kinda_ made up. It is however composed of very real things that all revolve around **experience**.
 
-### More than just the UI
+### More than just User Interface.
 
 It's easy to default to "_oh you mean UI, right?_" when talking about engineering experiences.
 
-The reality is that however that the term 'UI' means so **very much more**. UI goes _way beyond_ browser based applications. The term 'UI', could in fact be a reference to one of the following: 
+The reality however, is the term 'UI' means **more** that a browser based application. UI goes _way beyond_ that, The term 'UI', could in fact be a reference to one of the following: 
 
 - [Graphical User Interface](https://en.wikipedia.org/wiki/Graphical_user_interface) _(GUI)_
 - [Command Line Interface](https://en.wikipedia.org/wiki/Command-line_interface) _(CLI)_
 - [Application Programming Interface](https://en.wikipedia.org/wiki/API) _(API)_
 - [Conversational UI](https://chatbotsmagazine.com/what-is-a-conversational-ui-and-why-it-matters-de358507b9a2)[^1] 
 
-Let's take a look at examples of the first three of these.[^1]
+Let's take a look at some examples of the first three of these.[^1]
 
 {{< image-grid >}}
     {{< image-grid-item "*gui*" "GUI (Graphical User Interface)" "Image of a GUI" >}}
@@ -38,31 +38,31 @@ Let's take a look at examples of the first three of these.[^1]
     {{< image-grid-item "*json*" "JSON Payload (API)" "Image of a JSON payload used in APIS" >}}
 {{< /image-grid >}}
 
-Creating compelling experiences around these interfaces requires mastering a wide set of skills. To master these skills, one must first **master the art of interfaces**.
-
 ### The art of interfaces.
 
-An interface is the only way we _(as humans)_ can interact with software. We do this via a graphical interface (incl. AR/VR & Gesture), or by a command/text driven interface (this also includes menu driven interfaces). We execute these these graphical, textual or conversational driven commands via physical input in some form of _pressing or moving physical buttons/controls, brain waves, eye tracking or speech_. 
+An interface is the only way we _(as humans)_ can interact with software. 
 
-Understanding [Human Computer Interaction](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) _(HCI)_ is a key skill to understanding the **art** of interfaces. Understanding what someone **_would expect to see, and how they would react_** when thinking about how to achive a goal using a computer
+We do this via graphical interfaces (incl. AR/VR & Gesture), or by command/text driven interfaces (this also includes menu driven interfaces). We execute these these graphical, textual or conversational driven commands via physical input in some form of _pressing or moving physical buttons/controls, brain waves, eye tracking or speech_. 
+
+Understanding [Human Computer Interaction](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) _(HCI)_ is key to fluidity in the **art** of interfaces. Understanding what someone **_would expect to see, and how they would react_** when thinking about how to achieve a goal using a computer.
 
 It's an art, because humans engage in dialogue that is often unpredictable, open-ended and flexible. There is no fixed set of hard rules on having a conversation, we expect the same from computers. **_We want them to understand us_**, rather than the _other way around_.
 
-> At the end of the day, Experience Engineering is the **_facilitator_** of great UX (User Experience) or DX (Developer Experience).
+At the end of the day, Experience Engineering is the **_facilitator_** of great UX (User Experience) or DX (Developer Experience).
 
 {{< default-box >}}
 Have you have ever used a UI, API, SDK or CLI and thought to yourself "**that was easy, I _enjoyed_ that**"?
 {{< /default-box >}}
 
-### So what is User Experience (UX)?
+### What is User Experience (UX)?
 
-Over the years, the question of **_"What is the difference between UI and UX?_** has popped up more than once. It's actually more mis-understood than you would think, so here is how I define what both mean.
+Over the years, the question of **_"What is the difference between UI and UX?_** has popped up more than once. It's actually more misunderstood than you would think, here is how I define what both mean.
 
 **UX (User Experience)**:
 : _This is what we want a consumer to -**_feel_**- as a **result** of engaging with a product_.
 
 **UI (User Interface)**:
-: _This is what **facilitates** the -**_feeling_**- you want the consumer to experience, allowing engagement with a product_.
+: _This is what **facilitates** the -**_feeling_**- we want the consumer to experience, when engaging with a product_.
 
 Actually, let's use a visual aid to help explain this...
 
@@ -74,22 +74,22 @@ The man loves to **_recline_** in his ugly [^2] chair. To facilitate this experi
 
 ## What about Developer Experience (DX)?
 
-DX is the sibling to UX and UI. The focus of which is developers and the experience they have whilst building applications on top of (or using) your product. 
+DX is a **_sibling_** to UX and UI. The focus of which is developers and the experience they have whilst building applications on top of (or using) a product. 
 
-**Developers want simple tools** that **_just work and then get out of the way_**. They have little time for _'yet another learning curve'_. A developer wants a tool to feel familiar and intutive, like picking up a screwdriver.
+**Developers want simple tools** that **_just work and then get out of the way_**. They have little time for _'yet another learning curve'_. A developer wants a tool to feel familiar and intuitive, like picking up a screwdriver. 
 
-Developer tools need to **fit** into existing workflows, or development environments.
+Developer tools need to **fit** into existing workflows, or existing development environments. 
 
 {{< inline-figure "*dx-ux-ui*" "DX (Developer Experience) vs UX vs UI and the epicenter of Experience Engineering " "diagram showing the relationship between UX, UI and DX." >}}
 
-The **Experience Engineering Epicenter** is where all sides of the spectrum meet and experiences converge. It's the **_most interesting space for creative engineers I can think of_**. The challenges are complex and the problem space is large.
+The **Experience Engineering Epicenter** is where _all sides of the spectrum_ meet and experiences converge. It's the **_most interesting space for creative engineers I can think of_**. The challenges are complex and the problem space is large.
 
 In her excellent article [The Case for Developer Experience](https://future.a16z.com/the-case-for-developer-experience/), Jean Yang states:
 
 > No matter what, developer experience for such tools is going to be **_the_** thing. Having good complexity-exploring tools is going to be a crucial competitive advantage — and having good developer experience for exploring complexity will be a key advantage for developer tools. These tools will may change how software gets made…
 
 {{< error-box >}}
-In my [personal opinion]({{< ref "disclaimer">}}), **Good DX** can make a **_million_** dollar company, a **billion** dollar one.
+In my [opinion]({{< ref "disclaimer">}}), **Good DX** can make a **_million_** dollar company, a **billion** dollar one.
 {{< /error-box >}}
 
 ---
@@ -99,14 +99,16 @@ In my [personal opinion]({{< ref "disclaimer">}}), **Good DX** can make a **_mil
 > "_[Industrial design](https://en.wikipedia.org/wiki/Industrial_design) is a process of design applied to physical products that are to be manufactured by mass production. 
 It is the **_creative act_** of determining and defining a **_product's form and features_**..._"
 
-To a user of your software, **the interface is what takes the form of the product.**
+To any user of software, **the interface is what takes the form of the product**. 
 
-If your application features are clever, but your interfaces are clunky, inconsistent and hard to consume - you won't have any consumers of your product.[^3]
+If an application's features are clever, but the interfaces are clunky, inconsistent and hard to consume - that product won't have any consumers.[^3]
 
-An application developer experiences your application **though your API or SDK**. A DevSecOps or Automation Engineer experiences it **through your CLI**. An end
-user of your application will most likey experience it **through your UI**.[^4]
+An application developer experiences a product **though an API or SDK**. A DevSecOps or Automation Engineer experiences it **through an API or CLI**. An end
+user of the application will most likely experience it **through a UI**.[^4]
 
 However **_all three types_**  can _mix-and-match_ experiences at any time. **Consistency** across all interfaces is essential. No-one wants to have learn one set of behaviors and terms, only to have a completely different set thrown at them when shifting from API to CLI consumption.
+
+Early stage / innovative users of a product will put up with clunky, inconsistent and half baked interfaces. Mainstream, pragmatic consumers **will not**.
 
 ---
 
@@ -123,7 +125,7 @@ early majority are **pragmatists** and will be looking for a _polished, consiste
 Have you have ever gone looking for a feature, without knowing where it would be and '**_just found it_**'?
 {{< /info-box >}}
 
-### Consistenty, Accessibility, Simplicity, Convenience and Self-Service
+### Consistency, Accessibility, Simplicity, Convenience and Self-Service
 
 By focusing on these five principals when building a modern SaaS based application or service, a new product's chances of crossing the chasm **improve significantly**. 
 
@@ -133,19 +135,19 @@ The early majority are not going to accept a clunky and complex out of the box e
 > ...chances are it's going to **_sink into that chasm_**, like so many before it.
 
 **Consistency**
-: **_A GUI, CLI, SDK and API should all work along side each other_**. All using the same verbage and design patterns across every touch point.
+: **_A GUI, CLI, SDK and API should all work along side each other_**. All using the same verbiage and design patterns across every touch point.
 
 **Accessibility**
 : **_[a11y](https://www.a11yproject.com/) is not something you think about at the end_**. It's something that needs to be baked into very core from the start.
 
 **Simplicity**
-: **_Don't make consumers think_**. Have you ever been embarassed trying to figure out how to fold a kids push chair? Interfaces should feel intrinsic and intuitive. Cognitive load is a bad thing in this case.
+: **_Don't make consumers think_**. Have you ever been embarrassed trying to figure out how to fold a kids push chair? Interfaces should feel intrinsic and intuitive. Cognitive load is a bad thing in this case.
 
 **Convenience**
 : **_Make it easy to join, install, upgrade and operate from (and on) any device_**. A SaaS product needs to consumable from a smart fridge or a micro controller. 
 
 **Self-Service**
-: **_Banks < ATMs < Apple Pay_**. Super fast time to value without a barrier to entry.
+: **_Banks < ATMs < Apple Pay_**. Always aim to deliver super fast time to value without a barrier to entry. People will consume more if they can self-serve, on demand.
 
 ---
 
@@ -159,7 +161,9 @@ When architecting software from an experience first perspective, it **opens up m
 A bottoms up (engineering first) approach, often results in interfaces being shoe-horned in or '**_slapped_**' on at the end. Resulting in long complex wizards, 
 or a sea of buttons, dials and options, steps and broken state. The end-to-end experience for a consumer is what **really matters**. Not how clever the tech is underneath.
 
-> **_Draw the road_**, **before laying the code**.
+Amazon uses this technique with new product development via the [PR FAQ strategy](https://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management).
+
+> **_Draw and explore the road_**, **before laying the code**.
 
 {{< /card >}}
 

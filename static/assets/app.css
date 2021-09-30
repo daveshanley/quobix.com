@@ -115,6 +115,9 @@ h1.list-title {
     font-size: 1em !important;
 }
 
+.article-body {
+    margin-top: 60px;
+}
 
 .article-body h2, h3, h4 {
     margin-top: 40px;
@@ -574,15 +577,10 @@ hr.article-title-divider {
         width: 100vw;
         max-width: initial;
     }
+
+    
+    .article-body {
+        margin-top: 50px;
+    }
     
 }
-
-.u-hidden-visually {
-    clip-path: inset(100%);
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }

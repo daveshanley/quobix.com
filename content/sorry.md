@@ -17,11 +17,11 @@ There isn't ever a situation in which I am trying to be hurtful, or exert rudene
 
 If you have experienced emotional distress because of something I did, said or wrote, then please accept my **_genuine apology_** :hearts:.
 
-Sometimes, I mis-read intent. Sometimes I forget how brutal even the most innocent words can be, when used in a certain context. 
+Sometimes, I misread intent. Sometimes I forget how brutal even the most innocent words can be, when used in a certain context. 
 
 Sometimes I simply _let my emotions get the better of me_ and I am **_unable to use my words properly_**.
 
-By causing you offense, I have _failed_ in my mission to **balance** **_logic, reason and empthy_**. 
+By causing you offense, I have _failed_ in my mission to **balance** **_logic, reason and empathy_**. 
 
 I'll keep trying to do better, please don't give up on me.
 
