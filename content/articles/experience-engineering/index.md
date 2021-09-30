@@ -110,7 +110,7 @@ Early-stage / innovative users of a product will put up with clunky, inconsisten
 
 ## Experience is a differentiator when crossing the chasm
 
-The excellent hit tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the **_'early majority'_**, during the **technology adoption lifecycle**:
+The excellent high-tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the **_'early majority'_**, during the **technology adoption lifecycle**:
 
 {{< inline-figure "*chasm*" "The chasm is the most dangerous place to be (if you're a technology product)" "illustration of the chasm, part of the technology life cycle" >}}
 
@@ -170,7 +170,7 @@ Amazon uses this technique with new product development via the [PR FAQ strategy
 
 To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a comprehensive set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires some broad and deep knowledge; here is a sample:
 
-### Front-end / browser based engineering
+### Front-end and browser based engineering
 
 [languages/markup]
 : [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
@@ -181,7 +181,7 @@ To become fluent in [the art of interfaces](#the-art-of-interfaces), one must be
 [browser technology]
 : [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
-### Middleware, daemon, CLI, or platform-based engineering
+### Middleware, daemon, CLI, and platform-based engineering
 
 [languages]
 : [Golang](https://golang.org/), [Rust](https://www.rust-lang.org/) [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Ruby](https://www.ruby-lang.org/en/), [elixir](https://elixir-lang.org/), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
