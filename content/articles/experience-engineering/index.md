@@ -11,12 +11,12 @@ heroTitle: "When it's so easy to use, you don't even know it exists."
 heroAlt: "UX, UI, and DX are all a part of experience engineering"
 ---
 
-## What is Experience Engineering?
+## What is experience engineering?
 
 OK, so I know I just said that it's an actual term. It's a term that I've _kind of_ made up. It is, however, composed of real things that all revolve around designing
 and building **experiences**.
 
-### More than just User Interface.
+### More than just user interface
 
 It's easy to default to "_...oh you mean UI, right?_" when talking about engineering experiences.
 
@@ -35,7 +35,7 @@ Here are examples of the first three of these.[^1]
     {{< image-grid-item "*json*" "JSON Payload (API)" "Image of a JSON payload used in APIS" >}}
 {{< /image-grid >}}
 
-### The art of interfaces.
+### The art of interfaces
 
 An interface is the only way we _(as humans)_ can interact with software. 
 
@@ -51,7 +51,7 @@ Experience Engineering is the **_facilitator_** of great UX (User Experience) or
 Have you have ever used a UI, API, SDK, or CLI and thought to yourself, "**that was easy, I _enjoyed_ that**"?
 {{< /default-box >}}
 
-### What is User Experience (UX)?
+## What is user experience (UX)?
 
 The question **_"What is the difference between UI and UX?_** has popped up more than once. It's more misunderstood than you would think; here is how I define what both mean.
 
@@ -69,7 +69,7 @@ The man loves to **_recline_** in his ugly [^2] chair. To facilitate this experi
 
 ---
 
-## What about Developer Experience (DX)?
+## What about developer experience (DX)?
 
 DX is a **_sibling_** to UX and UI. The focus is on developers and their experience while building applications on top of (or using) a product. 
 
@@ -91,7 +91,7 @@ In my [opinion]({{< ref "disclaimer">}}), **Good DX** can make a **_million_** d
 
 ---
 
-## Experience Engineering, Industrial Design for Interfaces.
+## Experience engineering, industrial design for interfaces
 
 > "_[Industrial design](https://en.wikipedia.org/wiki/Industrial_design) is a process of design applied to physical products that are to be manufactured by mass production. 
 It is the **_creative act_** of determining and defining a **_product's form and features_**_"
@@ -108,7 +108,7 @@ Early-stage / innovative users of a product will put up with clunky, inconsisten
 
 ---
 
-## Experience is a differentiator when Crossing the Chasm.
+## Experience is a differentiator when crossing the chasm
 
 The excellent hit tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the **_'early majority'_**, during the **technology adoption lifecycle**:
 
@@ -122,7 +122,7 @@ The early majority are **pragmatists** and will be looking for a _polished, cons
 Have you have ever gone looking for a feature without knowing where it would be and '**_just found it_**'?
 {{< /info-box >}}
 
-### Consistency, Accessibility, Simplicity, Convenience, and Self-Service
+### Consistency, accessibility, simplicity, convenience, and self-service
 
 By focusing on these five principles when building a modern SaaS-based application or service, a new product's chances of crossing the chasm **improve significantly**. 
 
@@ -166,24 +166,32 @@ Amazon uses this technique with new product development via the [PR FAQ strategy
 
 {{< /card >}}
 
-## Some technologies used in Experience Engineering
+## Some technologies used in experience engineering
 
 To become fluent in [the art of interfaces](#the-art-of-interfaces), one must become proficient with a comprehensive set of technologies. Operating in the [Experience Engineering Epicenter](#what-about-developer-experience-dx) requires some broad and deep knowledge; here is a sample:
 
 ### Front-end / browser based engineering
 
-- [languages/markup] [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
-- [frameworks] [Angular](https://angular.io/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5]
-- [browser technology] [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+[languages/markup]
+: [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
+
+[frameworks]
+: [Angular](https://angular.io/), [Preact](https://preactjs.com/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), [webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [Laravel](https://laravel.com/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5], [Struts](https://struts.apache.org/)[^5], [Zend](https://framework.zend.com/)[^5],
+
+[browser technology]
+: [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 ### Middleware, daemon, CLI, or platform-based engineering
 
-- [languages] [Golang](https://golang.org/), [Rust](https://www.rust-lang.org/) [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
-- [frameworks/runtime] [Spring Framework](https://spring.io/), [Spring Boot](https://spring.io/guides/gs/spring-boot/), [Gorilla Web Toolkit](https://github.com/gorilla), [Cobra](https://github.com/spf13/cobra), [Transport](https://transport-bus.io), [Node](https://nodejs.org/en/)
+[languages]
+: [Golang](https://golang.org/), [Rust](https://www.rust-lang.org/) [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Ruby](https://www.ruby-lang.org/en/), [elixir](https://elixir-lang.org/), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
+
+[frameworks/runtime]
+: [Spring Framework](https://spring.io/), [Spring Boot](https://spring.io/guides/gs/spring-boot/), [Gorilla Web Toolkit](https://github.com/gorilla), [Cobra](https://github.com/spf13/cobra), [Transport](https://transport-bus.io), [Node](https://nodejs.org/en/)
 
 ### API & messaging-based engineering
 
-- [OpenAPI](https://www.openapis.org/), [AsyncAPI](https://www.asyncapi.com/), [GraphQL](https://graphql.org/), [Protobuf](https://developers.google.com/protocol-buffers), [RabbitMQ](https://www.rabbitmq.com/), [Kafka](https://kafka.apache.org/)
+[OpenAPI](https://www.openapis.org/), [AsyncAPI](https://www.asyncapi.com/), [GraphQL](https://graphql.org/), [Protobuf](https://developers.google.com/protocol-buffers), [RabbitMQ](https://www.rabbitmq.com/), [Kafka](https://kafka.apache.org/)
 
 
 
@@ -191,4 +199,4 @@ To become fluent in [the art of interfaces](#the-art-of-interfaces), one must be
 [^2]: This is not an attractive chair, would you buy it? If so, why?
 [^3]: Unless you hold a monopoly due to a niche market and a lack of competition.
 [^4]: This could be a desktop or mobile UI, native or web/browser-based.
-[^5]: Retired from service, these tools used to be part of my arsenal; they are no longer the right tools (PHP in particular)
+[^5]: Personally retired from service, these tools used to be part of my personal arsenal; they are no longer the right tools (PHP in particular)
