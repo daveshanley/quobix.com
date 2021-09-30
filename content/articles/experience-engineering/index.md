@@ -26,7 +26,7 @@ The reality, however, is the term 'UI' means **more** than a browser-based appli
 - [Application Programming Interface](https://en.wikipedia.org/wiki/API) _(API)_
 - [Conversational UI](https://chatbotsmagazine.com/what-is-a-conversational-ui-and-why-it-matters-de358507b9a2)[^1] 
 
-Let's take a look at some examples of the first three of these.[^1]
+Here are examples of the first three of these.[^1]
 
 {{< image-grid >}}
     {{< image-grid-item "*gui*" "GUI (Graphical User Interface)" "Image of a GUI" >}}
@@ -52,7 +52,7 @@ Have you have ever used a UI, API, SDK, or CLI and thought to yourself, "**that 
 
 ### What is User Experience (UX)?
 
-The question of **_"What is the difference between UI and UX?_** has popped up more than once. It's more misunderstood than you would think; here is how I define what both mean.
+The question **_"What is the difference between UI and UX?_** has popped up more than once. It's more misunderstood than you would think; here is how I define what both mean.
 
 **UX (User Experience)**:
 : _This is what we want a consumer to -**_feel_**- as a **result** of engaging with a product_.
@@ -109,7 +109,7 @@ Early-stage / innovative users of a product will put up with clunky, inconsisten
 
 ## Experience is a differentiator when Crossing the Chasm.
 
-In case you're not familiar with the book [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore, it talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the '**_early majority_**', during the **technology adoption lifecycle**:
+The excellent hit tech marketing bible [Crossing The Chasm](https://www.amazon.com/gp/product/0062292986/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0062292986&linkCode=as2&tag=quobix-20&linkId=4380940d531d2edf7a9a0874ed8ed364) by Geoffrey A. Moore talks about the _chasm_ that exists when taking a product from the '_early adopter_' phase to the '**_early majority_**', during the **technology adoption lifecycle**:
 
 {{< inline-figure "*chasm*" "The chasm is the most dangerous place to be (if you're a technology product)" "illustration of the chasm, part of the technology life cycle" >}}
 
@@ -134,7 +134,7 @@ The early majority will not accept a clunky and complex out-of-the-box experienc
 : **_A GUI, CLI, SDK, and API should all work alongside each other_**. All are using the same vocabulary and design patterns across every touchpoint.
 
 **Accessibility**
-: **_[a11y](https://www.a11yproject.com/) is not something you think about at the end_**. It needs to be a part of the fabric of every architecture. Baked into the very core from the start.
+: **_[a11y](https://www.a11yproject.com/) is not something you think about at the end_**. It has to be part of the fabric of every architecture. Baked into the very core from the start.
 
 **Simplicity**
 : **_Don't make consumers think_**. Have you ever been embarrassed trying to figure out how to fold up a kid's pushchair? Interfaces should feel intrinsic and intuitive. Cognitive load is a bad thing in this case.
