@@ -5,7 +5,7 @@ draft: false
 menu: "sorry"
 strapline: "Causing hurt and distress is not my game."
 hero: "images/sorry.png"
-heroSVG: "images/disclaimer.png"
+heroSVG: "images/sorry.png"
 heroTitle: "I am not trying to be an ass."
 heroAlt: "A pixelated heart, with the word 'sorry'"
 ---
