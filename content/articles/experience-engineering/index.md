@@ -8,11 +8,7 @@ strapline: "Sounds made up right? Well, it's not and you're already familiar wit
 hero: "images/hero-images/experience-engineering.png"
 heroSVG: "images/hero-images/experience-engineering.svg"
 heroTitle: "When it's so easy to use, you don't even know it exists."
-heroAlt: "UX, UI and DX"
-resources:
-- name: gui
-  src: images/gui.jpg
-  title: Graphical User Interface (GUI)
+heroAlt: "UX, UI and DX are all a part of experience engineering"
 ---
 
 ## What is Experience Engineering?
@@ -173,13 +169,13 @@ To become fluent in [the art of interfaces](#the-art-of-interfaces), one must be
 
 ### Front-end / browser based engineering
 
-- [languages/markup] [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/) (recommended), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
+- [languages/markup] [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [TypeScript](https://www.typescriptlang.org/), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)/[Sass](https://sass-lang.com/), [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [Markdown](https://www.markdownguide.org/)
 - [frameworks] [Angular](https://angular.io/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5]
 - [browser technology] [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 ### Middleware, daemon, CLI or platform based engineering
 
-- [languages] [Golang](https://golang.org/) (recommended), [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
+- [languages] [Golang](https://golang.org/), [Rust](https://www.rust-lang.org/) [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://www.python.org/), [C++](https://en.wikipedia.org/wiki/C%2B%2B), [Bash](https://www.gnu.org/software/bash/), [PHP](https://www.php.net/)[^5]
 - [frameworks/runtime] [Spring Framework](https://spring.io/), [Spring Boot](https://spring.io/guides/gs/spring-boot/), [Gorilla Web Toolkit](https://github.com/gorilla), [Cobra](https://github.com/spf13/cobra), [Transport](https://transport-bus.io), [Node](https://nodejs.org/en/)
 
 ### API & messaging based engineering
