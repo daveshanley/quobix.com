@@ -4,14 +4,13 @@ description: "Building the big red easy button, UI, UX, DX, API, CLI SDK all hav
 date: 2021-09-26T13:07:35-04:00
 draft: false
 menu: "articles"
+weight: 1
 strapline: "Sounds made up, right? Well, it's not and you're already familiar with it."
 hero: "images/hero-images/experience-engineering.png"
 heroSVG: "images/hero-images/experience-engineering.svg"
 heroTitle: "When it's so easy to use, you don't even know it exists."
 heroAlt: "UX, UI, and DX are all a part of experience engineering"
 ---
-
-## What is experience engineering?
 
 OK, so I know I just said that it's an actual term. It's a term that I've _kind of_ made up. It is, however, composed of real things that all revolve around designing
 and building **experiences**.
@@ -83,7 +82,7 @@ The **Experience Engineering Epicenter** is where _all sides of the spectrum_ me
 
 In her excellent article [The Case for Developer Experience](https://future.a16z.com/the-case-for-developer-experience/), Jean Yang states:
 
-> "No matter what, developer experience for such tools is going to be **_the_** thing. Having good complexity-exploring tools is going to be a crucial competitive advantage — and having good developer experience for exploring complexity will be a key advantage for developer tools. These tools will may change how software gets made"
+> "No matter what, developer experience for such tools is going to be **_the_** thing. Having good complexity-exploring tools is going to be a crucial competitive advantage — and having good developer experience for exploring complexity will be a key advantage for developer tools. These tools will may (sic) change how software gets made"
 
 {{< error-box >}}
 In my [opinion]({{< ref "disclaimer">}}), **Good DX** can make a **_million_** dollar company, a **billion** dollar one.
@@ -193,7 +192,7 @@ Here is a sample of the scope Scott is talking about:
 : [Angular](https://angular.io/), [Preact](https://preactjs.com/), [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), [Webpack](https://webpack.js.org/), [Jest](https://jestjs.io/), [Karma](https://karma-runner.github.io/latest/index.html), [Jasmine](https://jasmine.github.io/), [Cypress](https://www.cypress.io/), [Elm](https://elm-lang.org/), [Rails](https://rubyonrails.org/), [Phoenix](https://www.phoenixframework.org/), [Laravel](https://laravel.com/), [backbone.js](https://backbonejs.org/)[^5], [jQuery](https://jquery.com/)[^5], [Struts](https://struts.apache.org/)[^5], [Zend](https://framework.zend.com/)[^5],
 
 [browser technology]
-: [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+: [WebAssembly (WASM)](https://webassembly.org/), [WebRTC](https://webrtc.org/), [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), [Progressive Web Applications](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 ### Middleware, daemon, CLI, and platform-based engineering
 
