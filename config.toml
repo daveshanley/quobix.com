@@ -1,6 +1,7 @@
 baseURL = 'https://quobix.com/'
 languageCode = 'en-us'
 title = 'quobix'
+subTitle = ''
 enableGitInfo = true
 enableEmoji = true
 enableInlineShortcodes = true
