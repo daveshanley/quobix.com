@@ -2,7 +2,7 @@
 title: "TrashBox, Engineering a solution to memory loss."
 description: "Two problems plague my life, misplacing my phone and forgetting to take out the trash. I solved both issues with one black box."
 date: 2021-09-30T15:23:07-04:00
-draft: true
+draft: false
 menu: "articles"
 strapline: "It's 7 am on Wednesday, and I am once again running down the driveway in my underwear."
 hero: "images/hero-images/trashbox.png"
