@@ -144,7 +144,7 @@ It means we **physically have to get up and move** to disable this most irritati
 
 I grabbed a [Massive Arcade Button](https://www.adafruit.com/product/1185), [Red push button](https://www.adafruit.com/product/1439) and a [Green arcade button](https://www.adafruit.com/product/1193) for the controls. 
 
-I headed over to [Phidgets](https://www.phidgets.com/?view=engineers) to grab a [Single Board Computer](https://www.phidgets.com/?tier=1&catid=1&pcid=0), [VINT Hub](https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=643), two [LED Controllers](https://www.phidgets.com/?tier=3&catid=99&pcid=79&prodid=964) and an [LCD Sceen](https://www.phidgets.com/?tier=3&catid=100&pcid=80&prodid=1030) for all the controllers.
+I headed over to [Phidgets](https://www.phidgets.com/?view=engineers) to grab a [Single Board Computer](https://www.phidgets.com/?tier=1&catid=1&pcid=0), [VINT Hub](https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=643), two [LED Controllers](https://www.phidgets.com/?tier=3&catid=99&pcid=79&prodid=964) and an [LCD Screen](https://www.phidgets.com/?tier=3&catid=100&pcid=80&prodid=1030) for all the controllers.
 
 I used Home Depot for the wood for the actual box, and I already had the tools.
 
@@ -182,7 +182,7 @@ Trashbox was an **_opportunity_**.
 
 I added in some existing prototype code (that is now [opensource](https://github.com/vmware/transport-java)) to a new project that would allow me to use the bus to carry commands from button events and LED events.
 
-Running the code on the microcontroller helped me understand how **to improve the performance of the bus**. The single-threaded CPU **_ slows things down_**.
+Running the code on the microcontroller helped me understand how **to improve the performance of the bus**. The single-threaded CPU **_slows things down_**.
 
 The same code running Trashbox also powers the [vSphere Client](https://www.vmware.com/products/vsphere.html) and [VMware Cloud Console](https://vmc.vmware.com/) and others.
 
