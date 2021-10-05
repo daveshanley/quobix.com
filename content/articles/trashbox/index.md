@@ -119,8 +119,8 @@ My new 'trash' problem and recently re-emerged 'lost phone' problem was now caus
 2. Must **annoy my wife**, so she kicks my ass into taking out the trash.
 3. It will have a **_smaller button_** to allow us to select my phone or my wife's phone.
 4. Must have a **screen** to show which phone is currently selected.
-5. Will have another **_ more prominent button_** that will call the gobeepme service with the selected phone.
-6. Will have **_ tiny control button_** at the back to toggle different modes.
+5. Will have another **_more prominent button_** that will call the gobeepme service with the selected phone.
+6. Will have **_tiny control button_** at the back to toggle different modes.
 7. Makes **fun noises** for button feedback.
 8. It makes a **terrible noise** when it's trash time.
 9. Must look like a [prop from a cheap sci-fi show](https://reddwarf.fandom.com/wiki/Holly_Hop_Drive)[^1].
