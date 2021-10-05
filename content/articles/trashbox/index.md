@@ -132,7 +132,7 @@ What is _more_ annoying than super bright flashing red LEDs in your face?
 
 {{< inline-figure "*trashbox-loop*" "Is it annoying enough yet?" "animation of trash box lights, lighting up and flashing 'trash'" >}}
 
-The familiar Original Star Trek [whooping siren](https://github.com/daveshanley/trashbox/blob/master/sfx/alert.wav) plays, and the front of the trashbox lights up and blinks, endlessly, on **Tuesday night** at **_ 9 pm_**.
+The familiar Original Star Trek [whooping siren](https://github.com/daveshanley/trashbox/blob/master/sfx/alert.wav) plays, and the front of the trashbox lights up and blinks, endlessly, on **Tuesday night** at **_9 pm_**.
 
 The only way to turn it off is to _press the red control button_ at the back of the box.[^2] 
 
