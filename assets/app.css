@@ -582,5 +582,9 @@ hr.article-title-divider {
     .article-body {
         margin-top: 50px;
     }
+
+    li {
+        margin-bottom: 30px;
+    }
     
 }
