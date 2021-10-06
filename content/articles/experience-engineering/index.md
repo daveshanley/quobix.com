@@ -4,7 +4,6 @@ description: "Building the big red easy button, UI, UX, DX, API, CLI SDK all hav
 date: 2021-09-26T13:07:35-04:00
 draft: false
 menu: "articles"
-weight: 1
 strapline: "Sounds made up, right? Well, it's not and you're already familiar with it."
 hero: "images/hero-images/experience-engineering.png"
 heroSVG: "images/hero-images/experience-engineering.svg"
