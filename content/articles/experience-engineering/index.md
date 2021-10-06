@@ -1,6 +1,6 @@
 ---
 title: "What is Experience Engineering?"
-description: "Building the big red easy button, UI, UX, DX, API, CLI SDK all have experience engineering in common, but what exactly is it?"
+description: "Building the big red easy button, UI, UX, DX, API, CLI and SDK all have experience engineering in common, but what exactly is it?"
 date: 2021-09-26T13:07:35-04:00
 draft: false
 menu: "articles"
