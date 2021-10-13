@@ -176,7 +176,7 @@ At the time I was building trashbox, Transport only existed as [TypeScript](http
 
 Trashbox was an **_opportunity_**.
 
-> "_If I can prove that the bus design works on a single board computer controlling LCDs and LEDs, then I know it can power anything."
+> " _If_ I can prove that the bus design works on a single board computer controlling LCDs and LEDs, then I know it can _power anything_."
 
 {{< card "Trashbox runs Transport" >}}
 
