@@ -12,7 +12,7 @@
                     <figure>
                          <img src="{{ .Site.BaseURL }}{{ .Params.heroSVG }}" alt="{{ .Params.heroAlt }}">
                          <figcaption>
-                              {{ .Params.heroTitle }}
+                              {{ .Params.heroTitle | markdownify }}
                          </figcaption>
                     </figure>
                     {{end}}

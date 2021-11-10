@@ -28,6 +28,17 @@ body {
 
 }
 
+.homepage-logo {
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+.homepage-title {
+    text-align: center;
+    display:block;
+}
+
 #main-navigation {
     overflow-y: hidden;
     position: relative;
