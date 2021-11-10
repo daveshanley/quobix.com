@@ -508,6 +508,12 @@ hr.article-title-divider {
 /** mobile stuff */
 
 @media only screen and (max-width: 600px) {
+
+    .homepage-logo {
+        width: 370px;
+    }
+    
+
     .generated-timestamp {
         display: none;
     }
