@@ -40,14 +40,15 @@
                             {{ $value.Title}}
                         </span>
                     </a>
-                    <h3 class="page-list-title"><a href="{{ $value.Permalink }}">{{ $value.Title | markdownify }}</a></h3>
-                    <p>
-                        {{ $value.Description | markdownify }}
-                    </p>
-                    <sub>
-                        {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
-                    </sub>
-
+                    <div class="article-list-summary">
+                        <h3 class="page-list-title"><a href="{{ $value.Permalink }}">{{ $value.Title | markdownify }}</a></h3>
+                        <p>
+                            {{ $value.Description | markdownify }}
+                        </p>
+                        <sub>
+                            {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
+                        </sub>
+                    </div>
                 </li>
                 {{ end}}
                 {{ end}}
