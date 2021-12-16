@@ -1,7 +1,7 @@
 ---
 title: "How to create an event-driven API via AsyncAPI using golang."
 description: "Get started with event-driven APIs, Pub-Sub and microservices defined via AsyncAPI using golang."
-date: 2021-12-05T13:07:35-04:00
+date: 2021-12-16T13:07:35-04:00
 draft: false
 menu: "articles"
 strapline: "Using WebSockets and STOMP, we will create Pub-Sub server and a client defined by an AsyncAPI contract, in ten minutes."
@@ -11,6 +11,10 @@ heroTitle: "Building event driven and Pub-Sub APIs described with AsyncAPI is ea
 heroAlt: "AsyncAPI streaming microservices with golang"
 ---
 
+## Watch the video 
+{{< youtube "NawZ-lCTl70" >}}
+
+--- 
 If you want to learn more about AsyncAPI, head over to [AsyncAPI.com](https://asyncapi.com) and find out more about the standard and the power it provides us.
 
 Moving forward, I will _assume_ that you already know what AsyncAPI is and **_want to use it in your golang applications_**.
