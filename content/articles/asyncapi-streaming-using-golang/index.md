@@ -1,7 +1,7 @@
 ---
 title: "How to create a streaming AsyncAPI microservice using golang."
 description: "Get started with streaming APIs and microservices defined via AsyncAPI using golang."
-date: 2021-12-06T13:07:35-04:00
+date: 2021-12-21T13:07:35-04:00
 draft: false
 menu: "articles"
 strapline: "Using WebSockets and STOMP, we will create a streaming server and a client defined by an AsyncAPI contract, in ten minutes."
@@ -9,6 +9,11 @@ hero: "images/hero-images/asyncapi-streaming.png"
 heroSVG: "images/hero-images/asyncapi-streaming.svg"
 heroTitle: "Building event driven APIs described with AsyncAPI is easy."
 heroAlt: "AsyncAPI streaming microservices with golang"
+---
+
+## Watch the video 
+{{< youtube "TnxSlopBYgk" >}}
+
 ---
 
 If you want to learn more about AsyncAPI, head over to [AsyncAPI.com](https://asyncapi.com) and find out more about the standard and the power it provides us.
@@ -158,7 +163,7 @@ func (rws *RandomWordService) OnServiceReady() chan bool {
     return rws.readyChan
 }
 {{< /highlight >}}
-'**Init**' and '**OnServiceReady**' are Plank lifecycle hooks. They fire after Plank loads the service ('**_Init_**'), and Once Plank is ready to run the service ('**_OnServiceReady_**'). 
+'**Init**' and '**OnServiceReady**' are lifecycle hooks. They fire after Plank loads the service ('**_Init_**'), and Once Plank is ready to run the service ('**_OnServiceReady_**'). 
 
 '**OnServiceReady**' Returns a _boolean_ chan that Plank will listen for a signal on before completing activation. We capture a pointer to it named '**readyChan**'
 
@@ -251,7 +256,7 @@ func (rws *RandomWordService) getRandomWord() string {
 }
 {{< /highlight >}}
 
-We need to update both our REST Service API '**andleWordFetchSuccess**' and '**andleWordFetchFailure**' handlers to call this new method.
+We need to update both our REST Service API '**handleWordFetchSuccess**' and '**handleWordFetchFailure**' handlers to call this new method.
 
 It will ensure the service broadcasts an actual list of random words regardless of success or failure to obtain that data.
 
@@ -463,32 +468,17 @@ func main() {
 {{</ highlight >}}
 
 {{< code-split >}}Now we have our stream handler and our wait group defined, we can define functions that handle incoming messages and errors.{{< /code-split >}}
+{{< code-split >}}If you recall the [AsyncAPI contract](https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/daveshanley/asyncapi-tutorials/main/specs/simple-stream.yaml), All responses that use Plank over AsyncAPI are an object that Transport provides containing a '**Payload**' property.{{< /code-split >}}
+
 
 {{< highlight go >}}
     // start and keep listening
     handler.Handle(
         func(msg *model.Message) {
 
-            // unmarshal the message payload into a model.Response object
-            // this is a wrapper transport uses when being used as a server,
-            // it encapsulates a rich set of data about the message,
-            // but you only really care about the payload (body)
-            r := &model.Response{}
+            var randomWord string
+            msg.CastPayloadToType(&randomWord)
 {{</ highlight >}}
-
-{{< code-split >}}If you recall the [AsyncAPI contract](https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/daveshanley/asyncapi-tutorials/main/specs/simple-stream.yaml), All responses that use Plank over AsyncAPI are an object that Transport provides containing a '**Payload**' property.{{< /code-split >}}
-
-{{< highlight go >}}
-            d := msg.Payload.([]byte)
-            err := json.Unmarshal(d, &r)
-            if err != nil {
-                utils.Log.Errorf("error unmarshalling request: %v", err.Error())
-                return
-            }
-
-            // the value we want is in the payload of our model.Response
-            value := r.Payload.(string)
-{{< /highlight >}}
 
 {{< code-split >}}We will log it out to the console (because it's just a string) and then mark our wait group as done, incrementing its internal counter.{{< /code-split >}}
 
