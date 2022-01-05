@@ -14,4 +14,4 @@ The views and opinions expressed on this site are [mine and mine alone]({{< ref 
 
 I do not represent my employer in anyway and I take [full responsibility]({{< ref "sorry" >}}) for any of the content found here.
 
-Please don't sue me :heart:.
+**Please** don't sue me :heart:.
