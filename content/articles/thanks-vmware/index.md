@@ -171,7 +171,7 @@ He interrupted again:
 
 A **giant grin** rose from his face, and then he gave me a friendly '**_pat_**' on the back.
 
-However, due to the man's '[Wreck-Tt Ralph-esque](https://en.wikipedia.org/wiki/Wreck-It_Ralph)' stature, 
+However, due to the man's '[Wreck-It Ralph-esque](https://en.wikipedia.org/wiki/Wreck-It_Ralph)' stature, 
 it can often feel more like being hit with a tree trunk.
 
 ## That day was the moment my life began. 
