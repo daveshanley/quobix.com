@@ -2,7 +2,7 @@
 title: "Thank you, VMware."
 date: 2022-01-14T08:06:56-05:00
 draft: false
-description: "After nearly a decade, I made the hard decision to leave VMware. This is the story of the most project of my life at the company."
+description: "After nearly a decade, I made the hard decision to leave VMware. This is the story of the most important project of my life at the company."
 menu: "articles"
 strapline: "VMware was my home for a decade, I am so grateful to have been a part of her journey."
 hero: "images/hero-images/thankyou-vmware.png"
