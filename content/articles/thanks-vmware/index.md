@@ -1,6 +1,6 @@
 ---
 title: "Thank you, VMware."
-date: 2022-01-14T08:06:56-05:00
+date: 2022-01-17T08:06:56-05:00
 draft: false
 description: "After nearly a decade, I made the hard decision to leave VMware. This is the story of the most important project of my life at the company."
 menu: "articles"
@@ -188,7 +188,7 @@ He said **yes**.
 
 ## Michelle and I got married in 2015. 
 
-{{< inline-figure "*wedding*" "Michael Jackson showed up! Even though he had died nine years prior" "Image of my wife and I in our wedding attire, with a michael jackson impersonator between us" >}}
+{{< inline-figure "*wedding*" "Michael Jackson showed up! Even though he had died six years prior" "Image of my wife and I in our wedding attire, with a michael jackson impersonator between us" >}}
 
 We invited all our VMware friends and colleagues to celebrate in Las Vegas with us. 
 
