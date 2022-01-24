@@ -471,7 +471,7 @@ li.page-list-item sub {
     height: 220px;
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 10%;
     margin-right: 50px;
     margin-bottom: 50px;
     float: left;
@@ -535,6 +535,23 @@ dl {
 hr.article-title-divider {
     margin-bottom: 5px;
 }
+
+section.article-body p code, section.article-body div.terminal-alert code {
+    border: 1px solid #1a681a;
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    color: #03ff0d;
+        background-color: #29d33014;
+}
+
+section.article-body p code::before, section.article-body div.terminal-alert code::before  {
+    content: none;
+}
+
+section.article-body p code::after, section.article-body div.terminal-alert code::after  {
+    content: none;
+}
+
 
 /** mobile stuff */
 
