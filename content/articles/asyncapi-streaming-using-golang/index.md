@@ -87,19 +87,17 @@ The output of our Random Word Service will be just a string, so the payload of o
 
 Let's start by importing Transport into a new project.
 
-{{< default-box >}}
+
 {{< highlight zsh >}}
 go get github.com/vmware/transport-go
 {{< /highlight >}}
-{{</ default-box >}}
 
 Next, let's create the directory in which our AsyncAPI enabled services will live.
 
-{{< default-box >}}
 {{< highlight zsh >}}
 mkdir services
 {{< /highlight >}}
-{{</ default-box >}}
+
 
 Now we can create our new Random Word Service, create a new file named '[word_service.go](https://github.com/daveshanley/asyncapi-tutorials/blob/main/streaming/services/word_service.go)'
 
@@ -132,9 +130,9 @@ func NewRandomWordService() *RandomWordService {
     return &RandomWordService{}
 }
 {{< /highlight>}}
-The '**RandomWordService**' struct defines a string slice named '**words**', our random word broadcast source. It also defines a pointer to '**transportCore**', which provides access to Transport context and other useful features. 
+The `RandomWordService` struct defines a string slice named `words`, our random word broadcast source. It also defines a pointer to `transportCore`, which provides access to Transport context and other useful features. 
 
-The service also defines a '**readyChan**', which lets Plank know that the service has loaded up our random words and is ready to go.
+The service also defines a `readyChan`, which lets Plank know that the service has loaded up our random words and is ready to go.
 
 The last property is a pointer to a [cron job](https://github.com/robfig/cron/v3) that will allow us to execute something over and over, **_forever_**.
 
@@ -163,9 +161,10 @@ func (rws *RandomWordService) OnServiceReady() chan bool {
     return rws.readyChan
 }
 {{< /highlight >}}
-'**Init**' and '**OnServiceReady**' are lifecycle hooks. They fire after Plank loads the service ('**_Init_**'), and Once Plank is ready to run the service ('**_OnServiceReady_**'). 
 
-'**OnServiceReady**' Returns a _boolean_ chan that Plank will listen for a signal on before completing activation. We capture a pointer to it named '**readyChan**'
+`Init` and `OnServiceReady` are lifecycle hooks. They fire after Plank loads the service (`Init`), and Once Plank is ready to run the service (`OnServiceReady`). 
+
+`OnServiceReady` Returns a _boolean_ chan that Plank will listen for a signal on before completing activation. We capture a pointer to it named `readyChan`
 
 ---
 
@@ -209,11 +208,12 @@ func (rws *RandomWordService) handleWordFetchSuccess(response *model.Response) {
     rws.readyChan <- true
 }
 {{< /highlight >}}
-In our success handler '**handleWordFetchSuccess**', we cast the response of the API call into a '**[]string**' slice. We send a bool down our '**readyChan**' to alert Plank that we're ready to go.
+
+In our success handler `handleWordFetchSuccess`, we cast the response of the API call into a '**[]string**' slice. We send a bool down our `readyChan` to alert Plank that we're ready to go.
 
 ### 3.3 Handling a failed random word API call
 
-If our failure handler '**handleWordFetchFailure**' activates, we make up some random words of our own and proceed anyway. The list isn't very long, but it still fulfills the contract.
+If our failure handler `handleWordFetchFailure` activates, we make up some random words of our own and proceed anyway. The list isn't very long, but it still fulfills the contract.
 
 {{< highlight go >}}
 // handleWordFetchFailure will parse a failed random word API request.
@@ -256,7 +256,7 @@ func (rws *RandomWordService) getRandomWord() string {
 }
 {{< /highlight >}}
 
-We need to update both our REST Service API '**handleWordFetchSuccess**' and '**handleWordFetchFailure**' handlers to call this new method.
+We need to update both our REST Service API `handleWordFetchSuccess` and `handleWordFetchFailure` handlers to call this new method.
 
 It will ensure the service broadcasts an actual list of random words regardless of success or failure to obtain that data.
 
@@ -281,7 +281,7 @@ func (rws *RandomWordService) handleWordFetchSuccess(response *model.Response) {
 
 ## 5. Add in remaining lifecycle methods
 
-The last step of building our streaming service is to add in a few more Plank lifecycle methods. First, we want to stop our cron job cleanly when we're shutting down Plank, so we use '**OnServerShutdown**'.
+The last step of building our streaming service is to add in a few more Plank lifecycle methods. First, we want to stop our cron job cleanly when we're shutting down Plank, so we use `OnServerShutdown`.
 
 {{< highlight go >}}
 // OnServerShutdown will stop the cronjob firing cleanly when Plank shuts down.
@@ -309,11 +309,9 @@ Our streaming service is complete; now it's time to serve it via Plank.
 
 Let's create a new directory named '_server_' and add '[server.go](https://github.com/daveshanley/asyncapi-tutorials/blob/main/streaming/server/server.go)' to it. 
 
-{{< default-box >}}
 {{< highlight zsh >}}
 mkdir server
 {{< /highlight >}}
-{{</ default-box >}}
 
 The '**main**' function first creates a new instance of Plank that we name '**platformServer**' using a default configuration.
 
@@ -356,19 +354,17 @@ func main() {
 }
 {{< /highlight >}}
 
-Next, we create a new instance of '**RandomWordService**' and register with '**platformServer**' This will run the '**Init**' and '**OnServiceReady**' methods mentioned earlier.
+Next, we create a new instance of `RandomWordService` and register with `platformServer` This will run the `Init` and `OnServiceReady` methods mentioned earlier.
 
-The last step is to capture any operating system interrupt commands (_like Ctrl-C_) to shut down the platform **_cleanly_** and pass them to the '**platformServer**' pointer.
+The last step is to capture any operating system interrupt commands (_like Ctrl-C_) to shut down the platform **_cleanly_** and pass them to the `platformServer` pointer.
 
 ---
 
 ## 7. Boot the server
 
-{{< default-box >}}
 {{< highlight zsh >}}
 go run server/server.go
 {{< /highlight >}}
-{{< /default-box >}}
 
 {{< inline-figure "*plank-running*" "Random Word Service is up and running" "Image of a console window, showing the Plank boot screen with Plank running the new service." >}}
 
@@ -443,7 +439,7 @@ func main() {
 
 {{< info-box >}}Transport defines '**_Galactic Channels_**' as event bus channels mapped to an AsyncAPI channel or Message Broker destination.{{< /info-box >}}
 
-{{< code-split >}}We can listen to a channel on our event bus by using the '**ListenStream**' method. It will return a stream handler that we will define as '**handler**'.{{< /code-split >}}
+{{< code-split >}}We can listen to a channel on our event bus by using the `ListenStream` method. It will return a stream handler that we will define as `handler`.{{< /code-split >}}
 
 
 {{< highlight go >}}
@@ -459,7 +455,7 @@ func main() {
     }
 {{</ highlight >}}
 
-{{< code-split >}}Our '**handler**' will allow us to register functions that capture all messages and errors. We don't want to stream forever, so let's put a ceiling of ten on our stream by using a '**WaitGroup**'{{< /code-split >}}
+{{< code-split >}}Our `handler` will allow us to register functions that capture all messages and errors. We don't want to stream forever, so let's put a ceiling of ten on our stream by using a `WaitGroup`{{< /code-split >}}
 
 {{< highlight go >}}
     // create a wait group that will wait 10 times before completing.
@@ -468,7 +464,7 @@ func main() {
 {{</ highlight >}}
 
 {{< code-split >}}Now we have our stream handler and our wait group defined, we can define functions that handle incoming messages and errors.{{< /code-split >}}
-{{< code-split >}}If you recall the [AsyncAPI contract](https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/daveshanley/asyncapi-tutorials/main/specs/simple-stream.yaml), All responses that use Plank over AsyncAPI are an object that Transport provides containing a '**Payload**' property.{{< /code-split >}}
+{{< code-split >}}If you recall the [AsyncAPI contract](https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/daveshanley/asyncapi-tutorials/main/specs/simple-stream.yaml), All responses that use Plank over AsyncAPI are an object that Transport provides containing a `Payload` property.{{< /code-split >}}
 
 
 {{< highlight go >}}
@@ -496,7 +492,7 @@ func main() {
     wg.Wait()
 {{</ highlight >}}
 
-{{< code-split >}}After ten messages from our stream, the '**WaitGroup**' will complete. We can clean things up by closing our stream handler and marking our application bus channel as local. Our client will unsubscribe automatically from '**/topic/random-word**' on our broker.{{< /code-split >}}
+{{< code-split >}}After ten messages from our stream, the `WaitGroup` will complete. We can clean things up by closing our stream handler and marking our application bus channel as local. Our client will unsubscribe automatically from '**/topic/random-word**' on our broker.{{< /code-split >}}
 
 {{< highlight go >}}
     // close our handler, we're done.
@@ -519,12 +515,10 @@ func main() {
 
 ## 9. Run the client
 
-{{< default-box >}}
 {{< highlight zsh >}}
 go run client.go
 {{< /highlight >}}
-{{< /default-box >}}
-
+=
 You should see Ten random words print out to the console after ten seconds.
 
 {{< inline-figure "*client-output*" "Ten random words arriving as a stream that ticks every second." "Image of a console window, showing the the log output of ten random words." >}}

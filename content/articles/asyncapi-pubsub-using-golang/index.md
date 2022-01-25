@@ -114,19 +114,15 @@ Transport will wrap any response emitted by a service with these properties and 
 
 Let's start by importing Transport into a new project.
 
-{{< default-box >}}
 {{< highlight zsh >}}
 go get github.com/vmware/transport-go
 {{< /highlight >}}
-{{</ default-box >}}
 
 Next, let's create the directory in which our AsyncAPI enabled services will live.
 
-{{< default-box >}}
 {{< highlight zsh >}}
 mkdir services
 {{< /highlight >}}
-{{</ default-box >}}
 
 Now we can create our new Joke Service, create a new file named '[joke_service.go](https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/services/joke_service.go)'.
 
@@ -162,13 +158,13 @@ func NewJokeService() *JokeService {
 }
 {{</ highlight >}}
 
-The '**JokeService**' struct has no properties of its own, unlike the [Streaming example]({{< ref "articles/asyncapi-streaming-using-golang" >}}).
+The `JokeService` struct has no properties of its own, unlike the [Streaming example]({{< ref "articles/asyncapi-streaming-using-golang" >}}).
 
 ---
 
 ### 2.1 Initializing the service
 
-We use Plank's '**Init**' lifecycle method to automatically set outbound headers commonly required for JSON-based applications.
+We use Plank's `Init` lifecycle method to automatically set outbound headers commonly required for JSON-based applications.
 
 {{< highlight go >}}
 // Init will fire when the service is being registered by Plank.
@@ -184,7 +180,7 @@ func (js *JokeService) Init(core service.FabricServiceCore) error {
 
 ### 2.2 Handling published requests/events
 
-Next, we implement the '**HandleServiceRequest**' method. This method should act as a delegator, deciding where to send each request based on the '**Request**' property of the '**model.Request**' pointer.
+Next, we implement the `HandleServiceRequest` method. This method should act as a delegator, deciding where to send each request based on the `Request` property of the `model.Request` pointer.
 
 {{< highlight go >}}
 // HandleServiceRequest will handle icoming requests from event bus on our service channel.
@@ -198,19 +194,19 @@ func (js *JokeService) HandleServiceRequest(request *model.Request, core service
 }
 {{< /highlight >}}
 
-The '**Request**' property should match the '**operationId**' of the AsyncAPI contract.
+The `Request` property should match the `operationId` of the AsyncAPI contract.
 
-We're only interested in one operation in this service, '**get-joke**'. Let's send our request over to a handler method we're going to call '**getJoke**'.
+We're only interested in one operation in this service, `get-joke`. Let's send our request over to a handler method we're going to call `getJoke`.
 
 {{< info-box >}}
-We can let a default handler deal with any other kind of message/request that comes in that isn't a '**get-joke**' command; as unknown.
+We can let a default handler deal with any other kind of message/request that comes in that isn't a 'get-joke' command; as unknown.
 {{< /info-box >}}
 
 ---
 
 ### 2.3 Requesting a joke from another API.
 
-'**getJoke**` will use a simple REST Service built into the core of Transport. The REST Service makes it super easy to call an API to get our joke.
+`getJoke` will use a simple REST Service built into the core of Transport. The REST Service makes it super easy to call an API to get our joke.
 
 {{< highlight go >}}
 // getJoke calls our terrible joke service, and returns the response or error back to the requester.
@@ -224,12 +220,12 @@ func (js *JokeService) getJoke(request *model.Request, core service.FabricServic
             "Accept": "application/json",
         },
 {{< /highlight >}}
-{{< code-split >}}Using reflection in our REST Service call, we set the '**ResponseType**' as a '**Joke**'` type.{{< /code-split >}}
+{{< code-split >}}Using reflection in our REST Service call, we set the `ResponseType` as a `Joke` type.{{< /code-split >}}
 {{< highlight go >}}
         ResponseType: reflect.TypeOf(&Joke{}),
 {{< /highlight >}}
 
-{{< code-split >}}We then provide success and error handlers for our REST Service Call. There isn't much to do with a successful response other than passing the '**Joke**' object back to the consumer.{{< /code-split >}}
+{{< code-split >}}We then provide success and error handlers for our REST Service Call. There isn't much to do with a successful response other than passing the `Joke` object back to the consumer.{{< /code-split >}}
 
 {{< highlight go >}}
     }, func(response *model.Response) { // success handler function
@@ -254,9 +250,9 @@ func (js *JokeService) getJoke(request *model.Request, core service.FabricServic
 
 ## 3. Exposing the service via REST
 
-If we want to also expose this AsyncAPI Pub-Sub service over a RESTful transport using OpenAPI, Plank provides us with this helpful lifecycle hook called '**GetRESTBridgeConfig**'.
+If we want to also expose this AsyncAPI Pub-Sub service over a RESTful transport using OpenAPI, Plank provides us with this helpful lifecycle hook called `GetRESTBridgeConfig`.
 
-Plank makes it easy to 'bridge' Synchronous and Asynchronous APIs together by allowing services to provide a '**RESTBridgeConfig**' (or not). 
+Plank makes it easy to 'bridge' Synchronous and Asynchronous APIs together by allowing services to provide a `RESTBridgeConfig` (or not). 
 
 The config tells Plank the service's channel, the path to use, the HTTP request type, and options for allowing _OPTIONS_ and _HEAD_ requests.
 
@@ -289,14 +285,14 @@ Converting everything to an asynchronous event call. The bridge connects REST en
 
 All that's left is to implement some other lifecycle events. Plank requires them, but we don't need them in this tutorial.
 
-'**OnServerShutdown**' is used to cleanly end long-running tasks the service may be operating. We're not doing that in this service, so we don't need to do anything here.
+`OnServerShutdown` is used to cleanly end long-running tasks the service may be operating. We're not doing that in this service, so we don't need to do anything here.
 
 {{< highlight go >}}
 // OnServerShutdown is not implemented in this service.
 func (js *JokeService) OnServerShutdown() {}
 {{< /highlight >}}
 
-Lastly, '**OnServiceReady**' is used to set up the service before making it available.  We don't set anything up in this service, so we can simply return a pre-fired boolean chan here, which allows the service to be available immediately. 
+Lastly, `OnServiceReady` is used to set up the service before making it available.  We don't set anything up in this service, so we can simply return a pre-fired boolean chan here, which allows the service to be available immediately. 
 
 {{< highlight go >}}
 // OnServiceReady has no functionality in this service, so it returns a pre-fired channel.
@@ -318,11 +314,10 @@ Our service is ready! Now we need to create an instance of Plank, load up our se
 
 Create a new directory called 'server'
 
-{{< default-box >}}
 {{< highlight zsh >}}
 mkdir server
 {{< /highlight >}}
-{{</ default-box >}}
+
 
 Next, create a new file called '[server.go](https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/server/server.go)'
 
@@ -353,7 +348,7 @@ func main() {
    
 {{< /highlight >}}
 
-{{< code-split >}}Then register the '**JokeService**' with Plank by using our '**NewJokeService**' function and the '**JokeServiceChan**' constant defined by our service.{{< /code-split >}}
+{{< code-split >}}Then register the `JokeService` with Plank by using our `NewJokeService` function and the `JokeServiceChan` constant defined by our service.{{< /code-split >}}
 
 {{< highlight go >}}
     // register our JokeService with our platform server.
@@ -365,7 +360,7 @@ func main() {
     }    
 {{< /highlight >}}
 
-{{< code-split >}}Lastly, we create an '**os.Signal**' chan and pass it to Plank to start things up. This is used by Plank to capture interrupts (like Ctrl-C).{{< /code-split >}}
+{{< code-split >}}Lastly, we create an `os.Signal` chan and pass it to Plank to start things up. This is used by Plank to capture interrupts (like Ctrl-C).{{< /code-split >}}
 
 {{< highlight go >}}
 
@@ -384,36 +379,36 @@ Now we can boot up Plank and see our Terrible Joke Service running.
 
 ## 5. Boot the service and try it out
 
-{{< default-box >}}
+
 {{< highlight zsh >}}
 go run server/server.go
 {{< /highlight >}}
-{{</ default-box >}}
+
 
 {{< inline-figure "*plank-running*" "Our terrible joke service is up and running" "Image of a console window, showing the Plank boot screen with Plank running the new service." >}}
 
 The Plank boot screen should appear, and the following should be seen in the console.
 
-{{< default-box >}}
+
 {{< highlight zsh >}}
 Service '*services.JokeService' registered at channel 'joke-service'  
 Service channel 'joke-service' is now bridged to a REST endpoint /rest/joke (GET)  
 Service '*services.JokeService' initialized successfully. 
 {{< /highlight >}}
-{{</ default-box >}}
+
 
 We can call our service **_right away_** without creating an Async client to run pub-sub because of our **REST Bridge** that we configured. 
 
 
-{{< default-box >}}
+
 {{< highlight zsh >}}
 curl http://localhost:30080/rest/joke
 {{< /highlight >}}
-{{</ default-box >}}
+
 
 Will print something like: 
 
-{{< default-box >}}
+
 {{< highlight json >}}
 {
     "id": "HJJY0LR7hyd",
@@ -421,7 +416,7 @@ Will print something like:
     "status": 200
 }
 {{< /highlight >}}
-{{</ default-box >}}
+
 
 
 Pretty neat!
@@ -498,7 +493,7 @@ func main() {
     cm.MarkChannelAsGalactic(jokeSubChan, "/queue/joke-service", c)
 {{< /highlight >}}
 
-{{< code-split >}}We don't want the application to exit before our response has come in, so we can use a '**WaitGroup**'.{{< /code-split >}}
+{{< code-split >}}We don't want the application to exit before our response has come in, so we can use a `WaitGroup`.{{< /code-split >}}
 
 {{< highlight go >}}
     // create a wait group so our client stays running whilst we wait for a response.
@@ -514,7 +509,7 @@ func main() {
         func(msg *model.Message) {
 {{< /highlight >}}
 
-{{< code-split >}}We can use the helper method '**CastPayloadToType**' to convert our message payload into a '**Joke**' type.{{< /code-split >}}
+{{< code-split >}}We can use the helper method `CastPayloadToType` to convert our message payload into a `Joke` type.{{< /code-split >}}
 
 {{< highlight go >}}
             // extract our Joke response
@@ -524,7 +519,7 @@ func main() {
             } else {
 {{< /highlight >}}
 
-{{< code-split >}}We will log out the Joke property of our response to the console and then inform the '**WaitGroup**' that we're done.{{< /code-split >}}
+{{< code-split >}}We will log out the Joke property of our response to the console and then inform the `WaitGroup` that we're done.{{< /code-split >}}
 
 {{< highlight go >}}
                 // log out our joke to the console.
@@ -540,7 +535,7 @@ func main() {
 
 Now our 'Sub' code is done, we can write the 'Pub' code.
 
-Let's create a '**model.Request**' and set the '**_Request_**' property to be the '**get-joke**' operationId or '_command_' our Joke Service is looking for. 
+Let's create a `model.Request` and set the '**_Request_**' property to be the `get-joke` operationId or '_command_' our Joke Service is looking for. 
 
 {{< highlight go >}}
     // create a joke request.
@@ -548,7 +543,7 @@ Let's create a '**model.Request**' and set the '**_Request_**' property to be th
     reqBytes, _ := json.Marshal(req)  
 {{< /highlight >}}
 
-{{< code-split >}}Using our connection, we fire our '**model.Request**' object off to our publish destination '**/pub/queue/joke-service**'.{{< /code-split >}}
+{{< code-split >}}Using our connection, we fire our `model.Request` object off to our publish destination '**/pub/queue/joke-service**'.{{< /code-split >}}
 
 {{< highlight go >}}
     // publish joke request
@@ -579,11 +574,10 @@ Let's create a '**model.Request**' and set the '**_Request_**' property to be th
 
 Now you can run the client application. Pop open a new console and run:
 
-{{< default-box >}}
 {{< highlight zsh >}}
 go run client.go
 {{< /highlight >}}
-{{</ default-box >}}
+
 
 {{< info-box >}}
 Make sure the server is still running before you connect your client. 
