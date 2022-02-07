@@ -1,7 +1,7 @@
 ---
 title: "Hello, Splunk!"
 date: 2022-02-07T14:19:38-05:00
-draft: true
+draft: false
 menu: "articles"
 description: "New job, new domain, time to buckle-up buttercup"
 strapline: "Helmet on, harness tightened and down we go."
