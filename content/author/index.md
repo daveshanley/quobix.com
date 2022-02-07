@@ -15,7 +15,7 @@ I have about twenty-five years of experience with designing and building softwar
 
 My specialty is **Experience Engineering**, which _generally means_ that I design and build technology that you **_engage with_** as a consumer.
 
-I work as a **Sr. Staff Engineer** at [VMware](https://vmware.com). My role is **_Architect of Developer Experience_** (DX). 
+I work as a **Distinguished Engineer** at [Splunk](https://splunk.com). My role is **_Architect of UI_** in the Security group. 
 
 ## Making complex things feel simple and intuitive.
 
@@ -25,7 +25,7 @@ The easy button means abstracting away a lot of different technological complexi
 
 All those complexities are **pretty cool** because it means I get to touch a lot of *fast-moving* tech. 
 
-I _generally_ specialize in UI, CLI, API, and **_developer experience_**; however, I've designed and built across a **large landscape**. 
+I _generally_ specialize in UI, CLI, API, and developer experience; however, I've designed and built across a **large landscape**. 
 
 I've had the pleasure of architecting and building multiple platforms, SaaS products, developer tools, frameworks, games, and enterprise-scale management systems.
 
