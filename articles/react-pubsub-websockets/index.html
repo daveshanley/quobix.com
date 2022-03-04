@@ -1,0 +1,281 @@
+<!doctype html><html lang=en>
+<head>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"NewsArticle","headline":"How to build a React based pub-sub client using WebSockets and JavaScript","image":["https:\/\/quobix.com\/images\/hero-images\/react-stock-ticker.png"],"datePublished":"2022-01-24 09:14:17 -0500 -0500","author":{"@type":"Person","name":"Dave Shanley","url":"https://quobix.com/author"}}</script>
+<meta charset=utf-8>
+<link rel=apple-touch-icon sizes=180x180 href=https://quobix.com//apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://quobix.com/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://quobix.com/favicon-16x16.png>
+<meta name=description content="quobix.com, home of Dave Shanley">
+<meta charset=utf-8>
+<meta name=keywords content="dave shanley,shanley,code,golang,java,typescript,quobix,engineer">
+<link crossorigin=use-credentials rel=manifest href=https://quobix.com/site.webmanifest>
+<meta name=author content="Dave Shanley">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>quobix: How to build a React based pub-sub client using WebSockets and JavaScript</title><script>(function(t,s,o,e,a){t[e]=t[e]||[],t[e].push({'gtm.start':(new Date).getTime(),event:"gtm.js"});var i=s.getElementsByTagName(o)[0],n=s.createElement(o),r=e!="dataLayer"?"&l="+e:'';n.async=!0,n.src="https://www.googletagmanager.com/gtm.js?id="+a+r,i.parentNode.insertBefore(n,i)})(window,document,"script","dataLayer","GTM-PC979K2")</script>
+<script src=https://quobix.com/assets/bundle.js></script>
+<style>:root{--global-font-size:17px;--global-line-height:1.4em;--global-space:10px;--font-stack:Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+            serif;--mono-font-stack:Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+            serif;--background-color:#0d1117;--page-width:65em;--font-color:#e8e9ed;--invert-font-color:#222225;--secondary-color:#b685ff;--tertiary-color:#a3abba;--primary-color:#62c4ff;--error-color:#ff3c74;--progress-bar-background:#3f3f44;--progress-bar-fill:#62c4ff;--code-bg-color:none;--input-style:solid;--display-h1-decoration:none;--bold-text:#e397fa;--terminal-green:#00FF00FF;--hrcolor:#3d3d3d;--code-border:#525252}</style><link rel=stylesheet href=https://quobix.com/assets/syntax.css>
+<link rel=stylesheet href=https://quobix.com/assets/app.css>
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to build a React based pub-sub client using WebSockets and JavaScript">
+<meta property="og:description" content="Learn how easy it is to call Asynchronous APIs using pub-sub, WebSockets and STOMP, inside a React UI application, we're going to build in JavaScript.">
+<meta property="og:publish_date" content="2022-01-24 09:14:17 -0500 -0500">
+<meta property="og:url" content="https://quobix.com/articles/react-pubsub-websockets/">
+<meta property="og:site_name" content="quobix">
+<meta property="og:image" content="https://quobix.com/images/hero-images/react-stock-ticker.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="680">
+<meta property="og:image:secure_url" content="https://quobix.com/images/hero-images/react-stock-ticker.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Build a React pub-sub stock ticker using STOMP and WebSockets">
+<meta property="article:author" content="https://quobix.com">
+<meta property="article:publisher" content="https://quobix.com">
+<meta property="article:section" content="Software">
+<meta property="article:published_time" content="2022-01-24 09:14:17 -0500 -0500">
+<meta property="article:modified_time" content="2022-01-24 09:14:17 -0500 -0500">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@daveshanley">
+<meta name=twitter:creator content="@daveshanley">
+<meta name=twitter:label1 content="Written by">
+<meta name=twitter:data1 content="Dave Shanley">
+<meta name=twitter:label2 content="Reading time">
+<meta name=twitter:data2 content="6 minutes">
+</head><body class=terminal>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC979K2" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class=quobix-header>
+<section class=terminal-nav id=main-navigation>
+<header class=terminal-logo>
+<div class="logo terminal-prompt"><a href=https://quobix.com/>quobix</a></div></header><nav class=terminal-menu id=header-menu>
+<ul itemscope itemtype=http://schema.org/BreadcrumbList>
+<li itemprop=itemListElement itemscope itemtype=http://schema.org/ListItem>
+<a href=https://quobix.com/articles/ itemprop=item class=menu-item>
+<span itemprop=name class=active>Articles</span>
+<meta itemprop=position content="1">
+</a>
+</li><li itemprop=itemListElement itemscope itemtype=http://schema.org/ListItem>
+<a href=https://quobix.com/author/ itemprop=item class=menu-item>
+<span itemprop=name>Author</span>
+<meta itemprop=position content="2">
+</a>
+</li></ul></nav></section><hr id=top-nav-divider>
+</div><div class=container>
+<div class=main-container>
+<main class=content-container>
+<article class=framed-content>
+<h1 class=article-title>How to build a React based pub-sub client using WebSockets and JavaScript</h1><time datetime="2022-01-24 09:14:17 -0500 -0500">January 24, 2022</time>
+<div class=article-strapline>
+<em>Build a simple stock ticker UI using React, calling a pub-sub API.</em>
+</div><section class=article-body>
+<figure>
+<img src=https://quobix.com/images/hero-images/react-stock-ticker.svg alt="Build a React pub-sub stock ticker using STOMP and WebSockets">
+<figcaption>
+Asynchronous APIs and event driven design are part of the future of applications.
+</figcaption></figure><h2 id=watch-the-video>Watch the video</h2><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube.com/embed/JkxsTLZIofY style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div><hr>
+<p>This is quick tutorial to help you understand the basic mechanics of how <strong>Pub-Sub</strong> works and how you can call an asynchronous API from a browser using JavaScript, <a href=https://stomp.github.io/>STOMP</a>, and <a href=https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API>WebSockets</a>. We&rsquo;re going to build a simple</p><p>If you&rsquo;re not familiar with <a href=https://stomp.github.io/>STOMP</a>, it stands for (<strong><em>S</em></strong>)imple (<strong><em>T</em></strong>)ext (<strong><em>O</em></strong>)riented (<strong><em>M</em></strong>)essaging (<strong><em>P</em></strong>)rotocol. It&rsquo;s a straightforward but stable protocol that makes interacting with a message or event-based APIs a breeze.</p><hr>
+<div class=terminal-card>
+<header>You won&rsquo;t have to learn STOMP</header><div>
+We will use a library encapsulating the protocol. We&rsquo;re going to use <a href=https://transport-bus.io/>Transport</a> for this tutorial. It&rsquo;s an asynchronous API framework implemented in multiple languages that supports <a href=https://stomp.github.io/>STOMP</a> out of the box.
+</div></div><p>Our application is going to be a simple stock ticker. We will type in a stock symbol and request it from a <strong>StockTicker</strong> Service running for real over at <a href=https://transport-bus.io/>transport-bus.io</a> via WebSocket.</p><p>The service will respond with details about the latest closing price for that stock symbol, and our UI will render it out.</p><hr>
+<h2 id=1-create-our-new-react-application-using-create-react-app>1. Create our new react application using create-react-app</h2><p>Let&rsquo;s keep it simple and create a new react application using <code>npx create-react-app stock-ticker</code></p><p>Change directory into the &lsquo;<strong>stock-ticker</strong>&rsquo; directory, and now you can install <a href=https://github.com/vmware/transport-typescript>Transport (JavaScript)</a>.</p><p>Transport only has one significant dependency, RxJS, so let&rsquo;s install it via <code>yarn add rxjs</code></p><p>Now install Transport using <code>yarn add @vmw/transport</code>.</p><div class="terminal-alert terminal-alert-primary">To stop any TypeScript warnings, add Typescript (but it&rsquo;s not required) <code>yarn add typescript</code></div><hr>
+<h2 id=2-create-a-custom-hook-to-access-event-bus-and-boot-it>2. Create a custom hook to access event bus, and boot it.</h2><p>Create a new file named &lsquo;<strong>transport.js</strong>&rsquo;. Here we will create a custom hook called <code>useTransport</code>. It&rsquo;s a simple way for components to access the singleton event bus.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>BusUtil</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;@vmw/transport/util/bus.util&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>useTransport</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>BusUtil</span><span class=p>.</span><span class=nx>getBusInstance</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Next, we import <code>BusUtil</code> and <code>LogLevel</code> from Transport into our &ldquo;<strong>index.js</strong>&rdquo; file. We will use them to boot the event bus properly and set the logging level correctly.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=nx>React</span> <span class=nx>from</span> <span class=s1>&#39;react&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>ReactDOM</span> <span class=nx>from</span> <span class=s1>&#39;react-dom&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;./index.css&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>App</span> <span class=nx>from</span> <span class=s1>&#39;./App&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>reportWebVitals</span> <span class=nx>from</span> <span class=s1>&#39;./reportWebVitals&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>BusUtil</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;@vmw/transport/util/bus.util&#34;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>LogLevel</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;@vmw/transport/log/logger.model&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>ReactDOM</span><span class=p>.</span><span class=nx>render</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=o>&lt;</span><span class=nx>React</span><span class=p>.</span><span class=nx>StrictMode</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=o>&lt;</span><span class=nx>App</span> <span class=o>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=o>&lt;</span><span class=err>/React.StrictMode&gt;,</span>
+</span></span><span class=line><span class=cl>  <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;root&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// boot bus and set logging levels.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>bus</span> <span class=o>=</span> <span class=nx>BusUtil</span><span class=p>.</span><span class=nx>bootBus</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=nx>bus</span><span class=p>.</span><span class=nx>api</span><span class=p>.</span><span class=nx>setLogLevel</span><span class=p>(</span><span class=nx>LogLevel</span><span class=p>.</span><span class=nx>Verbose</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>bus</span><span class=p>.</span><span class=nx>log</span><span class=p>.</span><span class=nx>useDarkTheme</span><span class=p>(</span><span class=kc>true</span><span class=p>);</span> <span class=c1>// disable if you&#39;re not using dark mode in your browser.
+</span></span></span></code></pre></div><hr>
+<h2 id=3-connect-to-message-broker-in-appjs>3. Connect to message broker in App.js</h2><p>&ldquo;<strong>create-react-app</strong>&rdquo; will generate some example code here that we don&rsquo;t need, so let&rsquo;s clear out the generated markup.</p><p>Let&rsquo;s import <code>useState</code> and <code>useEffect</code> hooks from react, and let&rsquo;s use our custom hook <code>useTransport</code> to get a reference to our event bus.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>useState</span><span class=p>,</span> <span class=nx>useEffect</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;react&#34;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>StockTicker</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;./StockTicker&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>useTransport</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;./transport&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;./App.css&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>App</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>bus</span> <span class=o>=</span> <span class=nx>useTransport</span><span class=p>();</span></span></span></code></pre></div><p><p class=codesplit>
+We want to track if we&rsquo;re connected, so let&rsquo;s create a new state variable called <code>connected</code> and set it to <code>false</code>.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>  <span class=kr>const</span> <span class=p>[</span><span class=nx>connected</span><span class=p>,</span> <span class=nx>setConnected</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=kc>false</span><span class=p>);</span></span></span></code></pre></div></p><p><p class=codesplit>
+Next, we hook into the component lifecycle with <code>useEffect</code>. Let&rsquo;s use <code>bus.fabric.connect</code> and provide two closures.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>  <span class=c1>// connect to broker if we&#39;re not connected
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nx>useEffect</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>connected</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>bus</span><span class=p>.</span><span class=nx>fabric</span><span class=p>.</span><span class=nx>connect</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>          <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// handle success
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;application has connected to the broker&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=nx>setConnected</span><span class=p>(</span><span class=kc>true</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=p>},</span>
+</span></span><span class=line><span class=cl>          <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// handle failure
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;application has disconnected from the broker&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=nx>setConnected</span><span class=p>(</span><span class=kc>false</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=p>},</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;transport-bus.io&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=mi>443</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;/ws&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=kc>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;/topic&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;/queue&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span></span></span></code></pre></div><p class=codesplit>
+Now we can put in a new page title and then get cracking on our <code>StockTicker</code> component.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl>  <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>className</span><span class=o>=</span><span class=s>&#34;App&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span><span class=nx>Stock</span> <span class=nx>Lookup</span><span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>StockTicker</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>App</span><span class=p>;</span></span></span></code></pre></div></p><hr>
+<h2 id=4-create-stockticker-component>4. Create StockTicker component</h2><p>Create a new file named &ldquo;<strong>StockTicker.js</strong>&rdquo; and then import what we need:
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>useState</span><span class=p>,</span> <span class=nx>useEffect</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;react&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>useTransport</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;./transport&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>GeneralUtil</span> <span class=p>}</span> <span class=nx>from</span> <span class=s2>&#34;@vmw/transport/util/util&#34;</span><span class=p>;</span></span></span></code></pre></div><p class=codesplit>
+Now we can create our <code>StockTicker</code> component.
+</p></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>// stock ticker component
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=kd>function</span> <span class=nx>StockTicker</span><span class=p>()</span> <span class=p>{</span></span></span></code></pre></div><p><p class=codesplit>
+Let&rsquo;s define the state we&rsquo;re going to need for this component.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>    <span class=c1>// define hooks
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=p>[</span><span class=nx>stockLookup</span><span class=p>,</span> <span class=nx>setStockLookup</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=s2>&#34;GOOG&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=p>[</span><span class=nx>closePrice</span><span class=p>,</span> <span class=nx>setClosePrice</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=kc>null</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=p>[</span><span class=nx>lastRefreshed</span><span class=p>,</span> <span class=nx>setLastRefreshed</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=kc>null</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=p>[</span><span class=nx>symbol</span><span class=p>,</span> <span class=nx>setSymbol</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=kc>null</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=p>[</span><span class=nx>stockError</span><span class=p>,</span> <span class=nx>setStockError</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=kc>null</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=p>[</span><span class=nx>subscribed</span><span class=p>,</span> <span class=nx>setSubscribed</span><span class=p>]</span> <span class=o>=</span> <span class=nx>useState</span><span class=p>(</span><span class=kc>false</span><span class=p>);</span></span></span></code></pre></div></p><p><p class=codesplit>
+Next, we get a reference to our bus, define the channel we&rsquo;re subscribing to and then generate a connection string.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>    <span class=c1>// grab a reference to our event bus
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>bus</span> <span class=o>=</span> <span class=nx>useTransport</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1>// define the channel our stock service is operating on.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>stockChannel</span> <span class=o>=</span> <span class=s2>&#34;stock-ticker-service&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// create a connection string to identify our broker
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>connectionString</span> <span class=o>=</span> <span class=nx>GeneralUtil</span><span class=p>.</span><span class=nx>getFabricConnectionString</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;transport-bus.io&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=mi>443</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;/ws&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>);</span></span></span></code></pre></div></p><hr>
+<h3 id=41-implement-useeffect-and-subscribe-to-the-stock-ticker-channel>4.1 Implement useEffect and subscribe to the stock ticker channel</h3><p>Implement <code>useEffect</code> and subscribe to our broker destination.</p><p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>    <span class=c1>// if we are subscribed, then we do nothing, if not... we subscribe!
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>useEffect</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>subscribed</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// subscribe to service by marking the channel as galactic.
+</span></span></span></code></pre></div><p class=codesplit>
+If we haven&rsquo;t yet subscribed, we use the <a href=https://transport-bus.io/ts/extending-channels>markChannelAsGalactic</a> method, and it automatically subscribes the client to that destination on the broker. We&rsquo;re marking this channel as <a href=https://transport-bus.io/java/private-channels>private</a>, which means it will use a queue and be a one-to-one conversation.
+</p></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>                <span class=nx>bus</span><span class=p>.</span><span class=nx>markChannelAsGalactic</span><span class=p>(</span><span class=nx>stockChannel</span><span class=p>,</span> <span class=nx>connectionString</span><span class=p>,</span> <span class=kc>true</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                <span class=nx>setSubscribed</span><span class=p>(</span><span class=kc>true</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span></span></span></code></pre></div><p><p class=codesplit>
+Then, we can return a function that will use the <a href=https://transport-bus.io/ts/extending-channels>markChannelAsLocal</a> method to un-subscribe from the destination when the component is unmounted.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>            <span class=k>return</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// all done, unsubscribe
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>bus</span><span class=p>.</span><span class=nx>markChannelAsLocal</span><span class=p>(</span><span class=nx>stockChannel</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>};</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span> <span class=p>[</span><span class=nx>subscribed</span><span class=p>,</span> <span class=nx>bus</span><span class=p>,</span> <span class=nx>connectionString</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=p>);</span></span></span></code></pre></div></p><h3 id=42-implement-handlesymbolchange-function>4.2 Implement handleSymbolChange function</h3><p>Next, let&rsquo;s implement the <code>handleSymbolChange</code> function that will fire when the component form input changes. We set the <code>stockLookup</code> state using our event&rsquo;s <code>target.value</code> property.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>handleSymbolChange</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>setStockLookup</span><span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>target</span><span class=p>.</span><span class=nx>value</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span></span></span></code></pre></div><h3 id=43-implement-requeststock-function>4.3 Implement requestStock function</h3><div class=terminal-card>
+<header>Check out the AsyncAPI Contract</header><div>
+<p>If we look at the <a href="https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/vmware/transport-go/main/plank/specs/asyncapi/plank-sample-services-asyncapi.yaml">AsyncAPI contract</a> for this service and look at the <a href="https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/vmware/transport-go/main/plank/specs/asyncapi/plank-sample-services-asyncapi.yaml#operation-publish-pub/queue/stock-ticker-service">publish command</a> and have a look at the example, we can see that the payload of our message is an object that contains a single property named <code>symbol</code>.</p><p>We should note that the <strong>operation ID</strong> is <code>ticker_price_update_stream</code>. Operation IDs are what Transport calls <strong><em>commands</em></strong>.</p></div></div><p>Let&rsquo;s create a new request via the <code>generateFabricRequest</code> method.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl> <span class=kd>function</span> <span class=nx>requestStock</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>request</span> <span class=o>=</span> <span class=nx>bus</span><span class=p>.</span><span class=nx>fabric</span><span class=p>.</span><span class=nx>generateFabricRequest</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=s2>&#34;ticker_price_update_stream&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=p>{</span> <span class=nx>symbol</span><span class=o>:</span> <span class=nx>stockLookup</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>);</span></span></span></code></pre></div><p><p class=codesplit>
+Now we can define the logic that will send our request over the bus to our stock ticker service that is listening at <a href=https://transport-bus.io>transport-bus.io</a> on channel &ldquo;<strong>stock-ticker-service</strong>&rdquo;.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>        <span class=c1>// make the request over the bus and over to our broker at transport-bus.io
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>bus</span><span class=p>.</span><span class=nx>requestOnce</span><span class=p>(</span><span class=nx>stockChannel</span><span class=p>,</span> <span class=nx>request</span><span class=p>).</span><span class=nx>handle</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=p>(</span><span class=nx>response</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// success
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=k>if</span> <span class=p>(</span><span class=nx>response</span><span class=p>.</span><span class=nx>payload</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>setClosePrice</span><span class=p>(</span><span class=nx>response</span><span class=p>.</span><span class=nx>payload</span><span class=p>.</span><span class=nx>closePrice</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>setLastRefreshed</span><span class=p>(</span><span class=nx>response</span><span class=p>.</span><span class=nx>payload</span><span class=p>.</span><span class=nx>lastRefreshed</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>setSymbol</span><span class=p>(</span><span class=nx>response</span><span class=p>.</span><span class=nx>payload</span><span class=p>.</span><span class=nx>symbol</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>setStockError</span><span class=p>(</span><span class=s2>&#34;nothing returned by service&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=p>},</span>
+</span></span><span class=line><span class=cl>            <span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// error
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>setStockError</span><span class=p>(</span><span class=nx>error</span><span class=p>.</span><span class=nx>errorMessage</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>);</span></span></span></code></pre></div></p><hr>
+<h3 id=44-return-stockticker-jsx>4.4 Return StockTicker JSX</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-jsx data-lang=jsx><span class=line><span class=cl>    <span class=c1>// return our component JSX
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>label</span><span class=p>&gt;</span><span class=nx>Ticker</span> <span class=nx>Symbol</span><span class=o>:</span> <span class=p>&lt;/</span><span class=nt>label</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=na>value</span><span class=o>=</span><span class=p>{</span><span class=nx>stockLookup</span><span class=p>}</span> <span class=na>onChange</span><span class=o>=</span><span class=p>{</span><span class=nx>handleSymbolChange</span><span class=p>}</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>button</span> <span class=na>onClick</span><span class=o>=</span><span class=p>{</span><span class=nx>requestStock</span><span class=p>}&gt;</span><span class=nx>Get</span> <span class=nx>Price</span><span class=o>!</span><span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>StockError</span> <span class=na>errorMessage</span><span class=o>=</span><span class=p>{</span><span class=nx>stockError</span><span class=p>}</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=p>&lt;</span><span class=nt>StockResult</span>
+</span></span><span class=line><span class=cl>                <span class=na>closePrice</span><span class=o>=</span><span class=p>{</span><span class=nx>closePrice</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>                <span class=na>symbol</span><span class=o>=</span><span class=p>{</span><span class=nx>symbol</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>                <span class=na>lastRefreshed</span><span class=o>=</span><span class=p>{</span><span class=nx>lastRefreshed</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>);</span></span></span></code></pre></div><hr>
+<h2 id=5-create-stockresult-and-stockerror-components>5. Create StockResult and StockError Components</h2><p>The <code>StockError</code> component only renders if the props contain an <code>errorMessage</code> property.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>StockError</span><span class=p>(</span><span class=nx>props</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>props</span><span class=p>.</span><span class=nx>errorMessage</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=nx>hr</span> <span class=o>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=nx>h3</span><span class=o>&gt;</span><span class=nx>Sorry</span><span class=o>!</span> <span class=nx>the</span> <span class=nx>service</span> <span class=nx>issued</span> <span class=nx>an</span> <span class=nx>error</span><span class=o>&lt;</span><span class=err>/h3&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=nx>p</span><span class=o>&gt;</span> <span class=p>{</span><span class=nx>props</span><span class=p>.</span><span class=nx>errorMessage</span><span class=p>}</span> <span class=o>&lt;</span><span class=err>/p&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=o>&lt;</span><span class=err>/div&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=kc>null</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Lastly, we define our <code>StockResult</code> component. Let&rsquo;s limit the price value to two decimal points to make it simpler to read. Then we can also extract the <code>lastRefreshed</code> and <code>symbol</code> properties.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>StockResult</span><span class=p>(</span><span class=nx>props</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>price</span> <span class=o>=</span> <span class=nx>props</span><span class=p>.</span><span class=nx>closePrice</span><span class=o>?</span><span class=p>.</span><span class=nx>toFixed</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>lastRefreshed</span> <span class=o>=</span> <span class=nx>props</span><span class=p>.</span><span class=nx>lastRefreshed</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>symbol</span> <span class=o>=</span> <span class=nx>props</span><span class=p>.</span><span class=nx>symbol</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>price</span> <span class=o>&amp;&amp;</span> <span class=nx>lastRefreshed</span> <span class=o>&amp;&amp;</span> <span class=nx>symbol</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=nx>hr</span><span class=o>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nx>Symbol</span><span class=o>:</span> <span class=o>&lt;</span><span class=nx>strong</span><span class=o>&gt;</span><span class=p>{</span><span class=nx>symbol</span><span class=p>}</span><span class=o>&lt;</span><span class=err>/strong&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=nx>br</span><span class=o>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nx>Price</span><span class=o>:</span> <span class=o>&lt;</span><span class=nx>strong</span><span class=o>&gt;</span><span class=p>{</span><span class=nx>price</span><span class=p>}</span><span class=o>&lt;</span><span class=err>/strong&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=o>&lt;</span><span class=nx>br</span><span class=o>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nx>Last</span> <span class=nx>Refreshed</span><span class=o>:</span> <span class=o>&lt;</span><span class=nx>strong</span><span class=o>&gt;</span><span class=p>{</span><span class=nx>lastRefreshed</span><span class=p>}</span><span class=o>&lt;</span><span class=err>/strong&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=o>&lt;</span><span class=err>/div&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=kc>null</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><hr>
+<h2 id=6-run-the-application>6. Run the application!</h2><p>Let&rsquo;s run our application. In our terminal window, use <code>npm start</code> and our application should appear.</p><figure class=inline-figure>
+<a href=https://quobix.com/articles/react-pubsub-websockets/stock-ticker-ui.png><img src=https://quobix.com/articles/react-pubsub-websockets/stock-ticker-ui.png title="It looks crap yes, but it's the mechanics we care about in this tutorial" alt="Image of our Stock Ticker UI application running in a browser, showing a form input saying 'GOOG' and a button saying 'Get Price'."></a>
+<figcaption>It looks crap yes, but it&rsquo;s the mechanics we care about in this tutorial</figcaption></figure><hr>
+<h2 id=7-take-a-look-at-the-code>7. Take a look at the code.</h2><p>You can find all the <a href=https://github.com/daveshanley/asyncapi-tutorials/tree/main/stock-ticker>code in this tutorial on GitHub</a></p><ol>
+<li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/stock-ticker/src/App.js>App.js</a></li><li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/stock-ticker/src/StockTicker.js>StockTicker.js</a></li><li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/stock-ticker/src/transport.js>transport.js</a></li><li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/stock-ticker/src/index.js>index.js</a></li></ol><p>Also, you can <a href=https://transport-bus.io/ts/examples/stock-ticker>Try out the stock ticker online</a>.</p></section><hr>
+<nav class=go-back-parent-link>
+<a href=https://quobix.com/articles/>&lt; Back to Articles</a>
+</fnav>
+</article></main></div><footer class=footer>
+<a href=https://quobix.com/author>Dave Shanley</a> 2007-2022
+<span class=generated-timestamp>[generated 24/01/22 14:14 UTC]</span>
+</footer></div></body></html>

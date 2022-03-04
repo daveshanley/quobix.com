@@ -1,25 +1,24 @@
 <!doctype html><html lang=en>
 <head>
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.93.1">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"NewsArticle","headline":"code is art.","image":["https:\/\/quobix.com\/images\/hero-images\/home.png"],"datePublished":"2021-09-22 16:35:46 -0400 -0400","author":{"@type":"Person","name":"Dave Shanley","url":"https://quobix.com/author"}}</script>
 <meta charset=utf-8>
 <link rel=apple-touch-icon sizes=180x180 href=https://quobix.com//apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://quobix.com/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://quobix.com/favicon-16x16.png>
-<meta name=description content="quobix.com, home of dave shanley">
+<meta name=description content="quobix.com, home of Dave Shanley">
+<meta charset=utf-8>
 <meta name=keywords content="dave shanley,shanley,code,golang,java,typescript,quobix,engineer">
 <link crossorigin=use-credentials rel=manifest href=https://quobix.com/site.webmanifest>
 <meta name=author content="Dave Shanley">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>quobix: code is art</title>
-<script>(function(b,d,e,a,g){b[a]=b[a]||[],b[a].push({'gtm.start':(new Date).getTime(),event:'gtm.js'});var f=d.getElementsByTagName(e)[0],c=d.createElement(e),h=a!='dataLayer'?'&l='+a:'';c.async=!0,c.src='https://www.googletagmanager.com/gtm.js?id='+g+h,f.parentNode.insertBefore(c,f)})(window,document,'script','dataLayer','GTM-PC979K2')</script>
+<title>quobix: code is art</title><script>(function(t,s,o,e,a){t[e]=t[e]||[],t[e].push({'gtm.start':(new Date).getTime(),event:"gtm.js"});var i=s.getElementsByTagName(o)[0],n=s.createElement(o),r=e!="dataLayer"?"&l="+e:'';n.async=!0,n.src="https://www.googletagmanager.com/gtm.js?id="+a+r,i.parentNode.insertBefore(n,i)})(window,document,"script","dataLayer","GTM-PC979K2")</script>
 <script src=https://quobix.com/assets/bundle.js></script>
 <style>:root{--global-font-size:17px;--global-line-height:1.4em;--global-space:10px;--font-stack:Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
             serif;--mono-font-stack:Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-            serif;--background-color:#0d1117;--page-width:65em;--font-color:#e8e9ed;--invert-font-color:#222225;--secondary-color:#b685ff;--tertiary-color:#a3abba;--primary-color:#62c4ff;--error-color:#ff3c74;--progress-bar-background:#3f3f44;--progress-bar-fill:#62c4ff;--code-bg-color:none;--input-style:solid;--display-h1-decoration:none;--bold-text:#e397fa;--hrcolor:#3d3d3d;--code-border:#525252}</style>
-<link rel=stylesheet href=https://quobix.com/assets/syntax.css>
+            serif;--background-color:#0d1117;--page-width:65em;--font-color:#e8e9ed;--invert-font-color:#222225;--secondary-color:#b685ff;--tertiary-color:#a3abba;--primary-color:#62c4ff;--error-color:#ff3c74;--progress-bar-background:#3f3f44;--progress-bar-fill:#62c4ff;--code-bg-color:none;--input-style:solid;--display-h1-decoration:none;--bold-text:#e397fa;--terminal-green:#00FF00FF;--hrcolor:#3d3d3d;--code-border:#525252}</style><link rel=stylesheet href=https://quobix.com/assets/syntax.css>
 <link rel=stylesheet href=https://quobix.com/assets/app.css>
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
@@ -46,64 +45,43 @@
 <meta name=twitter:data1 content="Dave Shanley">
 <meta name=twitter:label2 content="Reading time">
 <meta name=twitter:data2 content="0 minutes">
-</head>
-<body class=terminal>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC979K2" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript>
-<div class=quobix-header>
+</head><body class=terminal>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC979K2" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class=quobix-header>
 <section class=terminal-nav id=main-navigation>
 <header class=terminal-logo>
-<div class="logo terminal-prompt"><a href=https://quobix.com/>quobix</a></div>
-</header>
-<nav class=terminal-menu id=header-menu>
+<div class="logo terminal-prompt"><a href=https://quobix.com/>quobix</a></div></header><nav class=terminal-menu id=header-menu>
 <ul itemscope itemtype=http://schema.org/BreadcrumbList>
 <li itemprop=itemListElement itemscope itemtype=http://schema.org/ListItem>
 <a href=https://quobix.com/articles/ itemprop=item class=menu-item>
 <span itemprop=name>Articles</span>
 <meta itemprop=position content="1">
 </a>
-</li>
-<li itemprop=itemListElement itemscope itemtype=http://schema.org/ListItem>
+</li><li itemprop=itemListElement itemscope itemtype=http://schema.org/ListItem>
 <a href=https://quobix.com/author/ itemprop=item class=menu-item>
 <span itemprop=name>Author</span>
 <meta itemprop=position content="2">
 </a>
-</li>
-</ul>
-</nav>
-</section>
-<hr id=top-nav-divider>
-</div>
-<div class=container>
+</li></ul></nav></section><hr id=top-nav-divider>
+</div><div class=container>
 <div class=main-container>
 <main class=content-container>
 <article class=framed-content>
-<h1 class=list-title>code is art.</h1>
-<h2 class=homepage-link-title>Latest Article</h2>
-<section class="latest-page-item homepage-item">
-<a href=https://quobix.com/articles/trashbox/>
-<img src=https://quobix.com/images/hero-images/trashbox.png class=article-hero-thumb alt="UX, UI, and DX are all a part of experience engineering." title="'Did you remember the Trash?'... oh no, not again.">
+<img src=https://quobix.com/images/quobix-homepage.png alt="quobix logo" title="quobix logo" width=800 class=homepage-logo>
+<h1 class="list-title homepage-title">code is art.</h1><h2 class=homepage-link-title>Latest Article</h2><section class="latest-page-item homepage-item">
+<a href=https://quobix.com/articles/hello-splunk/>
+<img src=https://quobix.com/images/hero-images/hello-splunk.png class=article-hero-thumb alt="Image of buttercup the pony, next to the words 'hello splunk'" title="A whole new world, with a familiar twist.">
 <span class=screen-reader>
-TrashBox, Engineering a solution to memory loss.
+Hello, Splunk!
 </span>
 </a>
 <section>
-<h3><a href=https://quobix.com/articles/trashbox/>TrashBox, Engineering a solution to memory loss.</a></h2>
-<p>
-Two problems plague my life, misplacing my phone and forgetting to take out the trash. I solved both issues with one black box.
-</p>
-<sub>
-Sep 30, 2021 | 7 minute
+<h3><a href=https://quobix.com/articles/hello-splunk/>Hello, Splunk!</a></h2><p>
+New job, new domain, time to buckle-up buttercup
+</p><sub>
+Feb 7, 2022 | 1 minute
 read
 </sub>
-</section>
-</section>
-</article>
-</main>
-</div>
-<footer class=footer>
-<a href=https://quobix.com/author>Dave Shanley</a> 2007-2021
+</section></section><p><a href=https://quobix.com/articles/>Read more articles ></a></p></article></main></div><footer class=footer>
+<a href=https://quobix.com/author>Dave Shanley</a> 2007-2022
 <span class=generated-timestamp>[generated 22/09/21 20:35 UTC]</span>
-</footer>
-</div>
-</body>
-</html>
+</footer></div></body></html>

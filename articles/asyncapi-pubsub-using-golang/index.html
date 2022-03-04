@@ -1,0 +1,373 @@
+<!doctype html><html lang=en>
+<head>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"NewsArticle","headline":"How to create an event-driven API via AsyncAPI using golang.","image":["https:\/\/quobix.com\/images\/hero-images\/asyncapi-pubsub.png"],"datePublished":"2021-12-16 13:07:35 -0400 -0400","author":{"@type":"Person","name":"Dave Shanley","url":"https://quobix.com/author"}}</script>
+<meta charset=utf-8>
+<link rel=apple-touch-icon sizes=180x180 href=https://quobix.com//apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://quobix.com/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://quobix.com/favicon-16x16.png>
+<meta name=description content="quobix.com, home of Dave Shanley">
+<meta charset=utf-8>
+<meta name=keywords content="dave shanley,shanley,code,golang,java,typescript,quobix,engineer">
+<link crossorigin=use-credentials rel=manifest href=https://quobix.com/site.webmanifest>
+<meta name=author content="Dave Shanley">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>quobix: How to create an event-driven API via AsyncAPI using golang.</title><script>(function(t,s,o,e,a){t[e]=t[e]||[],t[e].push({'gtm.start':(new Date).getTime(),event:"gtm.js"});var i=s.getElementsByTagName(o)[0],n=s.createElement(o),r=e!="dataLayer"?"&l="+e:'';n.async=!0,n.src="https://www.googletagmanager.com/gtm.js?id="+a+r,i.parentNode.insertBefore(n,i)})(window,document,"script","dataLayer","GTM-PC979K2")</script>
+<script src=https://quobix.com/assets/bundle.js></script>
+<style>:root{--global-font-size:17px;--global-line-height:1.4em;--global-space:10px;--font-stack:Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+            serif;--mono-font-stack:Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+            serif;--background-color:#0d1117;--page-width:65em;--font-color:#e8e9ed;--invert-font-color:#222225;--secondary-color:#b685ff;--tertiary-color:#a3abba;--primary-color:#62c4ff;--error-color:#ff3c74;--progress-bar-background:#3f3f44;--progress-bar-fill:#62c4ff;--code-bg-color:none;--input-style:solid;--display-h1-decoration:none;--bold-text:#e397fa;--terminal-green:#00FF00FF;--hrcolor:#3d3d3d;--code-border:#525252}</style><link rel=stylesheet href=https://quobix.com/assets/syntax.css>
+<link rel=stylesheet href=https://quobix.com/assets/app.css>
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to create an event-driven API via AsyncAPI using golang.">
+<meta property="og:description" content="Get started with event-driven APIs, Pub-Sub and microservices defined via AsyncAPI using golang.">
+<meta property="og:publish_date" content="2021-12-16 13:07:35 -0400 -0400">
+<meta property="og:url" content="https://quobix.com/articles/asyncapi-pubsub-using-golang/">
+<meta property="og:site_name" content="quobix">
+<meta property="og:image" content="https://quobix.com/images/hero-images/asyncapi-pubsub.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="680">
+<meta property="og:image:secure_url" content="https://quobix.com/images/hero-images/asyncapi-pubsub.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="AsyncAPI streaming microservices with golang">
+<meta property="article:author" content="https://quobix.com">
+<meta property="article:publisher" content="https://quobix.com">
+<meta property="article:section" content="Software">
+<meta property="article:published_time" content="2021-12-16 13:07:35 -0400 -0400">
+<meta property="article:modified_time" content="2021-12-16 13:07:35 -0400 -0400">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@daveshanley">
+<meta name=twitter:creator content="@daveshanley">
+<meta name=twitter:label1 content="Written by">
+<meta name=twitter:data1 content="Dave Shanley">
+<meta name=twitter:label2 content="Reading time">
+<meta name=twitter:data2 content="11 minutes">
+</head><body class=terminal>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC979K2" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div class=quobix-header>
+<section class=terminal-nav id=main-navigation>
+<header class=terminal-logo>
+<div class="logo terminal-prompt"><a href=https://quobix.com/>quobix</a></div></header><nav class=terminal-menu id=header-menu>
+<ul itemscope itemtype=http://schema.org/BreadcrumbList>
+<li itemprop=itemListElement itemscope itemtype=http://schema.org/ListItem>
+<a href=https://quobix.com/articles/ itemprop=item class=menu-item>
+<span itemprop=name class=active>Articles</span>
+<meta itemprop=position content="1">
+</a>
+</li><li itemprop=itemListElement itemscope itemtype=http://schema.org/ListItem>
+<a href=https://quobix.com/author/ itemprop=item class=menu-item>
+<span itemprop=name>Author</span>
+<meta itemprop=position content="2">
+</a>
+</li></ul></nav></section><hr id=top-nav-divider>
+</div><div class=container>
+<div class=main-container>
+<main class=content-container>
+<article class=framed-content>
+<h1 class=article-title>How to create an event-driven API via AsyncAPI using golang.</h1><time datetime="2021-12-16 13:07:35 -0400 -0400">December 16, 2021</time>
+<div class=article-strapline>
+<em>Using WebSockets and STOMP, we will create Pub-Sub server and a client defined by an AsyncAPI contract, in ten minutes.</em>
+</div><section class=article-body>
+<figure>
+<img src=https://quobix.com/images/hero-images/asyncapi-pubsub.svg alt="AsyncAPI streaming microservices with golang">
+<figcaption>
+Building event driven and Pub-Sub APIs described with AsyncAPI is easy.
+</figcaption></figure><h2 id=watch-the-video>Watch the video</h2><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube.com/embed/NawZ-lCTl70 style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div><hr>
+<p>If you want to learn more about AsyncAPI, head over to <a href=https://asyncapi.com>AsyncAPI.com</a> and find out more about the standard and the power it provides us.</p><p>Moving forward, I will <em>assume</em> that you already know what AsyncAPI is and <strong><em>want to use it in your golang applications</em></strong>.</p><div class=terminal-alert>If you want to check out the source of this article <a href=https://github.com/daveshanley/asyncapi-tutorials/tree/main/pub-sub>it can be found on GitHub</a>.</div><hr>
+<h2 id=1-getting-started>1. Getting started</h2><p>We&rsquo;re going to create a microservice that exposes <em>Publish</em> and <em>Subscribe</em> endpoints defined by AsyncAPI. We will publish requests to one channel and listen for responses on another.</p><p>To learn how to <a href=https://quobix.com/articles/asyncapi-streaming-using-golang/>create a streaming AsyncAPI microservice</a> if Pub-Sub isn&rsquo;t quite what you&rsquo;re looking for.</p><p>We&rsquo;re going to create a &lsquo;Terrible Joke&rsquo; service. It will listen for an incoming &lsquo;<strong>JokeRequest&rsquo;</strong> on a channel (<em>Publish</em>) and then publish a &lsquo;<strong>JokeResponse</strong>&rsquo; response to a different outbound channel (<em>Subscribe</em>)</p><div class=terminal-alert>Let&rsquo;s take a look at the <a href="https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/daveshanley/asyncapi-tutorials/main/specs/pub-sub.yaml">AsyncAPI contract for our Terrible Joke Service</a>.</div><figure class=inline-figure>
+<a href=https://quobix.com/articles/asyncapi-pubsub-using-golang/asyncapi-studio.png><img src=https://quobix.com/articles/asyncapi-pubsub-using-golang/asyncapi-studio.png title="AsyncAPI Studio is a nice tool for [visualizing our contract](https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/daveshanley/asyncapi-tutorials/main/specs/pub-sub.yaml)." alt="Image of AsyncAPI studio with the contract we're using in this tutorial loaded."></a>
+<figcaption>AsyncAPI Studio is a nice tool for <a href="https://studio.asyncapi.com/?load=https://raw.githubusercontent.com/daveshanley/asyncapi-tutorials/main/specs/pub-sub.yaml">visualizing our contract</a>.</figcaption></figure><p>We ask for a Joke by publishing a &lsquo;<strong>JokeRequest</strong>&rsquo; to &lsquo;<strong>pub/queue/joke-service</strong>&rsquo; and then listen for our response on &lsquo;<strong>queue/joke-service</strong>&rsquo;.</p><p>Let&rsquo;s look a the definition of the &lsquo;<strong>JokeResponse</strong>&rsquo; message broadcast.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>messages</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>JokeResponse</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>        </span><span class=w>        </span><span class=l>A response to a `JokeRequest`. Payload is a `Joke`.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>payload</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>allOf</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=nt>$ref</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;#/components/schemas/TransportResponse&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>object</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>properties</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>payload</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=nt>$ref</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;#/components/schemas/Joke&#39;</span></span></span></code></pre></div><p>We can see that it&rsquo;s composed of two elements, properties defined by <code>TransportResponse</code> and a payload property, consisting of a <code>Joke</code> object.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>components</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>schemas</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>Joke</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=p>&gt;</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>        </span><span class=w>        </span><span class=l>`Joke` represents the exact API response that is delivered via the icanhazdadjoke.com API. </span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>object</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>properties</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>id</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=p>&gt;</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>           </span><span class=w>           </span><span class=l>An alphanumeric string identifying this joke, via icanhazdadjoke.com</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>string</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>examples</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>M7wPC5wPKBd</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>MRZ0LJtHQCd</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>usrcaMuszd</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>joke</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=p>&gt;</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>           </span><span class=w>           </span><span class=l>A random joke from icanhazdadjoke.com. Probably not very funny but may crack a smile.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>string</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>examples</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>What kind of magic do cows believe in? MOODOO.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=l>What do you call a fly without wings? A walk.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>status</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=p>&gt;</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>            </span><span class=w>            </span><span class=l>HTTP status code of the API call, should be *200* unless something went wrong.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>number</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>format</span><span class=p>:</span><span class=w> </span><span class=l>int32</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>examples</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=m>200</span></span></span></code></pre></div><p>Our &lsquo;<strong>Joke</strong>&rsquo; object is pretty simple, with only three properties. &lsquo;<strong>id</strong>&rsquo; represents the joke ID returned by our source API, &lsquo;<strong>joke</strong>&rsquo; is the joke&rsquo;s actual string value, and &lsquo;<strong>status</strong>&rsquo; is the HTTP Code produced by the source API.</p><div class=terminal-card>
+<header>Introducing Transport and Plank</header><div>
+<p>This tutorial uses <a href=https://github.com/vmware/transport-go/tree/main/plank>Plank</a> to provide all the socket, message broker, boilerplate, and glue code you typically need to implement AsyncAPI services.</p><p><a href=https://github.com/vmware/transport-go/tree/main/plank>Plank</a> is a part of <a href=https://github.com/vmware/transport-go>Transport</a>, which operates as an asynchronous application framework for go.</p><p>Transport will wrap any response emitted by a service with these properties and make the service response available via the &lsquo;<strong>payload</strong>&rsquo; value. The &lsquo;<strong>payload</strong>&rsquo; can be an object, a primitive, or a string.</p></div></div><hr>
+<h2 id=2-creating-our-terrible-joke-service>2. Creating our terrible joke service</h2><p>Let&rsquo;s start by importing Transport into a new project.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>go get github.com/vmware/transport-go</span></span></code></pre></div><p>Next, let&rsquo;s create the directory in which our AsyncAPI enabled services will live.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>mkdir services</span></span></code></pre></div><p>Now we can create our new Joke Service, create a new file named &lsquo;<a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/services/joke_service.go>joke_service.go</a>&rsquo;.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>services</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;net/http&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;reflect&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;github.com/google/uuid&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;github.com/vmware/transport-go/model&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;github.com/vmware/transport-go/service&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>const</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nx>JokeServiceChannel</span> <span class=p>=</span> <span class=s>&#34;joke-service&#34;</span> <span class=c1>// matches asyncapi destination channel.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Joke is a representation of what is returned by our providing JokeAPI.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>type</span> <span class=nx>Joke</span> <span class=kd>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>Id</span>     <span class=kt>string</span> <span class=s>`json:&#34;id&#34;`</span>
+</span></span><span class=line><span class=cl>    <span class=nx>Joke</span>   <span class=kt>string</span> <span class=s>`json:&#34;joke&#34;`</span>
+</span></span><span class=line><span class=cl>    <span class=nx>Status</span> <span class=kt>int</span>    <span class=s>`json:&#34;status&#34;`</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// JokeService will return a terrible joke, on demand.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>type</span> <span class=nx>JokeService</span> <span class=kd>struct</span><span class=p>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// NewJokeService will return an instance of JokeService.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=nf>NewJokeService</span><span class=p>()</span> <span class=o>*</span><span class=nx>JokeService</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=o>&amp;</span><span class=nx>JokeService</span><span class=p>{}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>The <code>JokeService</code> struct has no properties of its own, unlike the <a href=https://quobix.com/articles/asyncapi-streaming-using-golang/>Streaming example</a>.</p><hr>
+<h3 id=21-initializing-the-service>2.1 Initializing the service</h3><p>We use Plank&rsquo;s <code>Init</code> lifecycle method to automatically set outbound headers commonly required for JSON-based applications.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// Init will fire when the service is being registered by Plank.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=p>(</span><span class=nx>js</span> <span class=o>*</span><span class=nx>JokeService</span><span class=p>)</span> <span class=nf>Init</span><span class=p>(</span><span class=nx>core</span> <span class=nx>service</span><span class=p>.</span><span class=nx>FabricServiceCore</span><span class=p>)</span> <span class=kt>error</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// JokeService always returns JSON objects as responses. Set default &#39;application/json&#39; headers.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>core</span><span class=p>.</span><span class=nf>SetDefaultJSONHeaders</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=kc>nil</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><hr>
+<h3 id=22-handling-published-requestsevents>2.2 Handling published requests/events</h3><p>Next, we implement the <code>HandleServiceRequest</code> method. This method should act as a delegator, deciding where to send each request based on the <code>Request</code> property of the <code>model.Request</code> pointer.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// HandleServiceRequest will handle icoming requests from event bus on our service channel.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=p>(</span><span class=nx>js</span> <span class=o>*</span><span class=nx>JokeService</span><span class=p>)</span> <span class=nf>HandleServiceRequest</span><span class=p>(</span><span class=nx>request</span> <span class=o>*</span><span class=nx>model</span><span class=p>.</span><span class=nx>Request</span><span class=p>,</span> <span class=nx>core</span> <span class=nx>service</span><span class=p>.</span><span class=nx>FabricServiceCore</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>switch</span> <span class=nx>request</span><span class=p>.</span><span class=nx>Request</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;get-joke&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>js</span><span class=p>.</span><span class=nf>getJoke</span><span class=p>(</span><span class=nx>request</span><span class=p>,</span> <span class=nx>core</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>default</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>core</span><span class=p>.</span><span class=nf>HandleUnknownRequest</span><span class=p>(</span><span class=nx>request</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>The <code>Request</code> property should match the <code>operationId</code> of the AsyncAPI contract.</p><p>We&rsquo;re only interested in one operation in this service, <code>get-joke</code>. Let&rsquo;s send our request over to a handler method we&rsquo;re going to call <code>getJoke</code>.</p><div class="terminal-alert terminal-alert-primary">We can let a default handler deal with any other kind of message/request that comes in that isn&rsquo;t a &lsquo;get-joke&rsquo; command; as unknown.</div><hr>
+<h3 id=23-requesting-a-joke-from-another-api>2.3 Requesting a joke from another API.</h3><p><code>getJoke</code> will use a simple REST Service built into the core of Transport. The REST Service makes it super easy to call an API to get our joke.</p><p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// getJoke calls our terrible joke service, and returns the response or error back to the requester.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=p>(</span><span class=nx>js</span> <span class=o>*</span><span class=nx>JokeService</span><span class=p>)</span> <span class=nf>getJoke</span><span class=p>(</span><span class=nx>request</span> <span class=o>*</span><span class=nx>model</span><span class=p>.</span><span class=nx>Request</span><span class=p>,</span> <span class=nx>core</span> <span class=nx>service</span><span class=p>.</span><span class=nx>FabricServiceCore</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// make API call using inbuilt RestService to make network calls. Use the wonderful icanhazdadjoke.com API.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>core</span><span class=p>.</span><span class=nf>RestServiceRequest</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>service</span><span class=p>.</span><span class=nx>RestServiceRequest</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>Uri</span><span class=p>:</span>    <span class=s>&#34;https://icanhazdadjoke.com&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nx>Method</span><span class=p>:</span> <span class=s>&#34;GET&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nx>Headers</span><span class=p>:</span> <span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>string</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=s>&#34;Accept&#34;</span><span class=p>:</span> <span class=s>&#34;application/json&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span></span></span></code></pre></div><p class=codesplit>
+Using reflection in our REST Service call, we set the <code>ResponseType</code> as a <code>Joke</code> type.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>        <span class=nx>ResponseType</span><span class=p>:</span> <span class=nx>reflect</span><span class=p>.</span><span class=nf>TypeOf</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>Joke</span><span class=p>{}),</span></span></span></code></pre></div></p><p class=codesplit>
+We then provide success and error handlers for our REST Service Call. There isn&rsquo;t much to do with a successful response other than passing the <code>Joke</code> object back to the consumer.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=p>},</span> <span class=kd>func</span><span class=p>(</span><span class=nx>response</span> <span class=o>*</span><span class=nx>model</span><span class=p>.</span><span class=nx>Response</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// success handler function
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=c1>// send back a successful joke.
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>core</span><span class=p>.</span><span class=nf>SendResponse</span><span class=p>(</span><span class=nx>request</span><span class=p>,</span> <span class=nx>response</span><span class=p>.</span><span class=nx>Payload</span><span class=p>.(</span><span class=o>*</span><span class=nx>Joke</span><span class=p>))</span></span></span></code></pre></div><p class=codesplit>
+The same can be said for our error handler. We&rsquo;re just going to create an error response and send it back to our consumers if anything goes wrong with the API call.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=p>},</span> <span class=kd>func</span><span class=p>(</span><span class=nx>response</span> <span class=o>*</span><span class=nx>model</span><span class=p>.</span><span class=nx>Response</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// error handler function
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>fabricError</span> <span class=o>:=</span> <span class=nx>service</span><span class=p>.</span><span class=nf>GetFabricError</span><span class=p>(</span><span class=s>&#34;API Failed&#34;</span><span class=p>,</span> <span class=nx>response</span><span class=p>.</span><span class=nx>ErrorCode</span><span class=p>,</span> <span class=nx>response</span><span class=p>.</span><span class=nx>ErrorMessage</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nx>core</span><span class=p>.</span><span class=nf>SendErrorResponseWithPayload</span><span class=p>(</span><span class=nx>request</span><span class=p>,</span> 
+</span></span><span class=line><span class=cl>            <span class=nx>response</span><span class=p>.</span><span class=nx>ErrorCode</span><span class=p>,</span> 
+</span></span><span class=line><span class=cl>            <span class=nx>response</span><span class=p>.</span><span class=nx>ErrorMessage</span><span class=p>,</span> 
+</span></span><span class=line><span class=cl>            <span class=nx>fabricError</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><hr>
+<h2 id=3-exposing-the-service-via-rest>3. Exposing the service via REST</h2><p>If we want to also expose this AsyncAPI Pub-Sub service over a RESTful transport using OpenAPI, Plank provides us with this helpful lifecycle hook called <code>GetRESTBridgeConfig</code>.</p><p>Plank makes it easy to &lsquo;bridge&rsquo; Synchronous and Asynchronous APIs together by allowing services to provide a <code>RESTBridgeConfig</code> (or not).</p><p>The config tells Plank the service&rsquo;s channel, the path to use, the HTTP request type, and options for allowing <em>OPTIONS</em> and <em>HEAD</em> requests.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// GetRESTBridgeConfig returns a config for a REST endpoint for this Joke Service
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=p>(</span><span class=nx>js</span> <span class=o>*</span><span class=nx>JokeService</span><span class=p>)</span> <span class=nf>GetRESTBridgeConfig</span><span class=p>()</span> <span class=p>[]</span><span class=o>*</span><span class=nx>service</span><span class=p>.</span><span class=nx>RESTBridgeConfig</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>[]</span><span class=o>*</span><span class=nx>service</span><span class=p>.</span><span class=nx>RESTBridgeConfig</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>ServiceChannel</span><span class=p>:</span> <span class=nx>JokeServiceChannel</span><span class=p>,</span> <span class=c1>// where is this service running?
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>Uri</span><span class=p>:</span>            <span class=s>&#34;/rest/joke&#34;</span><span class=p>,</span>       <span class=c1>// what path do you want to map to this service?
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>Method</span><span class=p>:</span>         <span class=nx>http</span><span class=p>.</span><span class=nx>MethodGet</span><span class=p>,</span>     <span class=c1>// which method on this path should we map?
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>AllowHead</span><span class=p>:</span>      <span class=kc>true</span><span class=p>,</span>               <span class=c1>// can the client send a HEAD request on this path?
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>AllowOptions</span><span class=p>:</span>   <span class=kc>true</span><span class=p>,</span>               <span class=c1>// can the client send an OPTIONS request on this path?
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>FabricRequestBuilder</span><span class=p>:</span> <span class=kd>func</span><span class=p>(</span><span class=nx>w</span> <span class=nx>http</span><span class=p>.</span><span class=nx>ResponseWriter</span><span class=p>,</span> <span class=nx>r</span> <span class=o>*</span><span class=nx>http</span><span class=p>.</span><span class=nx>Request</span><span class=p>)</span> <span class=nx>model</span><span class=p>.</span><span class=nx>Request</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=c1>// Plank will essentially call this service like any other for every inbound HTTP request
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=c1>// so we create a message on behalf of the client.
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=k>return</span> <span class=nx>model</span><span class=p>.</span><span class=nx>Request</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>Id</span><span class=p>:</span>                <span class=o>&amp;</span><span class=nx>uuid</span><span class=p>.</span><span class=nx>UUID</span><span class=p>{},</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>Request</span><span class=p>:</span>           <span class=s>&#34;get-joke&#34;</span><span class=p>,</span> <span class=c1>// which command do we want to run?
+</span></span></span><span class=line><span class=cl><span class=c1></span>                    <span class=nx>BrokerDestination</span><span class=p>:</span> <span class=kc>nil</span><span class=p>,</span>        <span class=c1>// not used in this demo.
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Converting everything to an asynchronous event call. The bridge connects REST endpoints with event bus calls. We tell Plank how to call our Joke service for each REST endpoint we want to define.</p><p>All that&rsquo;s left is to implement some other lifecycle events. Plank requires them, but we don&rsquo;t need them in this tutorial.</p><p><code>OnServerShutdown</code> is used to cleanly end long-running tasks the service may be operating. We&rsquo;re not doing that in this service, so we don&rsquo;t need to do anything here.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// OnServerShutdown is not implemented in this service.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=p>(</span><span class=nx>js</span> <span class=o>*</span><span class=nx>JokeService</span><span class=p>)</span> <span class=nf>OnServerShutdown</span><span class=p>()</span> <span class=p>{}</span></span></span></code></pre></div><p>Lastly, <code>OnServiceReady</code> is used to set up the service before making it available. We don&rsquo;t set anything up in this service, so we can simply return a pre-fired boolean chan here, which allows the service to be available immediately.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// OnServiceReady has no functionality in this service, so it returns a pre-fired channel.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=p>(</span><span class=nx>js</span> <span class=o>*</span><span class=nx>JokeService</span><span class=p>)</span> <span class=nf>OnServiceReady</span><span class=p>()</span> <span class=kd>chan</span> <span class=kt>bool</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// ready right away, nothing to do.
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=nx>readyChan</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>bool</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>readyChan</span> <span class=o>&lt;-</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>readyChan</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Our service is ready! Now we need to create an instance of Plank, load up our service, and try it out.</p><hr>
+<h2 id=4-create-an-application-server-to-run-the-service>4. Create an application server to run the service</h2><p>Create a new directory called &lsquo;server&rsquo;</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>mkdir server</span></span></code></pre></div><p>Next, create a new file called &lsquo;<a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/server/server.go>server.go</a>&rsquo;</p><p>Create a new instance of Plank by using a default Plank server configuration, running on <strong><em>localhost</em></strong> on port <strong>30080</strong>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;os&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;github.com/daveshanley/asyncapi-tutorials/pub-sub/services&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;github.com/vmware/transport-go/plank/pkg/server&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;github.com/vmware/transport-go/plank/utils&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// main will create a new instance of plank using a default configuration.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// create a default server configuration.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>serverConfig</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>server</span><span class=p>.</span><span class=nf>CreateServerConfig</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>utils</span><span class=p>.</span><span class=nx>Log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// create a new platform server from our configuration.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>platformServer</span> <span class=o>:=</span> <span class=nx>server</span><span class=p>.</span><span class=nf>NewPlatformServer</span><span class=p>(</span><span class=nx>serverConfig</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   
+</span></span></code></pre></div><p class=codesplit>
+Then register the <code>JokeService</code> with Plank by using our <code>NewJokeService</code> function and the <code>JokeServiceChan</code> constant defined by our service.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// register our JokeService with our platform server.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=nx>err</span> <span class=p>=</span> <span class=nx>platformServer</span><span class=p>.</span><span class=nf>RegisterService</span><span class=p>(</span><span class=nx>services</span><span class=p>.</span><span class=nf>NewJokeService</span><span class=p>(),</span> 
+</span></span><span class=line><span class=cl>                <span class=nx>services</span><span class=p>.</span><span class=nx>JokeServiceChannel</span><span class=p>);</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        <span class=nx>utils</span><span class=p>.</span><span class=nx>Log</span><span class=p>.</span><span class=nf>Fatalln</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>    
+</span></span></code></pre></div><p class=codesplit>
+Lastly, we create an <code>os.Signal</code> chan and pass it to Plank to start things up. This is used by Plank to capture interrupts (like Ctrl-C).
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// register a system channel with the platform, so we can catch interrupts and shut down cleanly.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>syschan</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=nx>os</span><span class=p>.</span><span class=nx>Signal</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// start plank and start listening for requests.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>platformServer</span><span class=p>.</span><span class=nf>StartServer</span><span class=p>(</span><span class=nx>syschan</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Now we can boot up Plank and see our Terrible Joke Service running.</p><hr>
+<h2 id=5-boot-the-service-and-try-it-out>5. Boot the service and try it out</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>go run server/server.go</span></span></code></pre></div><figure class=inline-figure>
+<a href=https://quobix.com/articles/asyncapi-pubsub-using-golang/plank-running.png><img src=https://quobix.com/articles/asyncapi-pubsub-using-golang/plank-running.png title="Our terrible joke service is up and running" alt="Image of a console window, showing the Plank boot screen with Plank running the new service."></a>
+<figcaption>Our terrible joke service is up and running</figcaption></figure><p>The Plank boot screen should appear, and the following should be seen in the console.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>Service <span class=s1>&#39;*services.JokeService&#39;</span> registered at channel <span class=s1>&#39;joke-service&#39;</span>  
+</span></span><span class=line><span class=cl>Service channel <span class=s1>&#39;joke-service&#39;</span> is now bridged to a REST endpoint /rest/joke <span class=o>(</span>GET<span class=o>)</span>  
+</span></span><span class=line><span class=cl>Service <span class=s1>&#39;*services.JokeService&#39;</span> initialized successfully. </span></span></code></pre></div><p>We can call our service <strong><em>right away</em></strong> without creating an Async client to run pub-sub because of our <strong>REST Bridge</strong> that we configured.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>curl http://localhost:30080/rest/joke</span></span></code></pre></div><p>Will print something like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;id&#34;</span><span class=p>:</span> <span class=s2>&#34;HJJY0LR7hyd&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;joke&#34;</span><span class=p>:</span> <span class=s2>&#34;Where did you learn to make ice cream? Sunday school.&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;status&#34;</span><span class=p>:</span> <span class=mi>200</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Pretty neat!</p><hr>
+<h2 id=6-create-a-client-to-call-the-service-asynchronously>6. Create a client to call the service asynchronously</h2><p>Let&rsquo;s go deeper and create a client to connect to our local instance of Plank and query our service using Pub-Sub.</p><p>Create a new file named &lsquo;<a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/client.go>client.go</a>&rsquo;</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;encoding/json&#34;</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;sync&#34;</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;github.com/vmware/transport-go/bridge&#34;</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;github.com/vmware/transport-go/bus&#34;</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;github.com/vmware/transport-go/model&#34;</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;github.com/vmware/transport-go/plank/services&#34;</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;github.com/vmware/transport-go/plank/utils&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span></span></span></code></pre></div><p class=codesplit>
+First, we create a broker connector configuration that connects to the local instance of Plank, now running on port 30080.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// create a message broker connector config and connect to
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// localhost over WebSocket on port 30080.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>config</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>bridge</span><span class=p>.</span><span class=nx>BrokerConnectorConfig</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>Username</span><span class=p>:</span>   <span class=s>&#34;guest&#34;</span><span class=p>,</span>           <span class=c1>// not required for demo, but our API requires it.
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>Password</span><span class=p>:</span>   <span class=s>&#34;guest&#34;</span><span class=p>,</span>           <span class=c1>// ^^ same.
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>ServerAddr</span><span class=p>:</span> <span class=s>&#34;localhost:30080&#34;</span><span class=p>,</span> <span class=c1>// our local plank instance, running RandomWordService
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>UseWS</span><span class=p>:</span>      <span class=kc>true</span><span class=p>,</span>              <span class=c1>// connect over websockets
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>WebSocketConfig</span><span class=p>:</span> <span class=o>&amp;</span><span class=nx>bridge</span><span class=p>.</span><span class=nx>WebSocketConfig</span><span class=p>{</span> <span class=c1>// configure websocket
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>WSPath</span><span class=p>:</span> <span class=s>&#34;/ws&#34;</span><span class=p>,</span> <span class=c1>// websocket endpoint
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>UseTLS</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=c1>// disable TLS for local demo
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=p>}}</span></span></span></code></pre></div><p class=codesplit>
+Next, we get a reference to Transport and its channel manager.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// get a pointer to transport
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>b</span> <span class=o>:=</span> <span class=nx>bus</span><span class=p>.</span><span class=nf>GetBus</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// get a pointer to transport&#39;s channel manager
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>cm</span> <span class=o>:=</span> <span class=nx>b</span><span class=p>.</span><span class=nf>GetChannelManager</span><span class=p>()</span></span></span></code></pre></div><p class=codesplit>
+Using the bus, we connect to our local instance of Plank and create a local channel on our application bus that we then bridge to our Joke Service subscription destination.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// connect to localhost:30080
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>c</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>b</span><span class=p>.</span><span class=nf>ConnectBroker</span><span class=p>(</span><span class=nx>config</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>utils</span><span class=p>.</span><span class=nx>Log</span><span class=p>.</span><span class=nf>Fatalf</span><span class=p>(</span><span class=s>&#34;unable to connect to %s, error: %v&#34;</span><span class=p>,</span> <span class=nx>config</span><span class=p>.</span><span class=nx>ServerAddr</span><span class=p>,</span> <span class=nx>err</span><span class=p>.</span><span class=nf>Error</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=c1>// create local channels for pub-sub comms that are bridged to our joke-service channel.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>jokeSubChan</span> <span class=o>:=</span> <span class=s>&#34;jokes&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>cm</span><span class=p>.</span><span class=nf>CreateChannel</span><span class=p>(</span><span class=nx>jokeSubChan</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// create a handler that will listen for a single response and then unsubscribe.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>jokeSubHandler</span><span class=p>,</span> <span class=nx>_</span> <span class=o>:=</span> <span class=nx>b</span><span class=p>.</span><span class=nf>ListenOnce</span><span class=p>(</span><span class=nx>jokeSubChan</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// mark our local &#39;jokes&#39; channel as &#39;galactic&#39; and map it to our connection and
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// the destinations defined by the AsyncAPI contract
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>cm</span><span class=p>.</span><span class=nf>MarkChannelAsGalactic</span><span class=p>(</span><span class=nx>jokeSubChan</span><span class=p>,</span> <span class=s>&#34;/queue/joke-service&#34;</span><span class=p>,</span> <span class=nx>c</span><span class=p>)</span></span></span></code></pre></div><p class=codesplit>
+We don&rsquo;t want the application to exit before our response has come in, so we can use a <code>WaitGroup</code>.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// create a wait group so our client stays running whilst we wait for a response.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>var</span> <span class=nx>wg</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>WaitGroup</span>
+</span></span><span class=line><span class=cl>    <span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span></span></span></code></pre></div><p class=codesplit>
+Next, we add success and error functions to our stream handler; to deal with our incoming Joke response.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// Start listening for our joke response.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>jokeSubHandler</span><span class=p>.</span><span class=nf>Handle</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=kd>func</span><span class=p>(</span><span class=nx>msg</span> <span class=o>*</span><span class=nx>model</span><span class=p>.</span><span class=nx>Message</span><span class=p>)</span> <span class=p>{</span></span></span></code></pre></div><p class=codesplit>
+We can use the helper method <code>CastPayloadToType</code> to convert our message payload into a <code>Joke</code> type.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>            <span class=c1>// extract our Joke response
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=kd>var</span> <span class=nx>joke</span> <span class=nx>services</span><span class=p>.</span><span class=nx>Joke</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>msg</span><span class=p>.</span><span class=nf>CastPayloadToType</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>joke</span><span class=p>);</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;failed to cast payload: %s\n&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>.</span><span class=nf>Error</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span></span></span></code></pre></div><p class=codesplit>
+We will log out the Joke property of our response to the console and then inform the <code>WaitGroup</code> that we&rsquo;re done.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>                <span class=c1>// log out our joke to the console.
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>utils</span><span class=p>.</span><span class=nx>Log</span><span class=p>.</span><span class=nf>Info</span><span class=p>(</span><span class=nx>joke</span><span class=p>.</span><span class=nx>Joke</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=kd>func</span><span class=p>(</span><span class=nx>err</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>utils</span><span class=p>.</span><span class=nx>Log</span><span class=p>.</span><span class=nf>Errorf</span><span class=p>(</span><span class=s>&#34;error received on channel: %e&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=p>})</span></span></span></code></pre></div><p>Now our &lsquo;Sub&rsquo; code is done, we can write the &lsquo;Pub&rsquo; code.</p><p>Let&rsquo;s create a <code>model.Request</code> and set the &lsquo;<strong><em>Request</em></strong>&rsquo; property to be the <code>get-joke</code> operationId or &lsquo;<em>command</em>&rsquo; our Joke Service is looking for.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// create a joke request.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>req</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>model</span><span class=p>.</span><span class=nx>Request</span><span class=p>{</span><span class=nx>Request</span><span class=p>:</span> <span class=s>&#34;get-joke&#34;</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>reqBytes</span><span class=p>,</span> <span class=nx>_</span> <span class=o>:=</span> <span class=nx>json</span><span class=p>.</span><span class=nf>Marshal</span><span class=p>(</span><span class=nx>req</span><span class=p>)</span>  
+</span></span></code></pre></div><p class=codesplit>
+Using our connection, we fire our <code>model.Request</code> object off to our publish destination &lsquo;<strong>/pub/queue/joke-service</strong>&rsquo;.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// publish joke request
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>c</span><span class=p>.</span><span class=nf>SendJSONMessage</span><span class=p>(</span><span class=s>&#34;/pub/queue/joke-service&#34;</span><span class=p>,</span> <span class=nx>reqBytes</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// wait for joke response to come in and be printed to the console.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span></span></span></code></pre></div><p class=codesplit>
+Once published, our WaitGroup will block the application from completing until our Joke response comes back in.
+</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl>    <span class=c1>// wait for joke response to come in and be printed to the console.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// mark channels as local (unsubscribe)
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>cm</span><span class=p>.</span><span class=nf>MarkChannelAsLocal</span><span class=p>(</span><span class=nx>jokeSubChan</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// disconnect from our broker.
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>c</span><span class=p>.</span><span class=nf>Disconnect</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><hr>
+<h2 id=7-run-the-client-and-enjoy-a-terrible-joke>7. Run the client and enjoy a terrible joke</h2><p>Now you can run the client application. Pop open a new console and run:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>go run client.go</span></span></code></pre></div><div class="terminal-alert terminal-alert-primary">Make sure the server is still running before you connect your client.</div><figure class=inline-figure>
+<a href=https://quobix.com/articles/asyncapi-pubsub-using-golang/client-output.png><img src=https://quobix.com/articles/asyncapi-pubsub-using-golang/client-output.png title="What a terrible joke." alt="Image of a console window, showing the output of our terrible joke client after talking to our terrible joke service.."></a>
+<figcaption>What a terrible joke.</figcaption></figure><p>And that&rsquo;s it; you&rsquo;re up and running with your own AsyncAPI nano-platform!</p><p>All the code from this tutorial <a href=https://github.com/daveshanley/asyncapi-tutorials/tree/main/pub-sub>can be found on GitHub</a></p><ul>
+<li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/specs/pub-sub.yaml>Pub-SubAsyncAPI Specification</a></li><li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/client.go>client.go</a></li><li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/server/server.go>server.go</a></li><li><a href=https://github.com/daveshanley/asyncapi-tutorials/blob/main/pub-sub/services/word_service.go>word_service.go</a></li></ul><p>Head over to <a href=https://transport-bus.io>transport-bus.io</a> if you would like to learn more about Transport as a tool for building full stack asynchronous applications.</p></section><hr>
+<nav class=go-back-parent-link>
+<a href=https://quobix.com/articles/>&lt; Back to Articles</a>
+</fnav>
+</article></main></div><footer class=footer>
+<a href=https://quobix.com/author>Dave Shanley</a> 2007-2022
+<span class=generated-timestamp>[generated 16/12/21 17:07 UTC]</span>
+</footer></div></body></html>
