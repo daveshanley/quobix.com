@@ -341,8 +341,30 @@ figure>figcaption {
 .warning-box {
     border: 1px solid rgb(255, 217, 0);
     color: rgb(255, 217, 0);
-    
 }
+
+.success-box {
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-green);
+}
+
+/* box overrides */
+.terminal-alert-error strong {
+    color: var(--error-color);
+}
+
+.terminal-alert-primary strong {
+    color: var(--primary-color);
+}
+
+.warning-box strong {
+    color: rgb(255, 217, 0);
+}
+
+.success-box strong {
+    color: var(--terminal-green);
+}
+
 
 /* interesting things (list of things) */
 

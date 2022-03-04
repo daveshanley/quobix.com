@@ -5,7 +5,8 @@ subTitle = ''
 enableGitInfo = true
 enableEmoji = true
 enableInlineShortcodes = true
-canonifyURLs = true   
+canonifyURLs = true
+ignoreErrors = ["error-remote-getjson"]
 [markup]
     [markup.goldmark]
         [markup.goldmark.renderer]
