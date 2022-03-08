@@ -1,7 +1,7 @@
 ---
 title: "How to beat Impostor Syndrome"
 date: 2022-03-08T10:46:55-05:00
-draft: false
+draft: false 
 menu: "articles"
 description: "Have you ever felt like a fraud? Like someone will 'find out' you're not as smart as they think you are? Ever feel way out of your depth? I feel you. Here is how I deal with it and how you can beat it."
 strapline: "Understanding why we feel dumb and why that's a good thing."
