@@ -1,13 +1,14 @@
 ---
 title: "How to beat Impostor Syndrome"
-date: 2022-03-04T10:46:55-05:00
-draft: true
+date: 2022-03-08T10:46:55-05:00
+draft: false
 menu: "articles"
 description: "Have you ever felt like a fraud? Like someone will 'find out' you're not as smart as they think you are? Ever feel way out of your depth? I feel you. Here is how I deal with it and how you can beat it."
 strapline: "Understanding why we feel dumb and why that's a good thing."
-hero: ""
-heroTitle: ""
-heroAlt: ""
+hero: "images/hero-images/impostor-syndrome.png"
+heroSVG: "images/hero-images/impostor-syndrome.png"
+heroTitle: "Ever feel like you're playing [among us](https://en.wikipedia.org/wiki/Among_Us) with your career?"
+heroAlt: "Image of buttercup the pony, next to the words 'hello splunk'"
 ---
 
 ## Ah, we meet again, my old friend.
@@ -97,9 +98,9 @@ around us as **_spheres_**.
 When we're new to a company or a team in an unfamiliar domain, we tend to imagine everyone around us with these
 **_giant_** bubbles of **knowledge** around them, and our bubble is **_puny_** and **_unworthy_**.
 
-[ image of spheres ]
+{{< inline-figure "*what-we-think*" "What we often think our knowledge and ability looks like compared to others around us" >}}
 
-The fear another will '**_discover_**' that we're **not as competent** as we should - can be strong.
+The fear another will '**_discover_**' that we're **not as competent** as we should - can be intense.
 
 Simply being asked to contribute can almost drive us to avoid interaction with others,
 shying away from answering questions or even participating in projects.
@@ -109,9 +110,13 @@ The fear of being seen as **_inferior_** can be challenging to overcome.
 The reality is that everyone around us has bubbles of knowledge that **overlap with ours**; they know things **_we don't_**
 and **_vice versa_**, like a Venn Diagram.
 
-[ image of impostor syndrome ]
+---
 
-They may have **_super-specialized_** knowledge about a set of technologies that we have a very light comprehension of, but they may know **nothing** about the technologies and techniques we do. We have skills **_they don't_**.
+## We all overlap
+
+{{< inline-figure "*what-it-looks-like*" "The reality is that our knowledge and experience all overlaps" >}}
+
+They may have **_super-specialized_** knowledge about a set of technologies that we have a very light comprehension of. Still, they may know **nothing** about the technologies and techniques we do. We may have skills **_they don't_**.
 
 ---
 
@@ -135,7 +140,7 @@ It's easy to forget the **depth** and **_breadth_** of our _own_ skills and expe
 by what **_others_** bring to the table.
 
 Everyone around us is mostly figuring things out as **they go along**; rarely does anyone have the
-**_exact_** knowledge required to handle a new situation.
+**_detailed_** knowledge required to handle a new situation.
 
 {{< info-box >}}
 Everyone is generally just a **_few_** steps from having **no idea** what to do.
@@ -143,7 +148,7 @@ Everyone is generally just a **_few_** steps from having **no idea** what to do.
 
 Almost everyone is affected, from interns to the most seasoned CEOs.
 
-When a senior leader says "**_I don't know_**", it's not them declaring weakness; it is, in fact, an invitation
+When a senior leader says "**_I don't know_**," it's not them declaring weakness; it is, in fact, an invitation
 for others to step up and contribute knowledge to the community.
 
 Saying "**_I don't know_**" is how we all become more experienced, wiser, and more valuable.
@@ -169,7 +174,7 @@ I always felt like I was **much** less knowledgeable when talking to other engin
 My constant '**_flight_**' or '**_fight_**' reflex engaged, so I don't make a fool of myself,
 has caused me to **ruin** the armpits of many a shirt over the years.
 
-[DK Graph]
+{{< inline-figure "*dunning-kruger*" "Some people never move past the peak" >}}
 
 ---
 
@@ -187,7 +192,7 @@ our confidence **starts to drop**. The drop varies in steepness, depending on **
 For me, this is when impostor syndrome **kicked in the hardest**.
 I used to feel like I was **half good** at something, that I was **_actually a fraud_** compared to others.
 
-Unfortunately, this feeling generally got **_worse_** as I learned more. Which resulted in feeling **even more** fraudulent.
+Unfortunately, this feeling generally got **_worse_** as I learned more. Which resulted in feeling **even more,** fraudulent.
 
 ---
 
