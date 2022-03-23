@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
+      "experimentalDecorators": true,
       "outDir": "./static/assets",
       "noImplicitAny": true,
       "module": "es6",
-      "target": "es5",
+      "target": "es6",
       "jsx": "react",
       "allowJs": true,
       "moduleResolution": "node"

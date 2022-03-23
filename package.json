@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "css-loader": "^6.3.0",
+    "lit": "^2.2.1",
     "style-loader": "^3.3.0",
     "terminal.css": "^0.7.2",
     "ts-loader": "^9.2.6",
