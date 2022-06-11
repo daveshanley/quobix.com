@@ -37,4 +37,5 @@ In case you're interested in learning more, I have written an **[article on expe
 
 - [LinkedIn Profile](https://www.linkedin.com/in/daveshanley/)
 - [Twitter (@daveshanley)](https://twitter.com/daveshanley)
+- [Youtube Channel](https://www.youtube.com/channel/UCaASvutJB9Sxu2tMLXTDaoQ)
 - [GitHub](https://github.com/daveshanley)
