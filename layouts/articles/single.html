@@ -1,0 +1,28 @@
+{{ define "mainblock" }}
+<div class="main-container">
+    <main class="content-container">
+        <article class="framed-content">
+            <h1 class="article-title">{{.Title}}</h1>
+            <time datetime="{{ .Date}}">{{ dateFormat "January 2, 2006" .Date }}</time>
+            <div class="article-strapline">
+                <em>{{ .Params.strapline }}</em>
+            </div>
+            <section class="article-body">
+                {{ if (isset .Params "hero")}}
+                <figure>
+                    <img src="{{ .Site.BaseURL }}{{ .Params.heroSVG }}" alt="{{ .Params.heroAlt }}">
+                    <figcaption>
+                        {{ .Params.heroTitle | markdownify }}
+                    </figcaption>
+                </figure>
+                {{end}}
+                {{.Content}}
+            </section>
+            <hr />
+            <nav class="go-back-parent-link">
+                <a href="{{ .Parent.RelPermalink }}">&lt; Back to {{ .Parent.Title}}</a>
+            </nav>
+        </article>
+    </main>
+</div>
+{{end}}

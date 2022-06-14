@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "structured-data" . }}
+    {{ partial "head" . }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/vacuum.css" />
+</head>
+
+<body class="terminal">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC979K2"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{{ partial "vacuum/header" . }}
+<div class="container">
+    {{ block "mainblock" . }}
+    {{ end }}
+    {{ partial "footer" . }}
+</div>
+</body>
+
+</html>
