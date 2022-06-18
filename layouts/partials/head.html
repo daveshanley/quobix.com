@@ -22,6 +22,8 @@
 <style>
     :root {
         --global-font-size: 17px;
+        --toc-font-size: 0.7rem;
+        --toc-font-header-size: 0.85rem;
         --global-line-height: 1.4em;
         --global-space: 10px;
         --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -31,12 +33,15 @@
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
             serif;
         --background-color: #0d1117;
+        --background-color-alpha: rgba(13, 17, 23, 0.80);
         --page-width: 65em;
         --font-color: #e8e9ed;
         --invert-font-color: #222225;
         --secondary-color: #b685ff;
+        --secondary-color-lowalpha: rgba(182, 133, 255, 0.73);
         --tertiary-color: #a3abba;
-        --primary-color: #62c4ff;
+        --primary-color: rgba(98, 196, 255, 1.0);
+        --primary-color-lowalpha: rgba(98, 196, 255, 0.6);
         --error-color: #ff3c74;
         --progress-bar-background: #3f3f44;
         --progress-bar-fill: #62c4ff;
@@ -47,6 +52,9 @@
         --terminal-green: #00FF00FF;
         --hrcolor: #3d3d3d;
         --code-border: #525252;
+
+
+
     }
 </style>
 <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/syntax.css" />
@@ -70,10 +78,6 @@
 <meta property="article:section" content="Software" />
 <meta property="article:published_time" content="{{ time .Date }}" />
 <meta property="article:modified_time" content="{{ time .Date }}" />
-
-
-
-<!-- twitter meta data -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@daveshanley">
 <meta name="twitter:creator" content="@daveshanley">

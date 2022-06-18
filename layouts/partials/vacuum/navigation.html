@@ -1,0 +1,29 @@
+<nav class="vacuum-navigation">
+    <ul class="vacuum-navigation-items" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.vacuum.ByWeight }}
+        {{ if .HasChildren }}
+        {{ range .Children }}
+        <li class="{{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+
+        {{ end }}
+        {{ end }}
+        {{ end }}
+    </ul>
+</nav>
+<mobile-nav>
+    <ul class="mobile-nav" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.vacuum }}
+    {{ if .HasChildren }}
+    {{ range .Children }}
+    <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
+    <a href="{{ .URL }}">{{ .Name }}</a>
+    </li>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    </ul>
+</mobile-nav>

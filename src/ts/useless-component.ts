@@ -1,9 +1,7 @@
-import {LitElement, html} from 'lit';
+import { LitElement, html } from 'lit';
 
 export class UselessComponent extends LitElement {
-    render() {
-        return html`
-       <h1>Useless!</h1>
-    `;
-    }
+  render() {
+    return html` <h1>Useless!</h1> `;
+  }
 }
