@@ -1,0 +1,159 @@
+
+.content-container {
+    display: flex;
+}
+
+.vacuum-title {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+}
+
+.vacuum-sep {
+    font-size: 1.4rem;
+    color: var(--tertiary-color);
+}
+
+
+.vacuum-navigation {
+    width: 150px;
+    border-right: 1px dashed var(--secondary-color);
+    margin-right: 20px;
+}
+.vacuum-content {
+  width: 60%;
+    flex-grow: 2;
+}
+
+.vacuum-navigation-items {
+    margin-top: 0;
+}
+
+.active-section {
+    background-color: var(--primary-color);
+    color: var(--invert-font-color);
+}
+
+.active-section a:hover {
+    color: var(--invert-font-color);
+}
+
+.active-section a {
+    color: var(--invert-font-color);
+}
+
+.article-body {
+    margin-top: 20px;
+}
+
+.framed-content hr {
+    width: 100%;
+    border-top: 1px dashed var(--secondary-color);
+    border-bottom: none;
+    margin: 40px auto 40px auto;
+}
+
+.table-of-contents {
+    position: fixed;
+    width: 200px;
+    /*right: 0;*/
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: dashed 1px var(--tertiary-color);
+}
+
+.right-nav {
+    min-width: 150px;
+}
+
+.table-of-contents ul > li {
+    font-size: var(--toc-font-size);
+}
+
+.table-of-contents p {
+    color: var(--tertiary-color);
+    font-size: var(--toc-font-header-size);
+}
+
+/* mobile experience */
+
+
+/** mobile stuff */
+
+mobile-nav {
+    display: none;
+}
+
+ul.mobile-nav {
+    margin: 0;
+    padding: 0;
+}
+
+li.mobile-nav {
+    margin: 0;
+    padding: 0;
+}
+
+li.mobile-nav::after {
+    content: "";
+}
+
+.article-body h2 {
+    margin-top: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    mobile-nav {
+        display: block;
+        transition: top 0.3s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        /*border: 1px dashed var(--secondary-color);*/
+        /*height: 40px;*/
+        /*border-radius: 5px;*/
+        /*width: 40px;*/
+        /*position: absolute;*/
+        /*top: 10px;*/
+        /*right: 10px;*/
+        /*z-index: 1;*/
+    }
+
+    mobile-nav.hide {
+        top: -185px;
+        /*border: 1px dashed var(--secondary-color);*/
+        /*height: 40px;*/
+        /*border-radius: 5px;*/
+        /*width: 40px;*/
+        /*position: absolute;*/
+        /*top: 10px;*/
+        /*right: 10px;*/
+        /*z-index: 1;*/
+    }
+
+
+
+    .quobix-header {
+        height: initial;
+    }
+    #header-menu {
+        display: none;
+    }
+    .main-container {
+        margin-top: 0;
+    }
+
+    .vacuum-navigation {
+      display:none;
+    }
+
+
+
+    .table-of-contents {
+        display: none;
+    }
+
+    .right-nav {
+       display: none;
+    }
+
+}
+
