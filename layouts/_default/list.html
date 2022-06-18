@@ -11,15 +11,15 @@
             {{ range first 1 .Pages}}
             <section class="latest-page-item">
                 <a href="{{ .Permalink }}">
-                    <img src="{{ .Params.hero }}" class="article-hero-thumb" alt="{{ .Params.heroAlt }}" title="{{ .Params.heroTitle }}"/>
+                    <img src="{{ .Site.BaseURL }}{{ .Params.hero }}" class="article-hero-thumb" alt="{{ .Params.heroAlt }}" title="{{ .Params.heroTitle }}"/>
                     <span class="screen-reader">
                         {{ .Title}}
                     </span>
                 </a>
                 <section>
-                <h3><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h3>
+                <h2><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
                 <p>
-                    {{ .Description}}
+                    {{ .Description | markdownify }}
                 </p>
                 <sub>
                     {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
@@ -35,19 +35,20 @@
                 {{ if gt $key 0 }}
                 <li class="page-list-item">
                     <a href="{{ $value.Permalink }}" class="article-hero-thumb">
-                        <img src="{{ $value.Params.hero }}" class="article-hero-thumb" alt="{{ $value.Params.heroAlt }}" title="{{ $value.Params.heroTitle }}"/>
+                        <img src="{{ .Site.BaseURL }}{{ $value.Params.hero }}" class="article-hero-thumb" alt="{{ $value.Params.heroAlt }}" title="{{ $value.Params.heroTitle }}"/>
                         <span class="screen-reader">
                             {{ $value.Title}}
                         </span>
                     </a>
-                    <h3 class="page-list-title"><a href="{{ $value.Permalink }}">{{ $value.Title | markdownify }}</a></h3>
-                    <p>
-                        {{ $value.Description}}
-                    </p>
-                    <sub>
-                        {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
-                    </sub>
-
+                    <div class="article-list-summary">
+                        <h3 class="page-list-title"><a href="{{ $value.Permalink }}">{{ $value.Title | markdownify }}</a></h3>
+                        <p>
+                            {{ $value.Description | markdownify }}
+                        </p>
+                        <sub>
+                            {{ dateFormat "Jan 2, 2006" .Date }} | {{ math.Round (div (countwords .Content) 220.0) }} minute read
+                        </sub>
+                    </div>
                 </li>
                 {{ end}}
                 {{ end}}

@@ -7,13 +7,12 @@
                <div class="article-strapline">
                     <em>{{ .Params.strapline }}</em>
                </div>
-               <hr />
                <section class="article-body">
                     {{ if (isset .Params "hero")}}
                     <figure>
-                         <img src="{{ .Params.hero }}" alt="{{ .Params.heroAlt }}">
+                         <img src="{{ .Site.BaseURL }}{{ .Params.heroSVG }}" alt="{{ .Params.heroAlt }}">
                          <figcaption>
-                              <h4>{{ .Params.heroTitle }}</h4>
+                              {{ .Params.heroTitle | markdownify }}
                          </figcaption>
                     </figure>
                     {{end}}
@@ -22,7 +21,7 @@
                <hr />
                <nav class="go-back-parent-link">
                     <a href="{{ .Parent.RelPermalink }}">&lt; Back to {{ .Parent.Title}}</a>
-               </fnav>
+               </nav>
           </article>
      </main>
 </div>

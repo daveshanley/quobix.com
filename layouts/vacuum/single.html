@@ -1,0 +1,37 @@
+{{ define "mainblock" }}
+<div class="main-container">
+    <main class="content-container">
+        {{ partial "vacuum/navigation" . }}
+
+        <section class="vacuum-content">
+
+            <article class="framed-content">
+
+                <h1 class="article-title">{{.Title}}</h1>
+                <div class="article-strapline">
+                    <em>{{ .Params.strapline }}</em>
+                </div>
+                <section class="article-body">
+                    {{ if (isset .Params "hero")}}
+                    <figure>
+                        <img src="{{ .Site.BaseURL }}{{ .Params.heroSVG }}" alt="{{ .Params.heroAlt }}">
+                        <figcaption>
+                            {{ .Params.heroTitle | markdownify }}
+                        </figcaption>
+                    </figure>
+                    {{end}}
+                    {{.Content}}
+                </section>
+            </article>
+        </section>
+        {{- if gt .WordCount 200 -}}
+        <div class="right-nav">
+            <asisde class="table-of-contents">
+                <p>What's on this page</p>
+                {{ .TableOfContents }}
+            </asisde>
+        </div>
+        {{- end -}}
+    </main>
+</div>
+{{end}}

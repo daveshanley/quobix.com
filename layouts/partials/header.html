@@ -1,22 +1,22 @@
 <div class="quobix-header">
-    <section class="terminal-nav">
+    <section class="terminal-nav" id="main-navigation">
         <header class="terminal-logo">
-            <div class="logo terminal-prompt"><a href="/">{{ .Site.Title }}</a></div>
+            <div class="logo terminal-prompt"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
         </header>
-        <nav class="terminal-menu">
-            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+        <nav class="terminal-menu" id="header-menu">
+            <ul itemscope="" itemtype="http://schema.org/BreadcrumbList">
                 {{- $current := . }}
-                {{- range .Site.Menus.main}}
+                {{- range $k, $v := .Site.Menus.main }}
                 {{- $active := eq .Name $current.Name}}
-                <li property="itemListElement" typef="ListItemElement">
-                    <a href="{{ .URL }}" property="item" typeof="WebPage"
-                        class="menu-item {{ if $active }}active{{end}}">
-                        <span property="name" class="{{ if $active }}active{{end}} {{ if $current.HasMenuCurrent "main" . }} active{{end}}">{{.Name}}</span>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a href="{{ $v.URL }}" itemprop="item" class="menu-item {{ if $current.IsMenuCurrent "main" . }}active{{end}}">
+                        <span itemprop="name" class="{{ if $current.IsMenuCurrent "main" . }}active{{end}}">{{ $v.Name}}</span>
+                        <meta itemprop="position" content="{{ add $k 1 }}">
                     </a>
                 </li>
                 {{- end}}
             </ul>
         </nav>
     </section>
-    <hr / class="top-nav-divider">
+    <hr id="top-nav-divider">
 </div>

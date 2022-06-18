@@ -1,11 +1,16 @@
 {
-    "compilerOptions": {
-      "outDir": "./static/assets",
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "jsx": "react",
-      "allowJs": true,
-      "moduleResolution": "node"
-    }
-  }
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "outDir": "./build/dist/",
+    "noImplicitAny": false,
+    "module": "es6",
+    "target": "es6",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "./build","./layouts",
+    "web-test-runner.config.mjs", "webpack.config.js"]
+}

@@ -1,0 +1,6 @@
+{{ $img := .Page.Resources.GetMatch (.Get 0)}}
+{{ $thumb := $img.Resize "285x" }}
+<figure class="image-grid-item">
+	<a href="{{ $img.RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="285" height="350" title="{{ .Get 1 }}" alt="{{ .Get 2 }}" /></a>
+	<figcaption>{{ .Get 1 }}</figcaption> 
+</figure> 

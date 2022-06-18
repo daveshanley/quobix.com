@@ -6,14 +6,14 @@
                <div class="about-strapline">
                     <em>{{ .Params.strapline }}</em>
                </div>
-               <hr class="about-header-divider"/>
+               <hr class="about-header-divider" />
                <div class="profile-crop">
-                    <img src="/images/about/dave-shanley-headshot.jpg" class="profile-shot" />
+                    <img src="{{ .Site.BaseURL }}images/about/dave-shanley-profile-2022.png" height="220" width="220"
+                         class="profile-shot" alt="a profile picture of Dave Shanley" title="Dave Shanley" />
                </div>
                <section class="about-body">
                     {{.Content}}
                </section>
-               <hr class="article-footer-divider"/>
           </article>
      </main>
 </div>

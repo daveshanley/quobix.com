@@ -1,23 +1,14 @@
 {{ define "mainblock" }}
 <div class="main-container">
-     <main class="content-container">
-          <article class="framed-content">
-               <h1 class="about-title">Who am I?</h1>
-               <div class="about-strapline">
-                    <em>{{ .Params.strapline }}</em>
-               </div>
+    <main class="content-container">
+        <article class="framed-content">
+            <img src="/images/quobix-homepage.png" alt="quobix logo" title="quobix logo" width="800" class="homepage-logo"  />
 
-               <hr />
-
-               <div class="profile-crop">
-                    <img src="/images/about/dave-shanley-headshot.jpg" class="profile-shot" />
-               </div>
-               <section class="article-body">
-                    {{.Content}}
-               </section>
-               <hr class="article-footer-divider"/>
-               
-          </article>
-     </main>
+            <h1 class="list-title homepage-title">{{ .Title}}</h1>
+            
+           {{ partial "latest" .}}
+           <p><a href="{{ ref . "articles" }}">Read more articles &gt;</a></p>
+        </article>
+    </main>
 </div>
 {{end}}

@@ -1,0 +1,10 @@
+{{ define "mainblock" }}
+<div class="main-container">
+    <main class="content-container">
+            {{ partial "vacuum/navigation" . }}
+        <section class="vacuum-content">
+            {{ .Content }}
+        </section>
+    </main>
+</div>
+{{end}}

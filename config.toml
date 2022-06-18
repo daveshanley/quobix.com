@@ -1,8 +1,16 @@
 baseURL = 'https://quobix.com/'
 languageCode = 'en-us'
-title = 'quobix.com'
+title = 'quobix'
+subTitle = ''
 enableGitInfo = true
+enableEmoji = true
+enableInlineShortcodes = true
+canonifyURLs = true
+ignoreErrors = ["error-remote-getjson"]
 [markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
     [markup.highlight]
         codeFences = true
         guessSyntax = false

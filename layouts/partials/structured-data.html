@@ -4,20 +4,14 @@
       "@type": "NewsArticle",
       "headline": "{{ .Title }}",
       "image": [
-        "https://example.com/photos/1x1/photo.jpg",
-        "https://example.com/photos/4x3/photo.jpg",
-        "https://example.com/photos/16x9/photo.jpg"
+        "{{ .Site.BaseURL }}{{ .Params.hero }}"
        ],
-      "datePublished": "2015-02-05T08:00:00+08:00",
-      "dateModified": "2015-02-05T09:20:00+08:00",
-      "author": [{
+      "datePublished": "{{ .PublishDate }}",
+      "author": {
           "@type": "Person",
-          "name": "Jane Doe",
-          "url": "http://example.com/profile/janedoe123"
-        },{
-          "@type": "Person",
-          "name": "John Doe",
-          "url": "http://example.com/profile/johndoe123"
-      }]
-    }
-    </script>
+          "name": "Dave Shanley",
+          "url": "https://quobix.com/author"
+        }
+      }
+  
+</script>

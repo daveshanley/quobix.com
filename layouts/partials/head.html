@@ -1,13 +1,29 @@
 <meta charset="utf-8">
-<meta name="description" content="quobix.com, home of dave shanley">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon-16x16.png">
+<meta name="description" content="quobix.com, home of Dave Shanley">
+<meta charset="UTF-8">
 <meta name="keywords" content="dave shanley, shanley, code, golang, java, typescript, quobix, engineer">
-<meta name="author" content="dave shanley">
+<!-- use creds whilst protected -->
+<link crossorigin="use-credentials" rel="manifest" href="{{ .Site.BaseURL }}site.webmanifest" />
+<meta name="author" content="Dave Shanley">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-<script src="/assets/bundle.js"></script>
+<title>{{ block "title" . }}{{ if .IsHome }}{{ .Site.Title }}: code is art{{ else }}quobix: {{ .Title }}{{ end }}{{ end }}</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PC979K2');</script>
+    <!-- End Google Tag Manager -->
+    
+<script src="{{ .Site.BaseURL }}assets/bundle.js"></script>
 <style>
     :root {
-        --global-font-size: 15px;
+        --global-font-size: 17px;
+        --toc-font-size: 0.7rem;
+        --toc-font-header-size: 0.85rem;
         --global-line-height: 1.4em;
         --global-space: 10px;
         --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -17,12 +33,15 @@
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
             serif;
         --background-color: #0d1117;
-        --page-width: 80em;
+        --background-color-alpha: rgba(13, 17, 23, 0.80);
+        --page-width: 65em;
         --font-color: #e8e9ed;
         --invert-font-color: #222225;
         --secondary-color: #b685ff;
+        --secondary-color-lowalpha: rgba(182, 133, 255, 0.73);
         --tertiary-color: #a3abba;
-        --primary-color: #62c4ff;
+        --primary-color: rgba(98, 196, 255, 1.0);
+        --primary-color-lowalpha: rgba(98, 196, 255, 0.6);
         --error-color: #ff3c74;
         --progress-bar-background: #3f3f44;
         --progress-bar-fill: #62c4ff;
@@ -30,34 +49,39 @@
         --input-style: solid;
         --display-h1-decoration: none;
         --bold-text: #e397fa;
+        --terminal-green: #00FF00FF;
         --hrcolor: #3d3d3d;
         --code-border: #525252;
-        
+
+
+
     }
 </style>
-<link rel="stylesheet" href="/assets/syntax.css" />
-<link rel="stylesheet" href="/assets/app.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/syntax.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/app.css" />
 <!-- OG data -->
-<meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
+<meta property="og:locale" content="en_US" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:title" content="{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta property="og:description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description}}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+<meta property="og:description" content="{{ if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+<meta property="og:publish_date" content="{{ time .Date }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ $.Site.Title }}" />
-{{ if and (not .IsHome) (isset .Params "cover") -}}
-<meta property="og:image" content="{{ .Param " cover" | absURL }}">
-{{ else -}}
-    {{- if isset $.Site.Params "favicon" }}
-    <meta property="og:image" content="{{ $.Site.Params.favicon | absURL }}">
-    {{- else -}}
-    <meta property="og:image" content="{{ printf " img/favicon/%s.png" $.Site.Params.ThemeColor | absURL }}">
-    {{- end -}}
-{{- end -}}
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-{{- range .Params.categories }}
-<meta property="article:section" content="{{ . }}" />
-{{ end }}
-{{- if isset .Params "date" }}
+<meta property="og:image" content="{{ .Params.hero | absURL }}">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="680">
+<meta property="og:image:secure_url" content="{{ .Params.hero | absURL }}" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="{{ .Params.heroAlt }}" />
+<meta property="article:author" content="https://quobix.com" />
+<meta property="article:publisher" content="https://quobix.com" />
+<meta property="article:section" content="Software" />
 <meta property="article:published_time" content="{{ time .Date }}" />
-{{ end }}
+<meta property="article:modified_time" content="{{ time .Date }}" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@daveshanley">
+<meta name="twitter:creator" content="@daveshanley">
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Dave Shanley" />
+<meta name="twitter:label2" content="Reading time" />
+<meta name="twitter:data2" content="{{ math.Round (div (countwords .Content) 220.0) }} minutes" />

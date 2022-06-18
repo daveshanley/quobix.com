@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    {{ partial "structured-data" . }}
     {{ partial "head" . }}
 </head>
 
 <body class="terminal">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC979K2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     {{ partial "header" . }}
     <div class="container">
         {{ block "mainblock" . }}

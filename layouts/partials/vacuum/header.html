@@ -1,0 +1,22 @@
+<div class="quobix-header">
+    <section class="terminal-nav" id="main-navigation">
+        <header class="terminal-logo">
+            <div class="logo terminal-prompt"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a><span class="vacuum-sep">::</span><span class="vacuum-title">vacuum</span></div>
+        </header>
+        <nav class="terminal-menu" id="header-menu">
+            <ul itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                {{- $current := . }}
+                {{- range $k, $v := .Site.Menus.main }}
+                {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "vacuum" .) }}
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a href="{{ $v.URL }}" itemprop="item" class="menu-item {{ if eq "Vacuum" $v.Name }}active{{end}}">
+                        <span itemprop="name" class="{{ if eq "Vacuum" $v.Name }}active{{end}}">{{ $v.Name}}</span>
+                        <meta itemprop="position" content="{{ add $k 1 }}">
+                    </a>
+                </li>
+                {{- end}}
+            </ul>
+        </nav>
+    </section>
+    <hr id="top-nav-divider">
+</div>
