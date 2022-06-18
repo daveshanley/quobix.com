@@ -9,29 +9,28 @@ menu:
     parent: "main"
 ---
 
----
 
-[Check out vacuum on GitHub](https://github.com/daveshanley/vacuum)
 
-## Check out the code
+
+## 1. Check out the code
 
 {{< highlight zsh >}}
 git clone https://github.com/daveshanley/vacuum.git  
+cd vacuum
 {{< /highlight >}}
-
-### Change directory into 'vacuum'
-
+{{< code-split >}}Then change directory into `vacuum`{{< /code-split >}}
 {{< highlight zsh >}}
 cd vacuum
 {{< /highlight >}}
 
-## Build the code
+
+## 2. Build the code
 
 {{< highlight zsh >}}
 go build vacuum.go
 {{< /highlight >}}
 
-## Run the code
+## 3. Run the code
 
 {{< highlight zsh >}}
 ./vacuum lint <your-openapi-spec.yaml>
@@ -45,3 +44,14 @@ vacuum is available as a container, you can pull the image from
 {{< highlight zsh >}}
 docker pull dshanley/vacuum
 {{< /highlight >}}
+
+To run via docker, just add `docker dshanley/vacuum` as your command, like so
+
+{{< highlight zsh >}}
+docker dshanley/vacuum lint <your-openapi-spec.yaml>
+{{< /highlight >}}
+
+
+[Check out vacuum on GitHub](https://github.com/daveshanley/vacuum)
+
+
