@@ -2,15 +2,29 @@
     <ul class="vacuum-navigation-items" itemscope="" itemtype="http://schema.org/BreadcrumbList">
         {{ $currentPage := . }}
         {{ range .Site.Menus.vacuum.ByWeight }}
-        {{ if .HasChildren }}
-        {{ range .Children }}
-        <li class="{{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
-            <a href="{{ .URL }}">{{ .Name }}</a>
-        </li>
+        <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
+        {{- if .HasChildren -}}
 
-        {{ end }}
-        {{ end }}
-        {{ end }}
+        <ul class="navigation-children">
+        {{- range .Children -}}
+            {{- $f := .Page}}
+            {{- if $f.Params.skip_nav }}<!--skip rendering -->{{ else }}
+            {{- $class := "child-nav" -}}
+            {{- if $currentPage.IsMenuCurrent "vacuum" . -}}
+            {{- $class = "active-child-nav" -}}
+            {{- end -}}
+            {{- if $currentPage.IsDescendant $f -}}
+            {{ $class = "active-child-nav" -}}
+            {{- end -}}
+            <li class="{{ $class }}">
+            {{- if $currentPage.IsMenuCurrent "vacuum" . }}{{ .Name }}{{end}}
+            {{- if not ($currentPage.IsMenuCurrent "vacuum" .) }}<a href="{{ .URL }}">{{ .Name }}</a>{{end}}</li>
+            {{- end -}}
+        {{- end -}}
+        </ul>
+        {{- end -}}
+        </vacuum-nav-item>
+        {{- end -}}
     </ul>
 </nav>
 <mobile-nav>

@@ -15,10 +15,12 @@
 
 
 .vacuum-navigation {
-    width: 150px;
+    width: 200px;
     border-right: 1px dashed var(--secondary-color);
     margin-right: 20px;
+    font-size: var(--nav-font-size)
 }
+
 .vacuum-content {
   width: 60%;
     flex-grow: 2;
@@ -26,6 +28,29 @@
 
 .vacuum-navigation-items {
     margin-top: 0;
+}
+
+.navigation-children {
+    font-size: var(--childnav-font-size);
+}
+
+ul.navigation-children > li {
+    margin-left: 0;
+    padding-left: 15px;
+}
+.active-child-nav {
+    background-color: var(--navigation-child-selected);
+    color: var(--font-color);
+}
+
+li.child-nav:hover {
+    background: none;
+    color: var(--font-color);
+}
+
+li.child-nav a:hover {
+    background: none;
+    color: var(--font-color)
 }
 
 .active-section {

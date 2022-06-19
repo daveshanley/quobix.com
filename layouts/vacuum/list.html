@@ -4,7 +4,19 @@
             {{ partial "vacuum/navigation" . }}
         <section class="vacuum-content">
             {{ .Content }}
+
+            {{ if .Params.showList }}<section class="list">
+                <ul>
+                {{ range .Pages }}
+                <li>
+                    <a href="{{.Permalink}}">{{.Title}}</a>
+                </li>
+                {{ end }}
+                </ul>
+            </section>
+            {{ end }}
         </section>
+
     </main>
 </div>
 {{end}}
