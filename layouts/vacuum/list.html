@@ -6,13 +6,23 @@
             {{ .Content }}
 
             {{ if .Params.showList }}<section class="list">
-                <ul>
-                {{ range .Pages }}
-                <li>
-                    <a href="{{.Permalink}}">{{.Title}}</a>
-                </li>
+
+                {{ range $index, $element := .Pages }}
+                {{ $x := 0}}
+                {{ if $element.Params.formats }}
+                   {{ $x = len $element.Params.formats  }}
+                    {{ $x = sub $x 1}}
+                {{end}}
+                <rule-item severity="{{ $element.Params.severity }}"
+                           name="{{ .Name }}"
+                           description="{{ .Description }}"
+                           formats="{{ range $i, $n := $element.Params.formats }}{{ . }}{{ if lt $i $x }},{{end}}{{end}}"
+                           recommended="{{ $element.Params.recommended }}"
+                           ruleType="{{ $element.Params.ruleType }}">
+                    <a href="{{ $element.Permalink}}">{{ $element.Title}}</a>
+                </rule-item>
                 {{ end }}
-                </ul>
+
             </section>
             {{ end }}
         </section>

@@ -1,11 +1,9 @@
 ---
-title: Example Rule 1
-linkTitle: Exampless
+title: Example Rule 2
+linkTitle: Frash.
 date: 2022-06-19T07:39:53-04:00
 draft: false
-description: |
-  chicken and cheese
-  and these bees.
+description: ""
 severity: warn
 recommended: true
 ruleType: style
@@ -14,6 +12,6 @@ formats:
   - "oas2"
 ---
 
-# Example Rule 1
+# Example Rule 2
 
-I am an example rule.
+I am an example rule, nice!
