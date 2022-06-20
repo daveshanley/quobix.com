@@ -12,6 +12,7 @@ export default css`
 
   .label {
     font-size: var(--rule-type-fontsize);
+    color: var(--tertiary-color);
   }
 
   .rule-type {

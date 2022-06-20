@@ -7,11 +7,7 @@ menu:
   vacuum:
     parent: "Rules"
     weight: 3
-description: ""
-
 showList: true
 ---
-
-# Operations Rules
 
 Let's explain what these are, and why they are here. 

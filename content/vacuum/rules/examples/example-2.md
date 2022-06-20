@@ -6,11 +6,11 @@ description: "This is a nice ones"
 severity: info
 recommended: true
 ruleType: style
+type: vacuum
+layout: rule
 formats:
   - "oas3"
   - "oas2"
 ---
-
-# Example Rule 2
 
 I am an example rule, nice!

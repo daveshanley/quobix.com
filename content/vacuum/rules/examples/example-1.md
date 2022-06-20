@@ -9,11 +9,12 @@ description: |
 severity: warn
 recommended: false
 ruleType: style
+type: vacuum
+layout: rule
 formats:
   - "oas3"
   - "oas2"
 ---
 
-# Example Rule 1
 
 I am an example rule.

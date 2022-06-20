@@ -1,0 +1,33 @@
+{{ define "mainblock" }}
+<div class="main-container">
+  <main class="content-container">
+    {{ partial "vacuum/navigation" . }}
+    <section class="vacuum-content">
+      {{ partial "vacuum/breadcrumb" . }}
+
+      <h1 class="rules-list-title">All Rules</h1>
+      {{ .Content }}
+
+      {{ if .Params.showList }}<section class="list">
+      <div class="rule-category-list ">
+      {{ range $index, $element := .Pages }}
+      {{ $x := 0}}
+      {{ if $element.Params.formats }}
+        {{ $x = len $element.Params.formats  }}
+        {{ $x = sub $x 1}}
+      {{end}}
+        <div class="rule-category">
+          <h2 class="rule-category-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+          <span class="rule-category-description">
+            {{ .Description }}
+          </span>
+        </div>
+      {{ end }}
+      </div>
+    </section>
+      {{ end }}
+    </section>
+
+  </main>
+</div>
+{{end}}

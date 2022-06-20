@@ -1,0 +1,57 @@
+{{ define "mainblock" }}
+<div class="main-container">
+  <main class="content-container">
+    {{ partial "vacuum/navigation" . }}
+    <section class="vacuum-content">
+      {{ partial "vacuum/breadcrumb" . }}
+
+      {{- if .Params.recommended }}
+      <rule-recommended-banner>
+        Recommended
+      </rule-recommended-banner>
+      {{ end -}}
+      <article>
+
+        <h1 class="rule-id">{{.Title}}</h1>
+        <hr class="rule-breakdown-hr"/>
+        <section class="rule-breakdown-panel">
+          <rule-panel>
+            <span>Formats:</span>
+            {{- $x := 0 -}}
+            {{- if .Params.formats -}}
+            {{- $x = len .Params.formats -}}
+            {{- $x = sub $x 1 -}}
+            {{- end -}}
+            <formats-panel formats="{{ range $i, $n := .Params.formats }}{{ . }}{{ if lt $i $x }},{{end}}{{end}}"></formats-panel>
+          </rule-panel>
+          <rule-panel>
+            <span>Severity:</span>
+            <severity-panel severity="{{ .Params.severity }}"></severity-panel>
+          </rule-panel>
+          <rule-panel>
+            <style-panel styleType="{{ .Params.ruleType }}"></style-panel>
+          </rule-panel>
+        </section>
+
+        <hr class="rule-breakdown-hr"/>
+
+        <section class="rule-details">
+          {{.Content}}
+        </section>
+
+        <hr class="rule-breakdown-hr"/>
+        {{ partial "vacuum/rule-footer-nav" . }}
+
+      </article>
+    </section>
+    {{- if gt .WordCount 200 -}}
+    <div class="right-nav">
+      <asisde class="table-of-contents">
+        <p>What's on this page</p>
+        {{ .TableOfContents }}
+      </asisde>
+    </div>
+    {{- end -}}
+  </main>
+</div>
+{{end}}

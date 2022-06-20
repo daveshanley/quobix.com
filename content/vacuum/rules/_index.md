@@ -1,21 +1,16 @@
 ---
-title: "I am a list"
-linkTitle: "Understanding Rules"
+title: "All Rules"
+linkTitle: "All Rules"
 date: 2022-06-19T07:39:53-04:00
 draft: false
 menu:
   vacuum:
     parent: "Rules"
     weight: 1
-description: ""
-strapline: ""
-hero: ""
-heroTitle: ""
-heroAlt: ""
 showList: true
 skip_nav: true
+type: vacuum
+layout: all-rules
 ---
 
-# Understanding rules
-
-This is where  we will explain what rules are.
+All built-in rules have are organised by categories. 

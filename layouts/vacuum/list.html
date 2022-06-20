@@ -3,8 +3,11 @@
     <main class="content-container">
             {{ partial "vacuum/navigation" . }}
         <section class="vacuum-content">
-            {{ .Content }}
+            {{ partial "vacuum/breadcrumb" . }}
 
+            <h1 class="rules-list-title">{{ .Title}}</h1>
+            {{ .Content }}
+            <hr>
             {{ if .Params.showList }}<section class="list">
 
                 {{ range $index, $element := .Pages }}

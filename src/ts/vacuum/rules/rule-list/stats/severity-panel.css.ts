@@ -11,6 +11,7 @@ export default css`
     display: block;
     text-align: center;
     font-size: var(--rule-severity-fontsize);
+    padding: 5px;
   }
 
   .warn {
