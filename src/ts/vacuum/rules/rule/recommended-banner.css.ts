@@ -28,13 +28,14 @@ export default css`
 
   @media only screen and (max-width: 600px) {
     .banner {
+      display:none;
       overflow-y: hidden;
       opacity: 0;
       height: 12px;
       z-index:3;
-      left: 0;
+      right: 0;
       line-height: 0.85rem;
-      margin-top: 30px;
+      margin-top: 0px;
       transition-timing-function: ease-out;
       transition: opacity 500ms;
       font-size: 0.7rem;

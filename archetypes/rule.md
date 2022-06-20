@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-linkTitle "{{ replace .Name "-" " " | title }}"
+title: "{{ .Name }}"
+linkTitle "{{ .Name }}"
 date: {{ .Date }}
 draft: false
 description: 

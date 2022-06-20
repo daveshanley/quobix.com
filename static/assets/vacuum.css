@@ -193,6 +193,10 @@ rule-panel formats-panel,severity-panel,style-panel {
     margin-top: 0;
 }
 
+.rules-list-content {
+    font-size: 1rem;
+}
+
 .rule-breakdown-panel span {
     display: block;
 }
@@ -303,9 +307,13 @@ li.mobile-nav::after {
         border: none;
         margin-top: -65px;
         padding-left: 0;
-        height: 10px;
+        height: 20px;
+        overflow: hidden;
     }
 
+    .breadcrumbs li {
+        margin-bottom: 0;
+    }
 
     h1.rule-id {
         padding-top: 0;

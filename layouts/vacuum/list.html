@@ -6,7 +6,7 @@
             {{ partial "vacuum/breadcrumb" . }}
 
             <h1 class="rules-list-title">{{ .Title}}</h1>
-            {{ .Content }}
+            <section class="rules-list-content">{{ .Content | markdownify }}</section>
             <hr>
             {{ if .Params.showList }}<section class="list">
 

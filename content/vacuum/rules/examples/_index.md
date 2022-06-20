@@ -11,4 +11,8 @@ menu:
 showList: true
 ---
 
-Let's explain what these are, and why they are here. 
+Examples help consumers understand how API calls should look. They are really important for
+automated tooling for mocking and testing. 
+
+These rules check examples have been added to component schemas, 
+parameters and operations. These rules also check that examples match the schema and types provided.
