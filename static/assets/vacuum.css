@@ -1,6 +1,11 @@
 
+.main-container {
+    position: relative;
+}
+
 .content-container {
     display: flex;
+    position: relative;
 }
 
 .vacuum-title {
@@ -15,15 +20,54 @@
 
 
 .vacuum-navigation {
-    width: 200px;
+    width: var(--vacuum-navigation-width);
     border-right: 1px dashed var(--secondary-color);
     margin-right: 20px;
     font-size: var(--nav-font-size)
 }
 
 .vacuum-content {
-  width: 60%;
+    width: 60%;
     flex-grow: 2;
+    position: relative;
+    padding-top: 20px;
+}
+
+.breadcrumbs {
+    border-bottom: 1px dashed var(--secondary-color-lowalpha);
+    border-left: 1px dashed var(--secondary-color);
+    border-right: 1px dashed var(--secondary-color);
+    width: 100%;
+    margin-top: -40px;
+    font-size: var(--breadcrumb-font-size);
+    height: 25px;
+    padding-left: 10px;
+    line-height: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs > ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.breadcrumbs > ul > li {
+    display: inline;
+    white-space: nowrap;
+    padding-left: 0;
+    margin-right: 0px;
+}
+
+.breadcrumbs > ul > li + li:before {
+    content: ">";
+    padding-left: 7px;
+}
+
+.breadcrumbs > ul > li:after {
+    content: none;
 }
 
 .vacuum-navigation-items {

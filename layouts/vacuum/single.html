@@ -1,10 +1,12 @@
 {{ define "mainblock" }}
 <div class="main-container">
+
     <main class="content-container">
+
         {{ partial "vacuum/navigation" . }}
 
         <section class="vacuum-content">
-
+            {{ partial "vacuum/breadcrumb" . }}
             <article class="framed-content">
 
                 <h1 class="article-title">{{.Title}}</h1>
