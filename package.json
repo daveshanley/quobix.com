@@ -20,6 +20,7 @@
     "@open-wc/eslint-config": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
+    "@web/dev-server-esbuild": "^0.3.0",
     "@web/test-runner": "next",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
