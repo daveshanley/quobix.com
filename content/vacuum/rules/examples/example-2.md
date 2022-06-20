@@ -1,10 +1,9 @@
 ---
 title: Example Rule 2
-linkTitle: Frash.
 date: 2022-06-19T07:39:53-04:00
 draft: false
-description: ""
-severity: warn
+description: "This is a nice ones"
+severity: info
 recommended: true
 ruleType: style
 formats:

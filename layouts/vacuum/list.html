@@ -15,9 +15,10 @@
                 {{end}}
                 <rule-item severity="{{ $element.Params.severity }}"
                            name="{{ .Name }}"
+                           url='{{ .RelPermalink }}'
                            description="{{ .Description }}"
                            formats="{{ range $i, $n := $element.Params.formats }}{{ . }}{{ if lt $i $x }},{{end}}{{end}}"
-                           recommended="{{ $element.Params.recommended }}"
+                           {{- if $element.Params.recommended }} recommended {{end -}}
                            ruleType="{{ $element.Params.ruleType }}">
                     <a href="{{ $element.Permalink}}">{{ $element.Title}}</a>
                 </rule-item>

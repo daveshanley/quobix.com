@@ -7,7 +7,7 @@ description: |
   chicken and cheese
   and these bees.
 severity: warn
-recommended: true
+recommended: false
 ruleType: style
 formats:
   - "oas3"
