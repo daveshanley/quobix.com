@@ -1,7 +1,6 @@
 import { css } from 'lit';
 
 export default css`
-
   .vacuum-navigation-items {
     margin-top: 0;
     margin-left: 0;
@@ -29,10 +28,9 @@ export default css`
 
   li.child-nav a:hover {
     background: none;
-    color: var(--font-color)
+    color: var(--font-color);
   }
-  
-  
+
   a {
     color: var(--primary-color);
     text-decoration: none;
