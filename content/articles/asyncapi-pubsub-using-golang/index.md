@@ -45,7 +45,7 @@ Let's take a look at the [AsyncAPI contract for our Terrible Joke Service](https
 
 We ask for a Joke by publishing a '**JokeRequest**' to '**pub/queue/joke-service**' and then listen for our response on '**queue/joke-service**'.
 
-Let's look a the definition of the '**JokeResponse**' message broadcast.
+Let's look at the definition of the '**JokeResponse**' message broadcast.
 
 {{< highlight yaml >}}
 messages:

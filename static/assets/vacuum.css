@@ -150,7 +150,12 @@ h1.rule-id {
 
 .table-of-contents ul > li {
     font-size: var(--toc-font-size);
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 15px;
+    line-height: 1rem;
 }
+
 
 .table-of-contents p {
     color: var(--tertiary-color);
@@ -214,6 +219,27 @@ section.rule-details {
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 1rem;
+}
+
+
+section.rule-details p code {
+    border: 1px solid #1a681a;
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    color: #03ff0d;
+    background-color: #29d33014;
+}
+
+section.rule-details p code::before  {
+    content: none;
+}
+
+section.rule-details p code::after  {
+    content: none;
+}
+
+.terminal code {
+    font-size: 1rem;s
 }
 
 /* mobile experience */
