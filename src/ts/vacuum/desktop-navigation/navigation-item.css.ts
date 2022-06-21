@@ -1,6 +1,36 @@
 import { css } from 'lit';
 
 export default css`
+  .vacuum-navigation-items {
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  ul.navigation-children {
+    margin-top: 0;
+    font-size: var(--childnav-font-size);
+  }
+
+  ul.navigation-children > li {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+  .active-child-nav {
+    background-color: var(--navigation-child-selected);
+    color: var(--font-color);
+  }
+
+  li.child-nav:hover {
+    background: none;
+    color: var(--font-color);
+  }
+
+  li.child-nav a:hover {
+    background: none;
+    color: var(--font-color);
+  }
+
   a {
     color: var(--primary-color);
     text-decoration: none;

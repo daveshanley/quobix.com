@@ -14,24 +14,20 @@ formats:
   - "oas2"
 ---
 
-Check every operation has either a `2xx` or `3xx` response code.
+Check every [Operation Response](https://swagger.io/docs/specification/describing-responses/) has either a `2xx` or `3xx` response code.
 
-[Operation](https://swagger.io/specification/#operation-object)'s have an identifier.
-
-An `operationId` is used by documentation tools, code generators and mocking engines. It's used to define page names,
-URI's and method names in auto-generated code.
+An operation isn't much use, unless it returns an **OK** status code (`2xx`), or a **Redirect/Choice** status code (`3xx`)
 
 ### Why did this violation appear?
 
-There is an [Operation](https://swagger.io/specification/#operation-object) in your specification that has not defined an `operationId`.
+There is an [Operation Response](https://swagger.io/specification/#responses-object) in your specification that isn't returning a success response.
 
 ### What is this rule checking for?
 
-Every [Operation](https://swagger.io/specification/#operation-object) is checked for the following
+Every [Operation Response](https://swagger.io/specification/#responses-object) is checked for the following:
 
-- Operation ID
+- **2xx** or **3xx** Response code
 
 ### How do I fix this violation?
 
-Every single [Operation](https://swagger.io/specification/#operation-object) needs an `operationId`. It's a critical requirement to be able to identify each individual
-operation uniquely. Ensure all operations have an `operationId`
+Ensure all operations return at least one `2xx` or `3xx` response.

@@ -80,11 +80,9 @@
     content: none;
 }
 
-.vacuum-navigation-items {
-    margin-top: 0;
-}
-
 .navigation-children {
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: var(--childnav-font-size);
 }
 

@@ -4,7 +4,9 @@ linkTitle: "About Vacuum"
 strapline: "The world's fastest OpenAPI linter."
 date: 2022-06-12T06:25:04-04:00
 draft: false
-menu: vacuum
+menu: 
+  vacuum:
+    weight: 1
 type: vacuum
 ---
 

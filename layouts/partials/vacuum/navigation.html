@@ -1,5 +1,5 @@
 <nav class="vacuum-navigation">
-    <ul class="vacuum-navigation-items" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+   <vacuum-desktop-navigation>
         {{ $currentPage := . }}
         {{ range .Site.Menus.vacuum.ByWeight }}
         <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
@@ -25,7 +25,7 @@
         {{- end -}}
         </vacuum-nav-item>
         {{- end -}}
-    </ul>
+   </vacuum-desktop-navigation>
 </nav>
 <mobile-nav>
     <ul class="mobile-nav" itemscope="" itemtype="http://schema.org/BreadcrumbList">
