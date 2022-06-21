@@ -96,7 +96,7 @@ ul.navigation-children > li {
 }
 
 li.child-nav:hover {
-    background: none;
+    background-color: var(--navigation-child-hover);
     color: var(--font-color);
 }
 
@@ -167,11 +167,11 @@ h1.rule-id {
     margin-bottom: 20px;
 }
 
-hr.rule-breakdown-hr {
+hr.rule-breakdown-hr, hr.function-hr {
     margin: 10px 0 10px 0;
 }
 
-h1.rule-id {
+h1.rule-id,h1.function-id {
     font-size: var(--rule-id-fontsize);
     padding-top: 0;
 }
@@ -184,7 +184,7 @@ rule-panel span {
     color: var(--tertiary-color);
 }
 
-h1.rules-list-title {
+h1.rules-list-title, h1.function-list-title {
     padding-top: 0;
     font-size: var(--rule-id-fontsize);
 }
@@ -213,14 +213,14 @@ rule-panel formats-panel,severity-panel,style-panel {
     font-size: var(--rule-item-details-fontsize);
 }
 
-section.rule-details {
+section.rule-details, section.function-details {
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 1rem;
 }
 
 
-section.rule-details p code {
+section.rule-details p code,section.function-details p code {
     border: 1px solid #1a681a;
     padding: 1px 5px 1px 5px;
     border-radius: 5px;
@@ -228,13 +228,15 @@ section.rule-details p code {
     background-color: #29d33014;
 }
 
-section.rule-details p code::before  {
+section.rule-details p code::before, section.function-details p code::before  {
     content: none;
 }
 
-section.rule-details p code::after  {
+section.rule-details p code::after, section.function-details p code::after   {
     content: none;
 }
+
+
 
 .terminal code {
     font-size: 1rem;s
@@ -264,20 +266,20 @@ li.mobile-nav::after {
     margin-top: 80px;
 }
 
-.rule-category-list {
+.rule-category-list, .function-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.rule-category {
+.rule-category, .function-list-item {
     width: 32%;
     padding-bottom: 18%; /* 32:18, i.e. 16:9 */
     margin-bottom: 2%; /* (100-32*3)/2 */
 }
 
 
-.rule-category-title {
+.rule-category-title, .function-title {
     margin-top: 0;
     padding-top: 0;
     margin-bottom: 10px;
@@ -286,7 +288,7 @@ li.mobile-nav::after {
     padding-bottom: 10px;
 }
 
-.rule-category-description {
+.rule-category-description, .function-description {
     font-size: var(--rule-item-details-fontsize);
     color: var(--tertiary-color);
 }

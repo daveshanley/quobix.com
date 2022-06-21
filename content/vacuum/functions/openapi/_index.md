@@ -9,6 +9,7 @@ menu:
     parent: "Functions"
 weight: 3
 showList: true
+layout: all-functions
 ---
 
 All openapi functions.

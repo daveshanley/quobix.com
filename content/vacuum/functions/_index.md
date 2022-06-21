@@ -10,7 +10,7 @@ menu:
 showList: true
 skip_nav: true
 type: vacuum
-layout: all-rules
+layout: all-functions
 ---
 
 All available vacuum functions.
