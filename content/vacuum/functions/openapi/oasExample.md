@@ -4,7 +4,7 @@ linkTitle: oasExample
 date: 2022-06-19T07:39:53-04:00
 draft: false
 description: |
-    oasExample scans a specification for missing examples.
+    Scans a specification for missing examples.
 type: vacuum
 layout: function
 

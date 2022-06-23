@@ -3,8 +3,8 @@ title: oasOpSuccessResponse
 linkTitle: oasOpSuccessResponse
 date: 2022-06-19T07:39:53-04:00
 draft: false
-description: |
- oasOpSuccessResponse will check operations contain at least one 2xx or 3xx HTTP responses.
+description: | 
+  Checks operations contain at least one 2xx or 3xx HTTP responses.
 type: vacuum
 layout: function
 
