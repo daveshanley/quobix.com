@@ -246,7 +246,7 @@ section.rule-details p code::after, section.function-details p code::after   {
 
 
 .terminal code {
-    font-size: 1rem;s
+    font-size: 1rem;
 }
 
 /* mobile experience */
@@ -281,7 +281,8 @@ li.mobile-nav::after {
 
 .rule-category, .function-list-item {
     width: 32%;
-    padding-bottom: 18%; /* 32:18, i.e. 16:9 */
+    padding-bottom: 20px;
+    padding-right: 20px;
     margin-bottom: 2%; /* (100-32*3)/2 */
 }
 
