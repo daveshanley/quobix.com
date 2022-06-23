@@ -7,6 +7,8 @@ description: Operations must return a 'success' response code.
 severity: warn
 recommended: false
 ruleType: validation
+functionType: openapi
+functionName: oasOpSuccessResponse
 type: vacuum
 layout: rule
 formats:
@@ -27,6 +29,27 @@ There is an [Operation Response](https://swagger.io/specification/#responses-obj
 Every [Operation Response](https://swagger.io/specification/#responses-object) is checked for the following:
 
 - **2xx** or **3xx** Response code
+
+### A good example.
+
+{{< highlight yaml >}}
+"/pet":
+  post:
+    responses:
+      '200':
+        description: New pet was added, great job.
+{{< /highlight >}}
+
+### A bad example.
+
+{{< highlight yaml >}}
+"/pet":
+  post:
+    responses:
+      '500':
+        description: It can only go wrong from here.    
+{{< /highlight >}}
+
 
 ### How do I fix this violation?
 

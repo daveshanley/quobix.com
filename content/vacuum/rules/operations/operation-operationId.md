@@ -8,6 +8,8 @@ description: |
 severity: error
 recommended: true
 ruleType: validation
+functionType: openapi
+functionName: oasOpId
 type: vacuum
 layout: rule
 formats:
@@ -30,6 +32,27 @@ There is an [Operation](https://swagger.io/specification/#operation-object) in y
 Every [Operation](https://swagger.io/specification/#operation-object) is checked for the following
 
 - Operation ID
+
+### A bad example
+
+{{< highlight yaml >}}
+"/pet":
+  post:
+    responses:
+      '200':
+        description: New pet was added, great job.
+{{< /highlight >}}
+
+### A good example
+
+{{< highlight yaml >}}
+"/pet":
+  post:
+    operationId: createNewPet
+    responses:
+      '200':
+        description: New pet added, great job. 
+{{< /highlight >}}
 
 ### How do I fix this violation?
 

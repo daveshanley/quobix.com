@@ -28,6 +28,11 @@
             <span>Severity:</span>
             <severity-panel severity="{{ .Params.severity }}"></severity-panel>
           </rule-panel>
+
+          <rule-panel>
+            <function-panel functionType='{{ .Params.functionType }}' functionName="{{ .Params.functionName }}"></function-panel>
+          </rule-panel>
+
           <rule-panel>
             <style-panel styleType="{{ .Params.ruleType }}"></style-panel>
           </rule-panel>

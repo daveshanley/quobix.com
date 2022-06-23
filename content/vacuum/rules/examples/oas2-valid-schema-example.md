@@ -8,6 +8,8 @@ description: |
 severity: warn
 recommended: true
 ruleType: validation
+functionType: openapi
+functionName: oasExample
 type: vacuum
 layout: rule
 formats:
@@ -33,7 +35,18 @@ The rule looks through the spec at the following elements, and checks that examp
 - Operation Responses
 - Operation Parameters
 - Global Definitions
-- Global Parameters
+- Global Parameters 
+- Example Schema Check
+- Use of value/externalValue
+
+### Validating the schema.
+
+If the operation or component implementing an example is an object (not a primitive), then vacuum will
+validate the example matches the schema defined.
+
+### Checking  value/externalValue
+
+Examples can have an `externalValue` or a `value`, but they **cannot have both**.
 
 ### What does a good example look like?
 
