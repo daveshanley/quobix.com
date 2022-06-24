@@ -10,4 +10,5 @@ menu:
 showList: true
 ---
 
-Let's explain what these are, and why they are here. 
+Operations are the meat and potatoes of any OpenAPI specification. These rules are designed to check all operations for 
+common faults, bugs and mis-configurations. 
