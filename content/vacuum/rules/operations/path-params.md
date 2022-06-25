@@ -22,7 +22,7 @@ formats:
 Sometimes, they can be defined, but never used, or used but never defined. Sometimes they are duplicated, or set to _required_, but then
 are not defined. 
 
-There is a whole raft of issues that can appear with[ Path Parameters](https://swagger.io/docs/specification/describing-parameters/#path-parameters), so this rule
+There is a whole raft of issues that can appear with [Path Parameters](https://swagger.io/docs/specification/describing-parameters/#path-parameters), so this rule
 is one of the more complex ones.
 
 ### Why did this violation appear?
