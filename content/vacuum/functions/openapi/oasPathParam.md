@@ -1,6 +1,6 @@
 ---
-title: path-params
-linkTitle: path-params
+title: oasPathParam
+linkTitle: oasPathParam
 date: 2022-06-19T07:39:53-04:00
 draft: false
 description: |

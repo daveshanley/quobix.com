@@ -9,6 +9,7 @@ menu:
     parent: "Functions"
 weight: 2
 showList: true
+layout: all-functions
 ---
 
 All core functions.
