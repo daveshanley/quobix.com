@@ -16,6 +16,9 @@ being made.
 The function is used by
 the [no-eval-in-markdown]({{< relref "/vacuum/rules/validation/no-eval-in-markdown" >}}) Rule
 
+This function is configured using `functionOptions` that define the regular expression used to check descriptions. The
+input name is `pattern`.
+
 ---
 
 [View Function Source](https://github.com/daveshanley/vacuum/blob/main/functions/openapi/no_eval_descriptions.go)

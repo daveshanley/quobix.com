@@ -30,7 +30,7 @@ There is JavaScript code using `eval()` defined in a `description` value.
 paths:
   /snakes/cakes:
     post:
-      description: "This is a hack attack. <script>eval('alert(\'hacked!\')')</script>";
+      description: "This is a hack attack. eval('alert(\'hacked!\')')";
 {{< /highlight >}}
 
 ### Good Example
