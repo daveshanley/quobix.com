@@ -4,9 +4,9 @@ linkTitle: info-description
 date: 2022-06-24T15:53:17-04:00
 draft: false
 description: |
- Checks specification has defined a description
-severity: info
-recommended: false
+ Checks specification has defined a description.
+severity: error
+recommended: true
 ruleType: validation
 functionType: core
 functionName: truthy
@@ -30,12 +30,10 @@ Think about the kind of questions that someone consuming the contract would want
 - Why should I use it? 
 - Who built it?
 - Where can I learn more?
-- 
+
 ### Why did this violation appear?
 
 There is no `description` defined in the `info` object. The `info` object may also be missing entirely.
-
-### What is this rule checking for?
 
 ### Bad example
 
@@ -53,8 +51,6 @@ info:
     Do you love chicken nuggets? Need API driven chicken nugget delivery? We got you covered. Built by nugget fanatics with love.
     Check out https://chicken-nug-nugs.com/api for more information
 {{< /highlight >}}
-
-
 
 ### How do I fix this violation?
 
