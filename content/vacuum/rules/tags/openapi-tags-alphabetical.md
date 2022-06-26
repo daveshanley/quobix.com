@@ -33,13 +33,12 @@ Global tags are not listed alphabetically for one or more operations.
 tags: 
   - name: "Nuggets"
     description: "Chicken nuggets"
-  - name: Apples
+  - name: "Apples"
     description: "Apples are great"
 ```
 ### Good Example
 
 ```yaml
-
 tags: 
   - name: "Apples"
     description: "Apples are great"

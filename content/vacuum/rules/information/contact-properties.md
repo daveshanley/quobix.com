@@ -41,22 +41,22 @@ The following properties are checked to ensure they have been defined.
 
 Missing `url` and `email`
 
-{{< highlight yaml >}}
+```yaml
 info:
   contact:
     name: Chicken Nugget Inc.
-{{< /highlight >}}
+```
 
 ---
 
 Missing `url`
 
-{{< highlight yaml>}}
+```yaml
 info:
   contact:
     name: Chicken Nugget Inc.
     email: dev-team@chicken-nugnugs.com
-{{< /highlight >}}
+```
 
 ### How do I fix this violation?
 
