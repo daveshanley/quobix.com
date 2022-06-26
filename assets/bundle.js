@@ -153,19 +153,21 @@
     background-color: var(--navigation-hover);
     color: var(--font-color);
   }
-`;var Re=function(e,t,o,r){var i,n=arguments.length,a=n<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,r);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,o,a):i(t,o))||a);return n>3&&a&&Object.defineProperty(t,o,a),a};let Pe=class extends ve{constructor(){super(),this._id=je()}get id(){return this._id}toggle(e,t){e.preventDefault(),this.open=!this.open,this._slottedChildren&&(this._slottedChildren.length<=0?t||window.location.assign(this.url):this._hasKids=!0)}get _slottedChildren(){const e=this.shadowRoot.querySelector("slot");return e?e.assignedElements({flatten:!0}):null}stopLinkClick(e){e.preventDefault();const t={detail:{navItem:this},bubbles:!0,composed:!0};this.dispatchEvent(new CustomEvent("navigationClicked",t))}render(){let e,t;return this.open?(e=J`<span itemprop='name'>${this.name}</span>`,t=J`<li
+`;var Re=function(e,t,o,r){var i,n=arguments.length,a=n<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,r);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,o,a):i(t,o))||a);return n>3&&a&&Object.defineProperty(t,o,a),a};let Pe=class extends ve{constructor(){super(),this._id=je()}get id(){return this._id}toggle(e,t){e.preventDefault(),this.open=!this.open,this._slottedChildren&&(this._slottedChildren.length<=0?t||window.location.assign(this.url):this._hasKids=!0)}get _slottedChildren(){const e=this.shadowRoot.querySelector("slot");return e?e.assignedElements({flatten:!0}):null}stopLinkClick(e){e.preventDefault();const t={detail:{navItem:this},bubbles:!0,composed:!0};this.dispatchEvent(new CustomEvent("navigationClicked",t))}render(){let e,t;return this.open?(e=J`<span itemprop="item">${this.name}</span><meta itemprop="name" content='${this.name}' />`,t=J`<li
         itemprop="itemListElement"
         itemscope=""
         itemtype="http://schema.org/ListItem"
         class="${this.open?"active":""} ${this._hasKids?"has-kids":""} "
       >
         ${e}
-        <meta itemprop="position" content=${this.position}>
-      </li>`):(e=J`<a itemprop="item"
-                     @click=${this.stopLinkClick}
-        href="${this.url?this.url:"./"}">
-        <span itemprop='name'>${this.name}</span>
-        <meta itemprop="position" content='${this.position}'>
+        <meta itemprop="position" content=${this.position} />
+      </li>`):(e=J`<a
+        itemprop="item"
+        @click=${this.stopLinkClick}
+        href="${this.url?this.url:"./"}"
+      >
+        <span itemprop="name">${this.name}</span>
+        <meta itemprop="position" content="${this.position}" />
       </a>`,t=J` <li
         itemprop="itemListElement"
         itemscope=""
