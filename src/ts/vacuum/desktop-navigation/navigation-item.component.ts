@@ -94,7 +94,8 @@ export class VacuumNavigationItemComponent extends LitElement {
         ${link}
       </li>`;
     } else {
-      link = html`<span itemprop="name">${this.name}</span>`;
+      link = html`<span itemprop="item">${this.name}</span
+        ><meta itemprop="name" content="${this.name}" />`;
       listItem = html`<li
         itemprop="itemListElement"
         itemscope=""
