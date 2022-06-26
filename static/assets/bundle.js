@@ -157,7 +157,9 @@
         class="${this.open?"active":""} ${this._hasKids?"has-kids":""} "
       >
         ${e}
-      </li>`):(e=J`<a @click=${this.stopLinkClick} href="${this.url}"
+      </li>`):(e=J`<a
+        @click=${this.stopLinkClick}
+        href="${this.url?this.url:"./"}"
         >${this.name}</a
       >`,t=J` <li
         @keyup=${this.toggle}
