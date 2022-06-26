@@ -34,7 +34,7 @@
     {{ range .Site.Menus.vacuum }}
     {{ if .HasChildren }}
     {{ range .Children }}
-    <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
+    <li itemprop="itemListElement" class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
         <a href="{{ .URL }}">{{ .Name }}</a>
     </li>
     {{ end }}
