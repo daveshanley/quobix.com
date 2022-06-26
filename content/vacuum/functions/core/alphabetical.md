@@ -4,7 +4,7 @@ linkTitle: alphabetical
 date: 2022-06-24T07:39:53-04:00
 draft: false
 description: |
-    Checks values in an array are alphabetically ordered
+    Checks values in an array are alphabetically ordered 
 type: vacuum
 layout: function
 
@@ -16,7 +16,8 @@ The value should not be `false` or an empty string `""` or `null`
 
 ### How do I use this function?
 
-This function is configured by the following `functionOptions`
+This function is configured by the following `functionOptions`. Essentially the `keyedBy` value is the property
+of the object, that is to be checked for alphabetic ordering.
 
 |    NAME     | DESCRIPTION                    |    TYPE    |  REQUIRED?  |
 |:-----------:|--------------------------------|:----------:|:-----------:|
@@ -26,7 +27,7 @@ This function is configured by the following `functionOptions`
 
 ```yaml
 openapi-tags-alphabetical:
-  description: Tags should be in alphabetical order.
+  description: "Tags should be in alphabetical order."
   type: style
   recommended: false
   given: $.tags

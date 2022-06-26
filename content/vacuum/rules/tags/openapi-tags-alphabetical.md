@@ -4,7 +4,7 @@ linkTitle: openapi-tags-alphabetical
 date: 2022-06-24T15:53:17-04:00
 draft: false
 description: |
- Check there is no JavaScript code calling eval() in descriptions.
+ Check global tags are in alphabetic order.
 severity: info
 recommended: false
 ruleType: style
@@ -17,36 +17,35 @@ formats:
  - "oas2"
 ---
 
-If you want to ensure readability for humans, it can make things much easier to read if operation tags are listed alphabetically.
+{{< info-box >}}
+JSON Path: __$.tags__
+{{< /info-box >}}
 
-This rule is an edge case that will only apply if operations contain multiple tags. For this reason, it is not
-a good idea to run this rule with the [operation-singular-tag](../../operations/operation-singular-tag) Rule.
+If you want to ensure readability for humans, it can make things much easier to read if tags are listed alphabetically.
 
 ### Why did this violation appear?
 
-Tags are not listed alphabetically for one or more operations.
+Global tags are not listed alphabetically for one or more operations.
 
 ### Bad example
 
-{{< highlight yaml >}}
-paths:
-  /snakes/cakes:
-    post:
-      tags:
-      - snakes
-      - cakes
-{{< /highlight >}}
-
+```yaml
+tags: 
+  - name: "Nuggets"
+    description: "Chicken nuggets"
+  - name: Apples
+    description: "Apples are great"
+```
 ### Good Example
 
-{{< highlight yaml >}}
-paths:
-  /snakes/cakes:
-    post:
-      tags:
-      - cakes
-      - snakes
-{{< /highlight >}}
+```yaml
+
+tags: 
+  - name: "Apples"
+    description: "Apples are great"
+  - name: "Nuggets"
+    description: "Chicken nuggets"
+```
 
 ### How do I fix this violation?
 
