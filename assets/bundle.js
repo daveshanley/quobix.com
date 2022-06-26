@@ -153,7 +153,7 @@
     background-color: var(--navigation-hover);
     color: var(--font-color);
   }
-`;var Re=function(e,t,o,r){var i,n=arguments.length,a=n<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,r);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,o,a):i(t,o))||a);return n>3&&a&&Object.defineProperty(t,o,a),a};let Pe=class extends ve{constructor(){super(),this._id=je()}get id(){return this._id}toggle(e,t){e.preventDefault(),this.open=!this.open,this._slottedChildren&&(this._slottedChildren.length<=0?t||window.location.assign(this.url):this._hasKids=!0)}get _slottedChildren(){const e=this.shadowRoot.querySelector("slot");return e?e.assignedElements({flatten:!0}):null}stopLinkClick(e){e.preventDefault();const t={detail:{navItem:this},bubbles:!0,composed:!0};this.dispatchEvent(new CustomEvent("navigationClicked",t))}render(){let e,t;return this.open?(e=J`${this.name}`,t=J`<li
+`;var Re=function(e,t,o,r){var i,n=arguments.length,a=n<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,r);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,o,a):i(t,o))||a);return n>3&&a&&Object.defineProperty(t,o,a),a};let Pe=class extends ve{constructor(){super(),this._id=je()}get id(){return this._id}toggle(e,t){e.preventDefault(),this.open=!this.open,this._slottedChildren&&(this._slottedChildren.length<=0?t||window.location.assign(this.url):this._hasKids=!0)}get _slottedChildren(){const e=this.shadowRoot.querySelector("slot");return e?e.assignedElements({flatten:!0}):null}stopLinkClick(e){e.preventDefault();const t={detail:{navItem:this},bubbles:!0,composed:!0};this.dispatchEvent(new CustomEvent("navigationClicked",t))}render(){let e,t;return this.open?(e=J`${this.name}`,t=J`<li itemprop="itemListElement"
         class="${this.open?"active":""} ${this._hasKids?"has-kids":""} "
       >
         ${e}
@@ -161,7 +161,7 @@
         @click=${this.stopLinkClick}
         href="${this.url?this.url:"./"}"
         >${this.name}</a
-      >`,t=J` <li
+      >`,t=J` <li itemprop="itemListElement"
         @keyup=${this.toggle}
         @click=${this.toggle}
         class="${this.open?"active":""}"
