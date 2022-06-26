@@ -153,24 +153,30 @@
     background-color: var(--navigation-hover);
     color: var(--font-color);
   }
-`;var Re=function(e,t,o,r){var i,n=arguments.length,a=n<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,r);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,o,a):i(t,o))||a);return n>3&&a&&Object.defineProperty(t,o,a),a};let Pe=class extends ve{constructor(){super(),this._id=je()}get id(){return this._id}toggle(e,t){e.preventDefault(),this.open=!this.open,this._slottedChildren&&(this._slottedChildren.length<=0?t||window.location.assign(this.url):this._hasKids=!0)}get _slottedChildren(){const e=this.shadowRoot.querySelector("slot");return e?e.assignedElements({flatten:!0}):null}stopLinkClick(e){e.preventDefault();const t={detail:{navItem:this},bubbles:!0,composed:!0};this.dispatchEvent(new CustomEvent("navigationClicked",t))}render(){let e,t;return this.open?(e=J`${this.name}`,t=J`<li
-        itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" 
+`;var Re=function(e,t,o,r){var i,n=arguments.length,a=n<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,r);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,o,a):i(t,o))||a);return n>3&&a&&Object.defineProperty(t,o,a),a};let Pe=class extends ve{constructor(){super(),this._id=je()}get id(){return this._id}toggle(e,t){e.preventDefault(),this.open=!this.open,this._slottedChildren&&(this._slottedChildren.length<=0?t||window.location.assign(this.url):this._hasKids=!0)}get _slottedChildren(){const e=this.shadowRoot.querySelector("slot");return e?e.assignedElements({flatten:!0}):null}stopLinkClick(e){e.preventDefault();const t={detail:{navItem:this},bubbles:!0,composed:!0};this.dispatchEvent(new CustomEvent("navigationClicked",t))}render(){let e,t;return this.open?(e=J`<span itemprop='name'>${this.name}</span>`,t=J`<li
+        itemprop="itemListElement"
+        itemscope=""
+        itemtype="http://schema.org/ListItem"
         class="${this.open?"active":""} ${this._hasKids?"has-kids":""} "
       >
         ${e}
-      </li>`):(e=J`<a
-        @click=${this.stopLinkClick}
-        href="${this.url?this.url:"./"}"
-        >${this.name}</a
-      >`,t=J` <li
-        itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+        <meta itemprop="position" content=${this.position}>
+      </li>`):(e=J`<a itemprop="item"
+                     @click=${this.stopLinkClick}
+        href="${this.url?this.url:"./"}">
+        <span itemprop='name'>${this.name}</span>
+        <meta itemprop="position" content='${this.position}'>
+      </a>`,t=J` <li
+        itemprop="itemListElement"
+        itemscope=""
+        itemtype="http://schema.org/ListItem"
         @keyup=${this.toggle}
         @click=${this.toggle}
         class="${this.open?"active":""}"
       >
         ${e}
       </li>`),J` ${t}
-      <slot class="${this.open?"open":"closed"}"></slot>`}};Pe.styles=ze,Re([be()],Pe.prototype,"name",void 0),Re([be()],Pe.prototype,"url",void 0),Re([be()],Pe.prototype,"open",void 0),Pe=Re([me("vacuum-nav-item")],Pe);let Oe=class extends ve{activated(e){let t;const o=this.shadowRoot.querySelector("slot");o&&(t=o.assignedElements({flatten:!0})),t&&t.forEach((t=>{const o=t;e.detail.navItem.id!==o.id&&o.open&&o.toggle(new Event("click"),!0)}))}render(){return J`
+      <slot class="${this.open?"open":"closed"}"></slot>`}};Pe.styles=ze,Re([be()],Pe.prototype,"name",void 0),Re([be()],Pe.prototype,"url",void 0),Re([be({type:Number})],Pe.prototype,"position",void 0),Re([be()],Pe.prototype,"open",void 0),Pe=Re([me("vacuum-nav-item")],Pe);let Oe=class extends ve{activated(e){let t;const o=this.shadowRoot.querySelector("slot");o&&(t=o.assignedElements({flatten:!0})),t&&t.forEach((t=>{const o=t;e.detail.navItem.id!==o.id&&o.open&&o.toggle(new Event("click"),!0)}))}render(){return J`
       <ul
         class="vacuum-navigation-items"
         itemscope=""

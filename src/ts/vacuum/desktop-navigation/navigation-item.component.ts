@@ -17,6 +17,9 @@ export class VacuumNavigationItemComponent extends LitElement {
   @property()
   url: string;
 
+  @property({ type: Number })
+  position: number;
+
   @property()
   open: boolean;
 
@@ -73,10 +76,13 @@ export class VacuumNavigationItemComponent extends LitElement {
 
     if (!this.open) {
       link = html`<a
+        itemprop="item"
         @click=${this.stopLinkClick}
         href="${this.url ? this.url : './'}"
-        >${this.name}</a
-      >`;
+      >
+        <span itemprop="name">${this.name}</span>
+        <meta itemprop="position" content="${this.position}" />
+      </a>`;
       listItem = html` <li
         itemprop="itemListElement"
         itemscope=""
@@ -88,7 +94,7 @@ export class VacuumNavigationItemComponent extends LitElement {
         ${link}
       </li>`;
     } else {
-      link = html`${this.name}`;
+      link = html`<span itemprop="name">${this.name}</span>`;
       listItem = html`<li
         itemprop="itemListElement"
         itemscope=""
@@ -96,6 +102,7 @@ export class VacuumNavigationItemComponent extends LitElement {
         class="${this.open ? 'active' : ''} ${this._hasKids ? 'has-kids' : ''} "
       >
         ${link}
+        <meta itemprop="position" content=${this.position} />
       </li>`;
     }
 

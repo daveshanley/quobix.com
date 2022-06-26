@@ -1,8 +1,8 @@
 <nav class="vacuum-navigation">
    <vacuum-desktop-navigation>
         {{ $currentPage := . }}
-        {{ range .Site.Menus.vacuum.ByWeight }}
-        <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
+        {{ range $index, $element := .Site.Menus.vacuum.ByWeight }}
+        <vacuum-nav-item position={{ add $index 1 }} url="{{ $element.URL }}" name="{{ $element.Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
         {{- if .HasChildren -}}
 
         <ul class="navigation-children">
@@ -31,11 +31,12 @@
 <mobile-nav>
     <ul class="mobile-nav" itemscope="" itemtype="http://schema.org/BreadcrumbList">
     {{ $currentPage := . }}
-    {{ range .Site.Menus.vacuum }}
-    {{ if .HasChildren }}
-    {{ range .Children }}
+    {{ range $index, $element := .Site.Menus.vacuum }}
+    {{ if $element.HasChildren }}
+    {{ range $element.Children }}
     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
-        <a href="{{ .URL }}">{{ .Name }}</a>
+      <a href="{{ .URL }}" itemprop="item"><span itemprop="name">{{ .Name }}</span></a>
+      <meta itemprop="position" content={{ $index }}>
     </li>
     {{ end }}
     {{ end }}
