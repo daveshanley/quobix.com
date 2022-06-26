@@ -42,13 +42,13 @@
 /* LiteralStringChar */ .chroma .sc { color: var(--primary-color)  }
 /* LiteralStringDelimiter */ .chroma .dl { color: var(--primary-color)  }
 /* LiteralStringDoc */ .chroma .sd { color: var(--primary-color)  }
-/* LiteralStringDouble */ .chroma .s2 { color: var(--primary-color)  }
+/* LiteralStringDouble */ .chroma .s2 { color: var(--string-literal)  }
 /* LiteralStringEscape */ .chroma .se { color: var(--primary-color)  }
 /* LiteralStringHeredoc */ .chroma .sh { color: var(--primary-color)  }
 /* LiteralStringInterpol */ .chroma .si { color: var(--primary-color)  }
 /* LiteralStringOther */ .chroma .sx { color: var(--primary-color)  }
 /* LiteralStringRegex */ .chroma .sr { color: var(--primary-color)  }
-/* LiteralStringSingle */ .chroma .s1 { color: var(--primary-color)  }
+/* LiteralStringSingle */ .chroma .s1 { color: var(--string-literal)  }
 /* LiteralStringSymbol */ .chroma .ss { color: var(--primary-color)  }
 /* LiteralNumber */ .chroma .m { color: var(--tertiary-color) }
 /* LiteralNumberBin */ .chroma .mb { color: var(--tertiary-color) }
