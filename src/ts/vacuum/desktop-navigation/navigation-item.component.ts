@@ -72,7 +72,9 @@ export class VacuumNavigationItemComponent extends LitElement {
     let listItem: TemplateResult;
 
     if (!this.open) {
-      link = html`<a @click=${this.stopLinkClick} href="${this.url}"
+      link = html`<a
+        @click=${this.stopLinkClick}
+        href="${this.url ? this.url : './'}"
         >${this.name}</a
       >`;
       listItem = html` <li

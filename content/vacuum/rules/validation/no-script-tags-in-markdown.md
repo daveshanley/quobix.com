@@ -36,8 +36,6 @@ paths:
       description: "This is a hack attack. <script>alert('hacked!')</script>";
 {{< /highlight >}}
 
-### Good Example
-
 ### How do I fix this violation?
 
 Ensure there is no JavaScript or `<script/>` tags in any description.

@@ -227,11 +227,11 @@ section.rule-details p > a:after, section.function-details p > a:after {
     content: "]";
 }
 
-section.rule-details p code,section.function-details p code {
+section.rule-details p code,section.function-details p code, td code {
     border: 1px solid #1a681a;
     padding: 1px 5px 1px 5px;
     border-radius: 5px;
-    color: #03ff0d;
+    color: #03ff0d!important;
     background-color: #29d33014;
 }
 
@@ -243,6 +243,21 @@ section.rule-details p code::after, section.function-details p code::after   {
     content: none;
 }
 
+section.function-details .highlight pre {
+    font-weight: 100;
+}
+
+table td, table th {
+    border: 1px dotted var(--tertiary-color);
+}
+
+td code::before {
+ content: none;
+}
+
+td code::after {
+    content: none;
+}
 
 
 .terminal code {

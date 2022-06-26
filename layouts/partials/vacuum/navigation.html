@@ -18,7 +18,8 @@
             {{- end -}}
             <li class="{{ $class }}">
             {{- if $currentPage.IsMenuCurrent "vacuum" . }}{{ .Name }}{{end}}
-            {{- if not ($currentPage.IsMenuCurrent "vacuum" .) }}<a href="{{ .URL }}">{{ .Name }}</a>{{end}}</li>
+            {{- if not ($currentPage.IsMenuCurrent "vacuum" .) }}<a href="{{ .URL }}">{{ .Name }}</a>{{end}}
+            </li>
             {{- end -}}
         {{- end -}}
         </ul>

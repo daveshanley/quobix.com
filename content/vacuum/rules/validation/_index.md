@@ -10,4 +10,4 @@ menu:
 showList: true
 ---
 
-Validation rules ensure that specific data types within the OpenAPI specification, look correct.
+Validation rules ensure that specific data types within the OpenAPI specification look correct.
