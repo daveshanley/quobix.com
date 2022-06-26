@@ -57,8 +57,8 @@ paths:
 
 ### How do I fix this violation?
 
-Ensure `name`, `email` and `url` have been defined as part of the specification [Contact Information](https://swagger.io/specification/#contact-object)
+Ensure that the `schemes` property is present, and the content is defined as an `array`
 
 #### Spectral Equivalent
 
-The rule is equivalent to [contact-properties](https://meta.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules#contact-properties)
+The rule is equivalent to [oas2-api-schemes](https://meta.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules#oas2-api-schemes)
