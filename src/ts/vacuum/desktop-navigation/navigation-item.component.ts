@@ -79,6 +79,8 @@ export class VacuumNavigationItemComponent extends LitElement {
       >`;
       listItem = html` <li
         itemprop="itemListElement"
+        itemscope=""
+        itemtype="http://schema.org/ListItem"
         @keyup=${this.toggle}
         @click=${this.toggle}
         class="${this.open ? 'active' : ''}"
@@ -89,6 +91,8 @@ export class VacuumNavigationItemComponent extends LitElement {
       link = html`${this.name}`;
       listItem = html`<li
         itemprop="itemListElement"
+        itemscope=""
+        itemtype="http://schema.org/ListItem"
         class="${this.open ? 'active' : ''} ${this._hasKids ? 'has-kids' : ''} "
       >
         ${link}
