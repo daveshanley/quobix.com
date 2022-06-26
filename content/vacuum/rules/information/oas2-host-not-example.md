@@ -16,6 +16,10 @@ formats:
  - "oas2"
 ---
 
+{{< info-box >}}
+JSON Path: __$.host__
+{{< /info-box >}}
+
 Sometimes the `host` contains '_example.com_', added during testing phases. Sometimes this is left in when the specification
 is pushed to production. 
 
