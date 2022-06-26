@@ -78,6 +78,7 @@ export class VacuumNavigationItemComponent extends LitElement {
         >${this.name}</a
       >`;
       listItem = html` <li
+        itemprop="itemListElement"
         @keyup=${this.toggle}
         @click=${this.toggle}
         class="${this.open ? 'active' : ''}"
@@ -87,6 +88,7 @@ export class VacuumNavigationItemComponent extends LitElement {
     } else {
       link = html`${this.name}`;
       listItem = html`<li
+        itemprop="itemListElement"
         class="${this.open ? 'active' : ''} ${this._hasKids ? 'has-kids' : ''} "
       >
         ${link}
