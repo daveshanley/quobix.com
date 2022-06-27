@@ -1,9 +1,8 @@
 <nav class="vacuum-navigation">
    <vacuum-desktop-navigation>
         {{ $currentPage := . }}
-        {{ range $index, $element := .Site.Menus.vacuum.ByWeight }}
-        <span style="display: none">what is going on here?</span>
-        <vacuum-nav-item url="{{ $element.URL }}" name="{{ $element.Name }}" {{ if $currentPage.IsMenuCurrent "vacuum" . }}open="true"{{end}}{{ if $currentPage.HasMenuCurrent "vacuum" . }}open="true"{{end}}>
+        {{ range .Site.Menus.vacuum.ByWeight }}
+        <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
         {{- if .HasChildren -}}
 
         <ul class="navigation-children">
@@ -19,8 +18,7 @@
             {{- end -}}
             <li class="{{ $class }}">
             {{- if $currentPage.IsMenuCurrent "vacuum" . }}{{ .Name }}{{end}}
-            {{- if not ($currentPage.IsMenuCurrent "vacuum" .) }}<a href="{{ .URL }}">{{ .Name }}</a>{{end}}
-            </li>
+            {{- if not ($currentPage.IsMenuCurrent "vacuum" .) }}<a href="{{ .URL }}">{{ .Name }}</a>{{end}}</li>
             {{- end -}}
         {{- end -}}
         </ul>
@@ -32,11 +30,11 @@
 <mobile-nav>
     <ul class="mobile-nav">
     {{ $currentPage := . }}
-    {{ range $index, $element := .Site.Menus.vacuum }}
-    {{ if $element.HasChildren }}
-    {{ range $element.Children }}
+    {{ range .Site.Menus.vacuum }}
+    {{ if .HasChildren }}
+    {{ range .Children }}
     <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
-      <a href="{{ .URL }}" itemprop="item">{{ .Name }}</a>
+        <a href="{{ .URL }}">{{ .Name }}</a>
     </li>
     {{ end }}
     {{ end }}
