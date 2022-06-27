@@ -158,11 +158,10 @@
       >
         ${e}
       </li>`):(e=J`<a
-        itemprop="item"
         @click=${this.stopLinkClick}
         href="${this.url?this.url:"./"}"
       >
-       ${this.name}
+        ${this.name}
       </a>`,t=J` <li
         @keyup=${this.toggle}
         @click=${this.toggle}
@@ -171,11 +170,7 @@
         ${e}
       </li>`),J` ${t}
       <slot class="${this.open?"open":"closed"}"></slot>`}};Pe.styles=ze,Re([be()],Pe.prototype,"name",void 0),Re([be()],Pe.prototype,"url",void 0),Re([be({type:Number})],Pe.prototype,"position",void 0),Re([be()],Pe.prototype,"open",void 0),Pe=Re([me("vacuum-nav-item")],Pe);let Oe=class extends ve{activated(e){let t;const o=this.shadowRoot.querySelector("slot");o&&(t=o.assignedElements({flatten:!0})),t&&t.forEach((t=>{const o=t;e.detail.navItem.id!==o.id&&o.open&&o.toggle(new Event("click"),!0)}))}render(){return J`
-      <ul
-        class="vacuum-navigation-items"
-        itemscope=""
-        itemtype="http://schema.org/BreadcrumbList"
-      >
+      <ul class="vacuum-navigation-items">
         <slot @navigationClicked=${this.activated}></slot>
       </ul>
     `}};Oe.styles=ze,Oe=function(e,t,o,r){var i,n=arguments.length,a=n<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,r);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,o,a):i(t,o))||a);return n>3&&a&&Object.defineProperty(t,o,a),a}([me("vacuum-desktop-navigation")],Oe);const Te=A`
