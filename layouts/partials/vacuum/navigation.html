@@ -2,6 +2,7 @@
    <vacuum-desktop-navigation>
         {{ $currentPage := . }}
         {{ range $index, $element := .Site.Menus.vacuum.ByWeight }}
+        <span style="display: none">what is going on here?</span>
         <vacuum-nav-item url="{{ $element.URL }}" name="{{ $element.Name }}" {{ if $currentPage.IsMenuCurrent "vacuum" . }}open="true"{{end}}{{ if $currentPage.HasMenuCurrent "vacuum" . }}open="true"{{end}}>
         {{- if .HasChildren -}}
 
