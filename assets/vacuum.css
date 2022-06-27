@@ -3,6 +3,24 @@
     position: relative;
 }
 
+h2, h3, h4 {
+    margin-top: 40px;
+    font-size: 1.4em !important;
+    border-bottom: 1px dashed rgb(73, 73, 73);
+    line-height: 30px;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.3em !important;
+}
+
+h4 {
+    font-size: 1.1em !important;
+}
+
+
+
 .content-container {
     display: flex;
     position: relative;
