@@ -80,13 +80,9 @@ export class VacuumNavigationItemComponent extends LitElement {
         @click=${this.stopLinkClick}
         href="${this.url ? this.url : './'}"
       >
-        <span itemprop="name">${this.name}</span>
-        <meta itemprop="position" content="${this.position}" />
+        ${this.name}
       </a>`;
       listItem = html` <li
-        itemprop="itemListElement"
-        itemscope=""
-        itemtype="http://schema.org/ListItem"
         @keyup=${this.toggle}
         @click=${this.toggle}
         class="${this.open ? 'active' : ''}"
@@ -94,16 +90,11 @@ export class VacuumNavigationItemComponent extends LitElement {
         ${link}
       </li>`;
     } else {
-      link = html`<span itemprop="item">${this.name}</span
-        ><meta itemprop="name" content="${this.name}" />`;
+      link = html`${this.name}`;
       listItem = html`<li
-        itemprop="itemListElement"
-        itemscope=""
-        itemtype="http://schema.org/ListItem"
         class="${this.open ? 'active' : ''} ${this._hasKids ? 'has-kids' : ''} "
       >
         ${link}
-        <meta itemprop="position" content=${this.position} />
       </li>`;
     }
 

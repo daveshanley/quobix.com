@@ -29,14 +29,13 @@
    </vacuum-desktop-navigation>
 </nav>
 <mobile-nav>
-    <ul class="mobile-nav" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+    <ul class="mobile-nav">
     {{ $currentPage := . }}
     {{ range $index, $element := .Site.Menus.vacuum }}
     {{ if $element.HasChildren }}
     {{ range $element.Children }}
-    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
-      <a href="{{ .URL }}" itemprop="item"><span itemprop="name">{{ .Name }}</span></a>
-      <meta itemprop="position" content={{ $index }}>
+    <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
+      <a href="{{ .URL }}" itemprop="item">{{ .Name }}</a>
     </li>
     {{ end }}
     {{ end }}
