@@ -27,6 +27,7 @@ operation-descriptions:
   description: "Operations should have at least 5 words"
   type: "validation"
   recommended: true
+  severity: "warn"
   given: "$"
   then:
     function: "oasDescriptions"

@@ -21,9 +21,11 @@ Checks that an [Operation Object](https://swagger.io/specification/#operation-ob
 it meets a minimum number of words. 
 
 Descriptions for operations are **really important**. Documentation generation tools use this description as the main 
-bulk of the documentation for the operation. It's amazing how often API authors leave this blank or don't put anything meaningful in gere. 
+bulk of the documentation for the operation. 
 
-### Why did this violation appear?
+It's amazing how often API authors leave this blank or don't put anything meaningful in here. 
+
+## Why did this violation appear?
 
 An [Operation Object](https://swagger.io/specification/#operation-object) or more are missing a `description`, or the
 if there is one, it's got too few words to pass. 
@@ -49,12 +51,11 @@ paths:
       responses:
         '200':
           ...
-  ...
 ```
-### How do I fix this violation?
+## How do I fix this violation?
 
 Add a `description` to the Operation, make it meaningful and useful.
 
-#### Spectral Equivalent
+### Spectral Equivalent
 
 The rule is equivalent to [operation-description](https://meta.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules#operation-description)
