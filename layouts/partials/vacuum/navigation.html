@@ -2,7 +2,7 @@
    <vacuum-desktop-navigation>
         {{ $currentPage := . }}
         {{ range $index, $element := .Site.Menus.vacuum.ByWeight }}
-        <vacuum-nav-item position={{ add $index 1 }} url="{{ $element.URL }}" name="{{ $element.Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
+        <vacuum-nav-item url="{{ $element.URL }}" name="{{ $element.Name }}" {{ if $currentPage.IsMenuCurrent "vacuum" . }}open="true"{{end}}{{ if $currentPage.HasMenuCurrent "vacuum" . }}open="true"{{end}}>
         {{- if .HasChildren -}}
 
         <ul class="navigation-children">

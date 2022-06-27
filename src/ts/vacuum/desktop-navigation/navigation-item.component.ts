@@ -20,7 +20,7 @@ export class VacuumNavigationItemComponent extends LitElement {
   @property({ type: Number })
   position: number;
 
-  @property()
+  @property({ type: Boolean })
   open: boolean;
 
   private readonly _id: string;
