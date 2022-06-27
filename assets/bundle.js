@@ -169,7 +169,7 @@
       >
         ${e}
       </li>`),J` ${t}
-      <slot class="${this.open?"open":"closed"}"></slot>`}};Pe.styles=ze,Re([be()],Pe.prototype,"name",void 0),Re([be()],Pe.prototype,"url",void 0),Re([be({type:Number})],Pe.prototype,"position",void 0),Re([be()],Pe.prototype,"open",void 0),Pe=Re([me("vacuum-nav-item")],Pe);let Oe=class extends ve{activated(e){let t;const o=this.shadowRoot.querySelector("slot");o&&(t=o.assignedElements({flatten:!0})),t&&t.forEach((t=>{const o=t;e.detail.navItem.id!==o.id&&o.open&&o.toggle(new Event("click"),!0)}))}render(){return J`
+      <slot class="${this.open?"open":"closed"}"></slot>`}};Pe.styles=ze,Re([be()],Pe.prototype,"name",void 0),Re([be()],Pe.prototype,"url",void 0),Re([be({type:Number})],Pe.prototype,"position",void 0),Re([be({type:Boolean})],Pe.prototype,"open",void 0),Pe=Re([me("vacuum-nav-item")],Pe);let Oe=class extends ve{activated(e){let t;const o=this.shadowRoot.querySelector("slot");o&&(t=o.assignedElements({flatten:!0})),t&&t.forEach((t=>{const o=t;e.detail.navItem.id!==o.id&&o.open&&o.toggle(new Event("click"),!0)}))}render(){return J`
       <ul class="vacuum-navigation-items">
         <slot @navigationClicked=${this.activated}></slot>
       </ul>
