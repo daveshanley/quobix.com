@@ -1,5 +1,5 @@
 <div class="breadcrumbs">
-  <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+  <ul itemscope="" itemtype="http://schema.org/BreadcrumbList">
     {{ template "breadcrumbnav" (dict "p1" . "p2" . "i" 1) }}
   </ul>
 </div>
@@ -10,10 +10,11 @@
 {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 "i" $n )  }}
 {{ end }}
 {{ if not (eq .p1.RelPermalink "/") }}
-<li{{ if eq .p1 .p2 }} class="crumb-active"{{ end }} property="itemListElement" typeof="ListItem">
-  <a property="item" typeof="WebPage" href="{{ .p1.Permalink }}">
-    <span property="name">{{ .p1.LinkTitle }}</span></a>
-    <meta property="position" content="{{ .i }}">
+<li {{ if eq .p1 .p2 }}class="crumb-active"{{ end }} itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+  <a itemprop="item" typeof="WebPage" href="{{ .p1.Permalink }}">
+    <span itemprop="name">{{ .p1.LinkTitle }}</span>
+    <meta itemprop="position" content="{{ .i }}">
+  </a>
 </li>
 {{end}}
 {{ end }}
