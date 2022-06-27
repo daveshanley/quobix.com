@@ -76,7 +76,6 @@ export class VacuumNavigationItemComponent extends LitElement {
 
     if (!this.open) {
       link = html`<a
-        itemprop="item"
         @click=${this.stopLinkClick}
         href="${this.url ? this.url : './'}"
       >

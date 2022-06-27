@@ -26,11 +26,7 @@ export class VacuumNavigationComponent extends LitElement {
 
   render() {
     return html`
-      <ul
-        class="vacuum-navigation-items"
-        itemscope=""
-        itemtype="http://schema.org/BreadcrumbList"
-      >
+      <ul class="vacuum-navigation-items">
         <slot @navigationClicked=${this.activated}></slot>
       </ul>
     `;
