@@ -1,5 +1,5 @@
 ---
-title: Contact Information Rules
+title: Specification Information Rules
 linkTitle: Spec Information
 date: 2022-06-19T07:39:53-04:00
 draft: false
