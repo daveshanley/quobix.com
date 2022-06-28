@@ -2,14 +2,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon-16x16.png">
-<meta name="description" content="quobix.com, home of Dave Shanley">
+<meta name="description" content="quobix::vaccum, The worlds fastest OpenAPI linter. {{ .Description }}">
 <meta charset="UTF-8">
-<meta name="keywords" content="dave shanley, shanley, code, golang, java, typescript, quobix, engineer">
+<meta name="keywords" content="OpenAPI, swagger, linting, linter, vacuum, dave shanley, shanley, code, golang, java, javascript, typescript, quobix, engineer">
 <!-- use creds whilst protected -->
 <link crossorigin="use-credentials" rel="manifest" href="{{ .Site.BaseURL }}site.webmanifest" />
 <meta name="author" content="Dave Shanley">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ block "title" . }}{{ if .IsHome }}{{ .Site.Title }}: code is art{{ else }}quobix: {{ .Title }}{{ end }}{{ end }}</title>
+<title>vacuum OpenAPI Linter: {{ .Title }}</title>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,8 +24,8 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/app.css" />
 <!-- OG data -->
 <meta property="og:locale" content="en_US" />
-<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-<meta property="og:title" content="{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:type" content="article" />
+<meta property="og:title" content="acuum OpenAPI Linter: {{ .Title }}">
 <meta property="og:description" content="{{ if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
 <meta property="og:publish_date" content="{{ time .Date }}" />
 <meta property="og:url" content="{{ .Permalink }}" />

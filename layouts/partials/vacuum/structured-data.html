@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "vacuum: {{ .Title }}",
+      "image": [
+        "{{ .Site.BaseURL }}{{ .Params.hero }}"
+       ],
+      "datePublished": "{{ .PublishDate }}",
+      "author": {
+          "@type": "Person",
+          "name": "Dave Shanley",
+          "url": "https://quobix.com/author"
+        }
+      }
+
+</script>
