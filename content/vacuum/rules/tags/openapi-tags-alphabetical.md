@@ -23,7 +23,7 @@ JSON Path: __$.tags__
 
 If you want to ensure readability for humans, it can make things much easier to read if tags are listed alphabetically.
 
-### Why did this violation appear?
+## Why did this violation appear?
 
 Global tags are not listed alphabetically for one or more operations.
 

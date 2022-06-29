@@ -21,7 +21,7 @@ Global [Tags](https://swagger.io/specification/#tag-object) define meta-data tha
 [Operations and Paths Rules]({{< relref "/vacuum/rules/operations" >}})
 
 
-### Why did this violation appear?
+## Why did this violation appear?
 
 Global tags have not been defined, or they are not an `array` as required by the schema.
 

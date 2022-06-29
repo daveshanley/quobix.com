@@ -25,11 +25,11 @@ are not defined.
 There is a whole raft of issues that can appear with [Path Parameters](https://swagger.io/docs/specification/describing-parameters/#path-parameters), so this rule
 is one of the more complex ones.
 
-### Why did this violation appear?
+## Why did this violation appear?
 
 An operation has used path parameters, but has incorrectly implemented them.
 
-### What is this rule checking for?
+## What is this rule checking for?
 
 - Unique paths (no duplicate parameters)
 - Duplicate parameter names in paths
@@ -41,7 +41,7 @@ An operation has used path parameters, but has incorrectly implemented them.
 
 Duplicate paths (different param names, but conflicting path definitions)
 
-{{< highlight yaml >}}
+```yaml
  paths:
   /pizza/{cake}/{icecream}:
     parameters:
@@ -60,13 +60,13 @@ Duplicate paths (different param names, but conflicting path definitions)
         - in: path
           name: candy  
           ...
-{{< /highlight >}}
+```
 
 ---
 
 Missing parameters (in path, but not defined)
 
-{{< highlight yaml>}}
+```yaml
 paths:
   /pizza/{type}/{toppings}:
     parameters:
@@ -75,14 +75,14 @@ paths:
     get:
       '200':
         ...
-{{< /highlight >}}
+```
 
 
 ---
 
 Using invalid `required` type
 
-{{< highlight yaml >}}
+```yaml
 paths:
  /musical/{melody}/{beats}:
    parameters:
@@ -94,14 +94,14 @@ paths:
        - in: path
          name: beats
          required: true
-{{< /highlight >}}
+```
 
 
 ---
 
 Parameter has been defined multiple times
 
-{{< highlight yaml>}}
+```yaml
 paths:
  /musical/{melody}/{beats}:
    parameters:
@@ -115,7 +115,7 @@ paths:
          name: beats
        - in: path
          name: beats
-{{< /highlight >}}
+```
 
 ### How do I fix this violation?
 
