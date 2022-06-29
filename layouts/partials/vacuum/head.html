@@ -4,7 +4,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon-16x16.png">
 <meta name="description" content="quobix::vaccum, The worlds fastest OpenAPI linter. {{ .Description }}">
 <meta charset="UTF-8">
-<meta name="keywords" content="OpenAPI, swagger, linting, linter, vacuum, dave shanley, shanley, code, golang, java, javascript, typescript, quobix, engineer">
+<meta name="keywords" content="OpenAPI, swagger, spectral, linting, linter, vacuum, dave shanley, shanley, code, golang, java, javascript, typescript, quobix, engineer">
 <!-- use creds whilst protected -->
 <link crossorigin="use-credentials" rel="manifest" href="{{ .Site.BaseURL }}site.webmanifest" />
 <meta name="author" content="Dave Shanley">
@@ -25,17 +25,17 @@
 <!-- OG data -->
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="acuum OpenAPI Linter: {{ .Title }}">
+<meta property="og:title" content="vacuum OpenAPI Linter: {{ .Title }}">
 <meta property="og:description" content="{{ if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
 <meta property="og:publish_date" content="{{ time .Date }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ $.Site.Title }}" />
-<meta property="og:image" content="{{ .Params.hero | absURL }}">
+<meta property="og:image" content="{{ .Site.BaseURL }}images/vacuum/logo-blackbg.png">
 <meta property="og:image:width" content="1400">
 <meta property="og:image:height" content="680">
-<meta property="og:image:secure_url" content="{{ .Params.hero | absURL }}" />
+<meta property="og:image:secure_url" content="{{ .Site.BaseURL }}images/vacuum/logo-blackbg.png" />
 <meta property="og:image:type" content="image/png" />
-<meta property="og:image:alt" content="{{ .Params.heroAlt }}" />
+<meta property="og:image:alt" content="{{ .Site.BaseURL }}images/vacuum/logo-blackbg.png" />
 <meta property="article:author" content="https://quobix.com" />
 <meta property="article:publisher" content="https://quobix.com" />
 <meta property="article:section" content="Software" />
@@ -46,5 +46,3 @@
 <meta name="twitter:creator" content="@daveshanley">
 <meta name="twitter:label1" content="Written by" />
 <meta name="twitter:data1" content="Dave Shanley" />
-<meta name="twitter:label2" content="Reading time" />
-<meta name="twitter:data2" content="{{ math.Round (div (countwords .Content) 220.0) }} minutes" />
