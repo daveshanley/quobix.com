@@ -23,7 +23,7 @@ oas2-anyOf:
   severity: "err"
   given: "$"
   then:
-    function: "oasPolymorphicOneOf"
+    function: "oas2PolymorphicAnyOf"
 ```
 
 The function is used by
