@@ -4,9 +4,9 @@ linkTitle: typed-enum
 date: 2022-06-29T06:53:17-04:00
 draft: false
 description: |
- Check enum values match specified types
+  Check enum values match specified types
 severity: warn
-recommended: false
+recommended: true
 ruleType: validation
 functionType: openapi
 functionName: typedEnum

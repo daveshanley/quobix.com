@@ -4,9 +4,9 @@ linkTitle: oas2-oneOf
 date: 2022-06-29T08:53:17-04:00
 draft: false
 description: |
- Check for invalid use of 'oneOf' 
+  Check for invalid use of 'oneOf' 
 severity: warn
-recommended: false
+recommended: true
 ruleType: validation
 functionType: openapi
 functionName: oas2PolymorphicOneOf

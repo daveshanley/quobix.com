@@ -4,9 +4,9 @@ linkTitle: oas2-anyOf
 date: 2022-06-29T07:53:17-04:00
 draft: false
 description: |
- Check for invalid use of 'anyOf' 
+  Check for invalid use of 'anyOf' 
 severity: warn
-recommended: false
+recommended: true
 ruleType: validation
 functionType: openapi
 functionName: oas2PolymorphicAnyOf
