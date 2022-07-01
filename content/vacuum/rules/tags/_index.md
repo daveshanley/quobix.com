@@ -1,7 +1,7 @@
 ---
 title: Tag Rules
 linkTitle: Tags
-date: 2022-06-35T07:39:53-04:00
+date: 2022-06-30T07:39:53-04:00
 draft: false
 menu:
   vacuum:
