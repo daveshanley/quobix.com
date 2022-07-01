@@ -12,4 +12,4 @@ showList: true
 layout: all-functions
 ---
 
-All vacuum OpenAPI functions.
+All vacuum OpenAPI built-in functions, designed specifically for **OpenAPI** 2 & 3.
