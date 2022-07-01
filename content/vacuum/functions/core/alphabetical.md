@@ -4,7 +4,7 @@ linkTitle: alphabetical
 date: 2022-06-24T07:39:53-04:00
 draft: false
 description: |
-    Checks values in an array are alphabetically ordered 
+    Checks values in an array are alphabetically ordered. 
 type: vacuum
 layout: function
 

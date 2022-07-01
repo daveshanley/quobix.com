@@ -4,7 +4,7 @@ linkTitle: schema
 date: 2022-06-25T07:39:53-04:00
 draft: false
 description: |
-    Checks that an object matches a supplied JSON Schema
+    Checks that an object matches a supplied JSON Schema.
 type: vacuum
 layout: function
 
