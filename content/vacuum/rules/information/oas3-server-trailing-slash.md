@@ -6,7 +6,7 @@ draft: false
 description: |
  Ensure that there is no trailing slash on host definition
 severity: warn
-recommended: true
+recommended: false
 ruleType: validation
 functionType: core
 functionName: pattern
@@ -22,6 +22,11 @@ JSON Path: __$.servers[*]__
 
 The `url` value cannot end with a trailing slash. The addition of a slash will create invalid URI's when consumed
 by tools.
+
+{{< card "why is this rule not recommended?">}}
+This rule is also covered by the [oas3-api-servers]({{< relref "/vacuum/rules/validation/oas3-api-servers.md" >}}) rule. If you 
+enable both of these rules, then you will see a 'double' hit.
+{{< /card >}}
 
 ### Why did this violation appear?
 
