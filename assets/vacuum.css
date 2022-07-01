@@ -19,7 +19,16 @@ h4 {
     font-size: 1.1em !important;
 }
 
+.nav-divider {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
+.github-link {
+    display: inline-block;
+    margin-top: 20px;
+}
 
 .content-container {
     display: flex;
