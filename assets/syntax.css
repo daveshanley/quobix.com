@@ -36,6 +36,7 @@
 /* NameVariableMagic */ .chroma .vm {  }
 /* Literal */ .chroma .l { color: var(--tertiary-color) }
 /* LiteralDate */ .chroma .ld {  }
+/* LiteralDate */ .chroma .cl { color: var(--tertiary-color)  }
 /* LiteralString */ .chroma .s { color: var(--primary-color) }
 /* LiteralStringAffix */ .chroma .sa { color: var(--primary-color)  }
 /* LiteralStringBacktick */ .chroma .sb { color: var(--primary-color)  }

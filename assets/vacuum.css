@@ -333,7 +333,7 @@ li.mobile-nav::after {
     margin-top: 0;
     padding-top: 0;
     margin-bottom: 10px;
-    font-size: 1.2em !important;
+    font-size: 1em !important;
     border-bottom: 1px dashed var(--secondary-color-lowalpha);
     padding-bottom: 10px;
 }
