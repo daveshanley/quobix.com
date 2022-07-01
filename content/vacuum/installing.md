@@ -11,30 +11,35 @@ type: vacuum
 
 ---
 
-## Install via homebrew
+## Install via homebrew.
 
+{{< info-box >}}
+This the _recommended_ approach.
+{{< /info-box >}}
 If you're on MacOS or Linux, the easiest way to install vacuum is via [homebrew](https://brew.sh/).
 
 ```zsh
 brew install daveshanley/vacuum/vacuum
 ```
 
-## Install via Docker
+## Install via Docker.
 
 vacuum is available as a container, you can pull the image from
-[Docker Hub](https://hub.docker.com/repository/docker/dshanley/vacuum/general)
+[Docker Hub](https://hub.docker.com/repository/docker/dshanley/vacuum/general).
 
 {{< highlight zsh >}}
 docker pull dshanley/vacuum
 {{< /highlight >}}
 
-To run via docker, just add `docker dshanley/vacuum` as your command, like so
+To run via docker, just add `docker dshanley/vacuum` as your command, like so:
 
 {{< highlight zsh >}}
 docker dshanley/vacuum lint <your-openapi-spec.yaml>
 {{< /highlight >}}
 
-## Checkout from source
+---
+
+## Checkout from source.
 
 {{< highlight zsh >}}
 git clone https://github.com/daveshanley/vacuum.git
@@ -45,13 +50,13 @@ cd vacuum
 {{< /highlight >}}
 
 
-### Build the code
+### Build the code.
 
 {{< highlight zsh >}}
 go build vacuum.go
 {{< /highlight >}}
 
-### Run the code
+### Run the code.
 
 {{< highlight zsh >}}
 ./vacuum lint <your-openapi-spec.yaml>

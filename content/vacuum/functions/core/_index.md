@@ -12,4 +12,5 @@ showList: true
 layout: all-functions
 ---
 
-All core functions.
+All core/built-in functions. These functions are available to any custom rule. They are generic and can operate
+against any **JSON Path** configured.
