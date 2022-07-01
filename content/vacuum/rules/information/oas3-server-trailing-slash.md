@@ -1,6 +1,6 @@
 ---
-title: oas2-host-trailing-slash
-linkTitle: oas2-host-trailing-slash
+title: oas3-host-trailing-slash
+linkTitle: oas3-host-trailing-slash
 date: 2022-06-26T14:58:17-04:00
 draft: false
 description: |
@@ -13,26 +13,25 @@ functionName: pattern
 type: vacuum
 layout: rule
 formats:
- - "oas2"
+ - "oas3"
 ---
 
 {{< info-box >}}
-JSON Path: __$.host__
+JSON Path: __$.servers[*]__
 {{< /info-box >}}
 
-The `host` value cannot end with a trailing slash. The addition of a slash will create invalid URI's when consumed
+The `url` value cannot end with a trailing slash. The addition of a slash will create invalid URI's when consumed
 by tools.
 
 ### Why did this violation appear?
 
-'/' was found at the end of the `host` property of the specification.
+'/' was found at the end of the `url` property of the specification.
 
 ### Bad example
 
 ```yaml
-host: "quobix.com/"
-schemes:
- - "https"
+servers:
+ - url: "https//quobix.com/"
 paths:
  /vacuum:
   ...
@@ -43,17 +42,15 @@ Will generate **quobix.com//vacuum**. The double slash comes from leaving it on 
 ### Good example
 
 ```yaml
-host: "quobix.com"
-schemes:
- - "https"
+servers:
+ - url: "https//quobix.com"
 paths:
  /vacuum:
-  ...
 ```
 ### How do I fix this violation?
 
-Remove '/' from the end of the `host` property.
+Remove '/' from the end of the `url` property.
 
 #### Spectral Equivalent
 
-The rule is equivalent to [oas2-host-trailing-slash](https://meta.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules#oas2-host-trailing-slash)
+The rule is equivalent to [oas3-host-trailing-slash](https://meta.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules#oas3-host-trailing-slash)
