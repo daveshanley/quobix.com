@@ -4,7 +4,7 @@
         {{ range .Site.Menus.vacuum.ByWeight }}
         <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
         {{- if .HasChildren -}}
-
+     <hr class="nav-divider" />
         <ul class="navigation-children">
         {{- range .Children -}}
             {{- $f := .Page}}
@@ -26,6 +26,9 @@
         </vacuum-nav-item>
         {{- end -}}
    </vacuum-desktop-navigation>
+
+    <hr class="nav-divider" />
+    <a  class="github-link" href="https://github.com/daveshanley/vacuum">Github</a>
 </nav>
 <mobile-nav>
     <ul class="mobile-nav">
