@@ -2,6 +2,7 @@
 title: Specification Information Rules
 linkTitle: Spec Information
 date: 2022-06-19T07:39:53-04:00
+description: Contract information is critical to understanding context about the contract.
 draft: false
 menu:
   vacuum:

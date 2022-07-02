@@ -2,6 +2,7 @@
 title: Schema Rules
 linkTitle: Schemas
 date: 2022-06-19T07:39:53-04:00
+description: Rules for checking schema's and object definition validity.
 draft: false
 menu:
   vacuum:

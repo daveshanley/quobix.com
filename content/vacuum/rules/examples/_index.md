@@ -3,7 +3,7 @@ title: Example Based Rules
 linkTitle: Examples
 date: 2022-06-19T07:39:53-04:00
 draft: false
-description: examples are great
+description: Rules for validating and checking examples.
 menu:
   vacuum:
     parent: "Rules"

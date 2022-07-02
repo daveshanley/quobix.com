@@ -2,6 +2,7 @@
 title: Validation Rules
 linkTitle: Validation
 date: 2022-06-19T07:39:53-04:00
+description: Ensure specific data types are correctly defined.
 draft: false
 menu:
   vacuum:

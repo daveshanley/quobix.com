@@ -2,6 +2,7 @@
 title: Tag Rules
 linkTitle: Tags
 date: 2022-06-30T07:39:53-04:00
+description: Tags are used to organize operations, check they have been used correctly.
 draft: false
 menu:
   vacuum:

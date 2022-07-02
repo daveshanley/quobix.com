@@ -2,6 +2,7 @@
 title: Security Rules
 linkTitle: Security
 date: 2022-06-30T07:39:53-04:00
+description: Are you secure? Or at least have you thought about it correctly.
 draft: false
 menu:
   vacuum:

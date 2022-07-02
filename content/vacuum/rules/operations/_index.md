@@ -2,6 +2,7 @@
 title: Operation and Path Rules
 linkTitle: Operations/Paths
 date: 2022-06-19T07:39:53-04:00
+description: Operations and Paths are the meat and potatoes of OpenAPI.
 draft: false
 menu:
   vacuum:
