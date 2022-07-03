@@ -41,9 +41,8 @@ There were thousands of different OpenAPI specs, across a large number of busine
 because spectral does a good job, except for one thing...
 
 {{< error-box >}}
-Spectral is really, slow against large and multiple specs.
+Spectral is really slow against large and multiple specs.
 {{< /error-box >}}
-
 
 
 ## We need a faster linter
