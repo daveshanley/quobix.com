@@ -76,10 +76,10 @@ openapi: 3.1
               - $ref: "#/components/schemas/Cake"
 ```
 
-### How do I fix this violation?
+## How do I fix this violation?
 
 Don't use **oneOf** with a Swagger/OpenAPI 2 spec. It's not compatible.
 
-#### Spectral Equivalent
+## Spectral Equivalent
 
 The rule is equivalent to [oas2-oneOf](https://meta.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules#oas2-oneof)

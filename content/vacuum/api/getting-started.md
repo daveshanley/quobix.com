@@ -1,7 +1,7 @@
 ---
 title: "API Quick Start"
 linkTitle: "Quick Start"
-date: 2022-06-19T07:39:53-04:00
+date: 2022-07-03T07:39:53-04:00
 strapline: "Download, plug-in and start linting!"
 draft: false
 type: vacuum
@@ -61,7 +61,7 @@ func main() {
             Spec:    specBytes,
         })
 
-   // create a new model.RuleResultSet from the results.
+    // create a new model.RuleResultSet from the results.
     // structure allows categorization, sorting and searching
     // in a simple and consistent way.
     resultSet := model.NewRuleResultSet(lintingResults.Results)

@@ -23,7 +23,7 @@ This rule checks that for every component there is a `description` set.
 
 One or more `description` elements in the spec are missing from a component (v3+) 
 
-### Bad example
+## Bad example
 
 ```yaml
 components:
@@ -37,7 +37,7 @@ components:
           type: string
 ```
 
-### Good example
+## Good example
 
 ```yaml
 components:

@@ -24,11 +24,11 @@ or listening for responses.
 
 Good examples are particularly valuable when data is complex, deep, nested or contains special formatting.
 
-### Why did this violation appear?
+## Why did this violation appear?
 
 The specification is missing examples in one or more areas. Examples need to be added *everywhere* for this rule to pass.
 
-### What is this rule checking for?
+## What is this rule checking for?
 
 The rule looks through the spec at the following elements, and checks that examples have been clearly defined for each.
 
@@ -41,16 +41,16 @@ The rule looks through the spec at the following elements, and checks that examp
 - Use of value/externalValue
 
 
-### Validating the schema.
+## Validating the schema.
 
 If the operation or component implementing an example is an object (not a primitive), then vacuum will
 validate the example matches the schema defined.
 
-### Checking  value/externalValue
+## Checking  value/externalValue
 
 Examples can have an `externalValue` or a `value`, but they **cannot have both**.
 
-### What does a good example look like?
+## What does a good example look like?
 
 In OpenAPI 3.0, we should include examples for each [RequestBody](https://swagger.io/docs/specification/describing-request-body/).
 We should also include examples for [Responses](https://swagger.io/docs/specification/describing-responses/), [Components](https://swagger.io/docs/specification/components/) or
@@ -104,7 +104,7 @@ paths:
                     numPatties: 1
 {{< /highlight >}}
 
-### How do I fix this violation?
+## How do I fix this violation?
 
 Examples are critical for consumers to be able to understand schemas and models defined by the spec.
 

@@ -117,10 +117,10 @@ paths:
          name: beats
 ```
 
-### How do I fix this violation?
+## How do I fix this violation?
 
 Ensure all path params are used, they are unique and accounted for.
 
-#### Spectral Equivalent
+### Spectral Equivalent
 
 The rule is equivalent to [path-params](https://meta.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules#path-params)
