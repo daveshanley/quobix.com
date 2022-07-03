@@ -181,6 +181,20 @@ h1.rule-id {
     line-height: 1rem;
 }
 
+.table-of-contents ul > li > ul {
+   margin-left: 5px;
+   margin-top: 10px;
+}
+
+.table-of-contents ul > li > ul > li {
+   font-size: 0.65rem;
+   line-height: 0.2rem;
+}
+
+.table-of-contents ul > li > ul > li:before {
+   content: "- "
+}
+
 
 .table-of-contents p {
     color: var(--tertiary-color);
@@ -342,6 +356,7 @@ li.mobile-nav::after {
     font-size: var(--rule-item-details-fontsize);
     color: var(--tertiary-color);
 }
+
 
 /* mobile */
 

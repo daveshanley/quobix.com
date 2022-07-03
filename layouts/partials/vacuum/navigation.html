@@ -16,9 +16,6 @@
             {{- if $currentPage.IsDescendant $f -}}
             {{ $class = "active-child-nav" -}}
             {{- end -}}
-            {{- if and ($currentPage.IsDescendant $f) (not (eq $currentPage $f)) -}}
-            {{ $class = "" -}}
-            {{- end -}}
             <li class="{{ $class }}">
             {{- if $currentPage.IsMenuCurrent "vacuum" . }}{{ .Name }}{{end}}
             {{- if not ($currentPage.IsMenuCurrent "vacuum" .) }}<a href="{{ .URL }}">{{ .Name }}</a>{{end}}</li>

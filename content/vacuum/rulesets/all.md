@@ -10,7 +10,7 @@ type: vacuum
 menu:
   vacuum:
     parent: "RuleSets"
-    weight: 7
+    weight: 2
 ---
 
 ---
