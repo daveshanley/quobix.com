@@ -41,7 +41,7 @@ import (
 func main() {
 
     // read in an OpenAPI Spec to a byte array
-    specBytes, err := ioutil.ReadFile("stripe.yaml")
+    specBytes, err := ioutil.ReadFile("my-openapi-spec.yaml")
     if err != nil {
         panic(err.Error())
     }
@@ -69,4 +69,4 @@ func main() {
 }
 ```
 
-Full documentation for `model.SpecIndex` [can be found at go.dev](https://pkg.go.dev/github.com/daveshanley/vacuum/model#SpecIndex)
+Full documentation for `SpecIndex` [can be found at go.dev](https://pkg.go.dev/github.com/daveshanley/vacuum/model#SpecIndex)
