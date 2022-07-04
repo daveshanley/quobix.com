@@ -69,7 +69,7 @@ export class MobileNavigationComponent extends LitElement {
       </div>`;
     }
 
-    return html`<div
+    return html` <div
         class="hamburger ${this.hide ? 'hide' : ''} ${this.open ? 'open' : ''}"
         @click=${this.toggle}
         @keyup=${this.toggle}

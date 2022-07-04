@@ -7,6 +7,9 @@ import './vacuum/rules/rule-list/rule-item.component';
 import './vacuum/rules/rule/recommended-banner.component';
 import './vacuum/rules/rule/rule-panel.component';
 import './vacuum/rules/rule-list/stats/function-panel.component';
+import './vacuum/terminal/terminal-window.component';
+import './vacuum/terminal/terminal-header.component';
+import './vacuum/terminal/terminal-command.component';
 
 import { listenForScrolling } from './scroll';
 

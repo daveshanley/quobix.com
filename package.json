@@ -56,7 +56,8 @@
       "import/no-unresolved": "off",
       "import/extensions": "off",
       "class-methods-use-this": "off",
-      "guard-super-call": "off"
+      "guard-super-call": "off",
+      "no-continue": "off"
     }
   },
   "prettier": {

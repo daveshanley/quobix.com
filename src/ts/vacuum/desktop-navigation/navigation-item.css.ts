@@ -10,6 +10,7 @@ export default css`
   ul.navigation-children {
     margin-top: 0;
     font-size: var(--childnav-font-size);
+    margin-bottom: 5px;
   }
 
   ul.navigation-children > li {
@@ -44,7 +45,7 @@ export default css`
 
   li {
     list-style: none;
-    margin: 0;
+    margin: 0 0 5px 0;
     padding: 0 0 0 5px;
   }
 
@@ -81,7 +82,8 @@ export default css`
   }
   .open {
     display: block;
-    background-color: var(--navigation-child-container);
+    background: var(--navigation-child-container);
+    margin-left: 5px;
   }
   .closed {
     display: none;
@@ -90,6 +92,7 @@ export default css`
   li.has-kids {
     background-color: var(--navigation-hover);
     color: var(--font-color);
+    border-bottom: 1px dashed var(--secondary-color-lowalpha);
   }
   li.has-kids:hover {
     background-color: var(--navigation-hover);

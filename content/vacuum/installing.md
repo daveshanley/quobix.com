@@ -18,51 +18,63 @@ This the _recommended_ approach.
 {{< /info-box >}}
 If you're on MacOS or Linux, the easiest way to install vacuum is via [homebrew](https://brew.sh/).
 
-```zsh
-brew install daveshanley/vacuum/vacuum
-```
+
+{{< terminal-window
+"install"
+"brew"
+"install">}}brew install daveshanley/vacuum/vacuum{{< /terminal-window >}}
 
 ## Install via Docker.
 
 vacuum is available as a container, you can pull the image from
 [Docker Hub](https://hub.docker.com/repository/docker/dshanley/vacuum/general).
 
-{{< highlight zsh >}}
-docker pull dshanley/vacuum
-{{< /highlight >}}
+{{< terminal-window
+"docker"
+"docker" 
+"pull">}}docker pull dshanley/vacuum{{< /terminal-window >}}
 
 To run via docker, just add `docker dshanley/vacuum` as your command, like so:
 
-{{< highlight zsh >}}
-docker dshanley/vacuum lint <your-openapi-spec.yaml>
-{{< /highlight >}}
+{{< terminal-window
+"docker"
+"dshanley/vacuum"
+"lint">}}docker dshanley/vacuum lint &lt;your-openapi-spec.yaml&gt;{{< /terminal-window >}}
 
 ---
 
 ## Checkout from source.
 
-{{< highlight zsh >}}
-git clone https://github.com/daveshanley/vacuum.git
-{{< /highlight >}}
-{{< code-split >}}Then change directory into `vacuum`{{< /code-split >}}
-{{< highlight zsh >}}
-cd vacuum
-{{< /highlight >}}
+{{< terminal-window
+"git"
+"git"
+"clone">}}git clone https://github.com/daveshanley/vacuum.git{{< /terminal-window >}}
+Then change directory into `vacuum`
+
+{{< terminal-window
+"git"
+"cd">}}cd vacuum{{< /terminal-window >}}
 
 
 ### Build the code.
 
-{{< highlight zsh >}}
-go build vacuum.go
-{{< /highlight >}}
+{{< terminal-window
+"go"
+"go" "build">}}go build vacuum.go{{< /terminal-window >}}
 
 ### Run the code.
 
-{{< highlight zsh >}}
-./vacuum lint <your-openapi-spec.yaml>
-{{< /highlight >}}
+{{< terminal-window
+"vacuum lint"
+"./vacuum" "lint">}}./vacuum lint &lt;my-openapi-spec.yaml>{{< /terminal-window >}}
 
+---
 
+## Next Steps
+
+[Read more about the linting command]({{< relref "/vacuum/commands/lint" >}}).
+
+---
 
 [Check out vacuum on GitHub](https://github.com/daveshanley/vacuum)
 

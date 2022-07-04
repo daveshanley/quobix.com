@@ -18,7 +18,8 @@ export class VacuumNavigationComponent extends LitElement {
       slots.forEach(slot => {
         const navItem = slot as VacuumNavigationItemComponent;
         if (evt.detail.navItem.id !== navItem.id) {
-          if (navItem.open) navItem.toggle(new Event('click'), true);
+          // not sure if it's a better UX or not, so disabling this for now.
+          // if (navItem.open) navItem.toggle(new Event('click'), true);
         }
       });
     }

@@ -1,10 +1,10 @@
 <nav class="vacuum-navigation">
-   <vacuum-desktop-navigation>
+  <div class="fixed-position">
+  <vacuum-desktop-navigation>
         {{ $currentPage := . }}
         {{ range .Site.Menus.vacuum.ByWeight }}
         <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
         {{- if .HasChildren -}}
-     <hr class="nav-divider" />
         <ul class="navigation-children">
         {{- range .Children -}}
             {{- $f := .Page}}
@@ -29,18 +29,28 @@
 
     <hr class="nav-divider" />
     <a  class="github-link" href="https://github.com/daveshanley/vacuum">GitHub</a>
+  </div>
 </nav>
 <mobile-nav>
     <ul class="mobile-nav">
     {{ $currentPage := . }}
     {{ range .Site.Menus.vacuum }}
+      <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
+      <a href="{{ .URL }}">{{ .Name }}</a>
     {{ if .HasChildren }}
+      <ul>
     {{ range .Children }}
-    <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
-        <a href="{{ .URL }}">{{ .Name }}</a>
-    </li>
+        {{- $f := .Page}}
+        {{- if $f.Params.skip_nav }}<!--skip rendering -->{{ else }}
+        <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{end}}
+
     {{ end }}
+        </ul>
     {{ end }}
+      </li>
     {{ end }}
     </ul>
 </mobile-nav>

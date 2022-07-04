@@ -3,6 +3,14 @@
     position: relative;
 }
 
+.terminal strong {
+    font-size: 0.9rem;
+}
+
+.terminal blockquote {
+    font-size: 0.9rem
+}
+
 h2, h3, h4 {
     margin-top: 40px;
     font-size: 1.4em !important;
@@ -51,7 +59,18 @@ h4 {
     width: var(--vacuum-navigation-width);
     border-right: 1px dashed var(--secondary-color);
     margin-right: 20px;
-    font-size: var(--nav-font-size)
+    font-size: var(--nav-font-size);
+    position: relative;
+}
+
+nav div.fixed-position {
+    position: fixed;
+    margin-left: -1px;
+    width: var(--vacuum-navigation-width);
+}
+
+vacuum-desktop-navigation {
+    width: var(--vacuum-navigation-width);
 }
 
 .vacuum-content {
@@ -110,14 +129,21 @@ h4 {
 
 .navigation-children {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     font-size: var(--childnav-font-size);
 }
 
 ul.navigation-children > li {
     margin-left: 0;
-    padding-left: 15px;
+    padding-left: 5px;
 }
+
+ul.navigation-children > li::before {
+    color: var(--secondary-color);
+    content: "- "
+}
+
+
 .active-child-nav {
     background-color: var(--navigation-child-selected);
     color: var(--font-color);
@@ -148,6 +174,7 @@ li.child-nav a:hover {
 
 .article-body {
     margin-top: 20px;
+    font-size: 0.9rem;
 }
 
 .framed-content hr {
@@ -189,7 +216,8 @@ h1.rule-id {
 
 .table-of-contents ul > li > ul > li {
    font-size: 0.65rem;
-   line-height: 0.2rem;
+   line-height: 1.2rem;
+    margin-bottom: 5px;
 }
 
 .table-of-contents ul > li > ul > li:before {
@@ -291,6 +319,11 @@ section.function-details .highlight pre {
 
 table td, table th {
     border: 1px dotted var(--tertiary-color);
+    font-size: 0.9rem;
+}
+
+em {
+    font-size: 0.9rem;
 }
 
 td code::before {
@@ -303,7 +336,7 @@ td code::after {
 
 
 .terminal code {
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 /* mobile experience */
@@ -315,6 +348,8 @@ mobile-nav {
 ul.mobile-nav {
     margin: 0;
     padding: 0;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 li.mobile-nav {
@@ -367,7 +402,14 @@ li.mobile-nav::after {
         display: block;
         transition: top 0.3s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        font-size: 0.9rem;
     }
+
+    ul.mobile-nav li > ul {
+        margin-left: 10px;
+        font-size: 0.7rem;
+    }
+
 
     mobile-nav.hide {
         top: -185px;
