@@ -40,4 +40,10 @@ export default css`
     line-height: 1.4rem;
     filter: drop-shadow(0 2px 2px black);
   }
+
+  @media only screen and (max-width: 600px) {
+    h2 {
+      font-size: var(--rule-item-header-fontsize-mobile);
+    }
+  }
 `;

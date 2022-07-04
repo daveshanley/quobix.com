@@ -35,4 +35,10 @@ export default css`
     font-size: 0.9rem;
     color: var(--tertiary-color);
   }
+
+  @media only screen and (max-width: 600px) {
+    .header {
+      font-size: 0.7rem;
+    }
+  }
 `;

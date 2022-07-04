@@ -23,4 +23,10 @@ export default css`
       var(--rule-item-background) 100%
     );
   }
+
+  @media only screen and (max-width: 600px) {
+    rule-stats-panel {
+      display: none; // overloads the experience.
+    }
+  }
 `;

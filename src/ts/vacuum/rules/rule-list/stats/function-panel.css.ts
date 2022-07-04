@@ -23,4 +23,11 @@ export default css`
     background-color: var(--primary-color);
     color: var(--invert-font-color);
   }
+
+  @media only screen and (max-width: 600px) {
+    a {
+      max-width: 100px;
+      text-overflow: ellipsis;
+    }
+  }
 `;

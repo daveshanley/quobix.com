@@ -33,7 +33,7 @@ export class MobileNavigationComponent extends LitElement {
         top: 50px;
         right: 10px;
         width: 50vw;
-        background: var(--background-color-alpha);
+        background: var(--background-color-alpha-mobile);
         backdrop-filter: blur(4px);
         z-index: 2;
         padding: 10px;

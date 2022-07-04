@@ -28,12 +28,12 @@ export default css`
 
   @media only screen and (max-width: 600px) {
     .banner {
-      display:none;
       overflow-y: hidden;
+      top: -19px;
       opacity: 0;
       height: 12px;
       z-index:3;
-      right: 0;
+      left: 0;
       line-height: 0.85rem;
       margin-top: 0px;
       transition-timing-function: ease-out;

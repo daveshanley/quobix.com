@@ -39,5 +39,8 @@ export default css`
       font-size: 0.9rem;
       overflow-x: auto;
     }
+    pre {
+      white-space: pre-wrap;
+    }
   }
 `;
