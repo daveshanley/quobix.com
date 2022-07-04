@@ -5,6 +5,7 @@ It allows service providers and consumers to work independently, using a strongl
 Why do I need an OpenAPI linter? We are human and we suck at writing. Even when something looks syntactically correct, it will probably still read like garbage.</description></item><item><title>What is vacuum?</title><link>https://quobix.com/vacuum/about/</link><pubDate>Sun, 12 Jun 2022 06:25:04 -0400</pubDate><guid>https://quobix.com/vacuum/about/</guid><description>vacuum is an ultra-super-fast, lightweight OpenAPI linter and quality checking tool, inspired by Spectral.
 It&amp;rsquo;s also compatible with existing Spectral rulesets and generates compatible Spectral reports.
 vacuum can suck all the lint of a 5mb OpenAPI spec in about 250ms. Designed to reliably lint OpenAPI specifications, very, very quickly. Including very large ones. Spectral. can be quite slow when used as an API and does not scale for enterprise applications.</description></item><item><title>Installing vacuum</title><link>https://quobix.com/vacuum/installing/</link><pubDate>Sun, 12 Jun 2022 06:25:04 -0400</pubDate><guid>https://quobix.com/vacuum/installing/</guid><description>Install via homebrew. This the recommended approach. If you&amp;rsquo;re on MacOS or Linux, the easiest way to install vacuum is via homebrew.
-brew install daveshanley/vacuum/vacuum Install via Docker. vacuum is available as a container, you can pull the image from Docker Hub.
-docker pull dshanley/vacuum To run via docker, just add docker dshanley/vacuum as your command, like so:
-docker dshanley/vacuum lint &amp;lt;your-openapi-spec.yaml&amp;gt; Checkout from source. git clone https://github.com/daveshanley/vacuum.git Then change directory into vacuum cd vacuum</description></item></channel></rss>
+install Install via Docker. vacuum is available as a container, you can pull the image from Docker Hub.
+docker To run via docker, just add docker dshanley/vacuum as your command, like so:
+docker Checkout from source. git Then change directory into vacuum
+git Build the code. go Run the code.</description></item></channel></rss>
