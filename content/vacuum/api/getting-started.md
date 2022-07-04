@@ -23,6 +23,9 @@ If you're a **golang** developer, and you want to lint **OpenAPI** specs using a
 ```bash
 go get github.com/daveshanley/vacuum
 ```
+{{< terminal-window "install vacuum" "go" "get">}}go get github.com/daveshanley/vacuum{{< /terminal-window >}}
+
+
 
 ## Lint an OpenAPI Spec
 
@@ -89,6 +92,9 @@ func main() {
         }
     }
 }
-
-
 ```
+
+## Now try something else
+
+Why not check out [using the index]({{< relref "/vacuum/api/spec-index">}}) or using the 
+[RuleResultSet]({{< relref "/vacuum/api/rule-resultset" >}}) APIs.
