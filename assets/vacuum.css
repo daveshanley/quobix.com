@@ -425,8 +425,6 @@ li.mobile-nav::after {
         margin-top: 20px!important;
     }
 
-
-
     mobile-nav.hide {
         top: -185px;
     }
