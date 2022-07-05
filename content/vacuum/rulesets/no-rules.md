@@ -38,7 +38,7 @@ rules:
 Now you can run any vacuum command that supports a ruleset.
 
 
-{{< terminal-window "lint with ruleset" "vacuum" "command" "-r">}}vacuum command -r custom-rules.yaml my-openapi-spec.yaml{{< /terminal-window >}}
+{{< terminal-window "lint with ruleset" "vacuum" "lint" "-r">}}vacuum lint -r custom-rules.yaml my-openapi-spec.yaml{{< /terminal-window >}}
 
 
 There is a [specific-ruleset](https://github.com/daveshanley/vacuum/blob/main/rulesets/examples/specific-ruleset.yaml) 

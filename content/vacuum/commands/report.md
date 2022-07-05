@@ -87,7 +87,7 @@ Want something easy to copy and paste?
 "vacuum report using ruleset"
 "vacuum"
 "lint"
-"-r">}}vacuum report -r rulesets/examples/specific-ruleset.yaml \
+"-r,-c">}}vacuum report -r rulesets/examples/specific-ruleset.yaml \
 -c model/test_files/petstorev3.json petstore{{< /terminal-window >}}
 
 ## Compatible commands
