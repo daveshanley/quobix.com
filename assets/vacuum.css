@@ -380,7 +380,6 @@ li.mobile-nav::after {
 .rule-category-list, .function-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .rule-category, .function-list-item {
