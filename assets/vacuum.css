@@ -92,6 +92,10 @@ vacuum-desktop-navigation {
     padding-top: 20px;
 }
 
+.vacuum-content.home {
+    padding-top: 0;
+}
+
 .breadcrumbs {
     border-bottom: 1px dashed var(--secondary-color-lowalpha);
     border-left: 1px dashed var(--secondary-color);
@@ -420,7 +424,8 @@ nav div.fixed-position a.quick-start-navigation::after {
 
 
 .homepage-strapline {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     text-align: center;
     display:block;
     margin-bottom: 40px;
@@ -432,7 +437,7 @@ nav div.fixed-position a.quick-start-navigation::after {
 
 
 .homepage-strapline strong {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-style: italic;
 }
 
@@ -518,6 +523,18 @@ section.homepage-body h2 {
 
     .rule-category, .function-list-item {
         width: 100%;
+    }
+
+    .homepage-strapline {
+        font-size: 1.1rem;
+    }
+
+    .homepage-strapline strong {
+        font-size: 1.1rem;
+    }
+
+    main.content-container.home {
+        margin-top: 60px;
     }
 
 
