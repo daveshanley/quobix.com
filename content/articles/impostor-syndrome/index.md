@@ -68,9 +68,9 @@ we're **not as bright** as they thought.
 It also manifests as the feeling of having **_deceived_** others into thinking we're more intelligent or
 skillful than we really are.
 
-{{< warn-box >}}
-This is **despite** evidence to the contrary.
-{{< /warn-box >}}
+{{< error-box >}}
+This is **_despite_** evidence to the contrary.
+{{< /error-box >}}
 
 ---
 

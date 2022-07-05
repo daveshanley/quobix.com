@@ -26,40 +26,40 @@ If you're on MacOS or Linux, the easiest way to install vacuum is via [homebrew]
 
 ## Install via Docker.
 
-vacuum is available as a container, you can pull the image from
+vacuum is available as a container, pull the image from
 [Docker Hub](https://hub.docker.com/repository/docker/dshanley/vacuum/general).
 
 {{< terminal-window
-"docker"
+"docker pull"
 "docker" 
 "pull">}}docker pull dshanley/vacuum{{< /terminal-window >}}
 
-To run via docker, just add `docker dshanley/vacuum` as your command, like so:
+To run via docker, add `dshanley/vacuum` as the docker command, like so:
 
 {{< terminal-window
-"docker"
+"docker dshanley/vacuum lint"
 "dshanley/vacuum"
-"lint">}}docker dshanley/vacuum lint &lt;your-openapi-spec.yaml&gt;{{< /terminal-window >}}
+"lint">}}docker dshanley/vacuum lint &lt;my-openapi-spec.yaml&gt;{{< /terminal-window >}}
 
 ---
 
 ## Checkout from source.
 
 {{< terminal-window
-"git"
+"git clone"
 "git"
 "clone">}}git clone https://github.com/daveshanley/vacuum.git{{< /terminal-window >}}
 Then change directory into `vacuum`
 
 {{< terminal-window
-"git"
+"change directory"
 "cd">}}cd vacuum{{< /terminal-window >}}
 
 
 ### Build the code.
 
 {{< terminal-window
-"go"
+"go build"
 "go" "build">}}go build vacuum.go{{< /terminal-window >}}
 
 ### Run the code.

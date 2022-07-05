@@ -1,9 +1,18 @@
 <nav class="vacuum-navigation">
   <div class="fixed-position">
+    <a href="/vacuum/start" class="quick-start-navigation">Quick Start Guide</a>
+    <hr class="quick-start-divider" />
   <vacuum-desktop-navigation>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.vacuum.ByWeight }}
-        <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
+        {{- $currentPage := . -}}
+        {{- $skip := false -}}
+        {{- range .Site.Menus.vacuum.ByWeight -}}
+        {{- with .Page -}}
+          {{- if .Params.skip_nav -}}
+          {{- $skip = true -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $skip }}<!--skip rendering and reset -->{{ $skip = false }}{{ else }}
+    <vacuum-nav-item url="{{ .URL }}" name="{{ .Name }}" {{- if $currentPage.IsMenuCurrent "vacuum" . }}open='true'{{end}}{{- if $currentPage.HasMenuCurrent "vacuum" . }}open='true'{{end}}>
         {{- if .HasChildren -}}
         <ul class="navigation-children">
         {{- range .Children -}}
@@ -22,6 +31,7 @@
             {{- end -}}
         {{- end -}}
         </ul>
+        {{- end -}}
         {{- end -}}
         </vacuum-nav-item>
         {{- end -}}

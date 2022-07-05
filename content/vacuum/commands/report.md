@@ -49,7 +49,7 @@ This will generate a **_compressed_** report from your _my-openapi-spec.yaml_ an
 
 ## Available Flags
 
-`lint` supports the following flags
+`report` supports the following flags
 
 | Short |     Full      | Input  | Description                                               |
 |:-----:|:-------------:|:------:|:----------------------------------------------------------|
@@ -59,7 +59,7 @@ This will generate a **_compressed_** report from your _my-openapi-spec.yaml_ an
 
 ## Global Flags
 
-`lint` supports the following _global_ flags
+`report` supports the following _global_ flags
 
 | Short |     Full     |  Input   | Description                              |
 |:-----:|:------------:|:--------:|:-----------------------------------------|
