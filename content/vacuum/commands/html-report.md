@@ -2,6 +2,7 @@
 title: "html-report command"
 linkTitle: "HTML Report"
 date: 2022-07-04T07:39:53-04:00
+description: "View linting report in a browser, in style."
 strapline: Explore linting analytics, in style.
 draft: false
 type: vacuum

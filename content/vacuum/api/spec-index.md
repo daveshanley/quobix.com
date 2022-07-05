@@ -2,6 +2,7 @@
 title: "The Index"
 linkTitle: "Spec Index"
 date: 2022-07-03T07:39:53-04:00
+description: The reason behind the speed.
 strapline: The reason behind the speed.
 draft: false
 type: vacuum

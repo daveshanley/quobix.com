@@ -3,6 +3,7 @@ title: "lint command"
 linkTitle: "Lint"
 date: 2022-07-03T07:39:53-04:00
 strapline: Lint an OpenAPI Specification.
+description: "Lint an OpenAPI spec and see results in the console."
 draft: false
 type: vacuum
 menu:

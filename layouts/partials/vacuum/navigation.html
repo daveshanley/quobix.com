@@ -46,7 +46,12 @@
     {{ $currentPage := . }}
     {{ range .Site.Menus.vacuum }}
       <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "vacuum" . }}active-section{{ end }}">
+
+      {{ if .HasChildren }}
+      {{ .Name }}
+      {{ else }}
       <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
     {{ if .HasChildren }}
       <ul>
     {{ range .Children }}

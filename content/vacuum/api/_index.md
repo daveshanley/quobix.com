@@ -11,7 +11,7 @@ menu:
 showList: true
 skip_nav: true
 type: vacuum
-layout: single
+layout: all-functions
 ---
 
-Get started with APIs.
+Get started with APIs.`

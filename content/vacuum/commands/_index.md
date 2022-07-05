@@ -11,7 +11,7 @@ menu:
 showList: true
 skip_nav: true
 type: vacuum
-layout: single
+layout: all-functions
 ---
 
 If you want to actually do anything with vacuum, you will need to use a command. Learn about them here.

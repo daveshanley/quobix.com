@@ -2,6 +2,7 @@
 title: "dashboard command"
 linkTitle: "Dashboard"
 date: 2022-07-04T07:39:53-04:00
+description: "View linting report in a cool dashboard UI."
 strapline: You know what? console UIs are really cool. 
 draft: false
 type: vacuum

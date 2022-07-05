@@ -2,6 +2,7 @@
 title: "report command"
 linkTitle: "vacuum Report"
 date: 2022-07-04T07:39:53-04:00
+description: "Build a 'vacuum sealed' report that is re-playable."
 strapline: vacuum-sealed analytics, high fidelity data.
 draft: false
 type: vacuum

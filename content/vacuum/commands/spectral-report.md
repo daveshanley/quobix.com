@@ -1,6 +1,7 @@
 ---
 title: "spectral-report command"
 linkTitle: "Spectral Report"
+description: "Build a Spectral compatible JSON report"
 date: 2022-07-04T07:39:53-04:00
 strapline: A drop-in replacement for Spectral reports.
 draft: false

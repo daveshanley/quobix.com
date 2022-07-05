@@ -1,6 +1,7 @@
 ---
 title: "RuleResultSet"
 linkTitle: "RuleResultSet"
+description: The easiest way to make sence of linting results.
 date: 2022-07-03T08:39:53-04:00
 strapline: The easiest way to make sense of linting results.
 draft: false
