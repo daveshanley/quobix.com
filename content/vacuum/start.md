@@ -32,7 +32,7 @@ Run the `lint` command with the `-d` (_details_)  flag set:
 {{< terminal-window
 "lint"
 "vacuum"
-"lint">}}vacuum lint -d my-openapi-specification.yaml{{< /terminal-window >}}
+"lint" "-d">}}vacuum lint -d my-openapi-specification.yaml{{< /terminal-window >}}
 
 Learn more about the [lint](/vacuum/commands/lint) command.
 

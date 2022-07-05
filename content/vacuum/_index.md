@@ -1,18 +1,30 @@
 ---
 title: "Vacuum"
 date: 2022-06-12T06:24:52-04:00
-strapline: "The world's fastest OpenAPI linter"
+strapline: "The world's **fastest** OpenAPI linter."
 draft: false
 menu: main
 type: vacuum
+layout: homepage
 ---
 
-![vacuum logo](/images/vacuum/logo.png)
+---
 
-vacuum is the worlds fastest OpenAPI linter
+Are you looking for an **ultra-fast** and **_fully featured_** [OpenAPI](https://www.openapis.org) linter, and SDK
+written in go? 
 
-Documentation is coming together over the next few weeks.
+> Stop looking, you **_just found it_**.
 
+---
 
+## > [Get Started in 30 seconds](/vacuum/start)
+
+## > [Learn about vacuum](/vacuum/about)
+
+## > [Learn about the core concepts used](/vacuum/concepts)
+
+## > [Why vacuum?](/vacuum/why)
+
+---
 
 [Check out vacuum on GitHub](https://github.com/daveshanley/vacuum)

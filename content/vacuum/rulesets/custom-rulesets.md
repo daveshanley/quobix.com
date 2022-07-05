@@ -55,16 +55,14 @@ Now it's possible to run this new RuleSet against any vacuum command.
 
 `lint` example:
 
-```zsh
-vacuum lint -r ruleset.yaml my-openapi-spec.yaml
-```
+
+{{< terminal-window "lint with ruleset" "vacuum" "lint" "-r">}}vacuum lint -r ruleset.yaml my-openapi-spec.yaml{{< /terminal-window >}}
 
 `html-report` example:
 
-```zsh
-vacuum html-report -r ruleset.yaml my-openapi-spec.yaml
-```
+{{< terminal-window "lint with ruleset" "vacuum" "html-report" "-r">}}vacuum html-report -r ruleset.yaml my-openapi-spec.yaml{{< /terminal-window >}}
 
+vacuum lint -r ruleset.yaml my-openapi-spec.yaml
 Every single OpenAPI spec on the planet, should fail this rule; unless the title really is '_hello world_'.
 
 ## Anatomy of a Rule

@@ -21,9 +21,6 @@ If you're a **golang** developer, and you want to lint **OpenAPI** specs using a
 
 ## Install vacuum
 
-```bash
-go get github.com/daveshanley/vacuum
-```
 {{< terminal-window "install vacuum" "go" "get">}}go get github.com/daveshanley/vacuum{{< /terminal-window >}}
 
 

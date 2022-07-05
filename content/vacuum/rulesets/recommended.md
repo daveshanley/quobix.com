@@ -32,19 +32,17 @@ and it's named [recommended-ruleset.yaml](https://github.com/daveshanley/vacuum/
 
 Now you can run any vacuum command that supports a ruleset.
 
-```zsh
-vacuum <command> --ruleset recommended-rules.yaml my-openapi-spec.yaml
-```
+
+{{< terminal-window "lint with ruleset" "vacuum" "command" "-r">}}vacuum command -r recommended-rules.yaml my-openapi-spec.yaml{{< /terminal-window >}}
+
 
 ---
 
-## Generating complete RuleSet.
+## Generating Recommended RuleSet.
 
 To generate a complete RuleSet of every recommended rule and all the configurations used, vacuum contains a `generate-ruleset` command
 that accepts an '**recommended**' option. This command only generates YAML files.
 
-```zsh
-vacuum generate-ruleset recommended my-ruleset
-```
+{{< terminal-window "generate ruleset" "vacuum" "generate-ruleset">}}vacuum generate-ruleset recommended my-ruleset{{< /terminal-window >}}
 
 Will generate '**my-ruleset-recommended.yaml**' and will be a complete listing of every recommended rule available.

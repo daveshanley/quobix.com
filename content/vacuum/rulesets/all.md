@@ -30,9 +30,8 @@ and it's named [all-ruleset.yaml](https://github.com/daveshanley/vacuum/blob/mai
 
 Now you can run any vacuum command that supports a ruleset.
 
-```zsh
-vacuum <command> --ruleset all-rules.yaml my-openapi-spec.yaml
-```
+{{< terminal-window "lint with ruleset" "vacuum" "command" "-r">}}vacuum command -r all-rules.yaml my-openapi-spec.yaml{{< /terminal-window >}}
+
 
 ---
 
@@ -41,9 +40,8 @@ vacuum <command> --ruleset all-rules.yaml my-openapi-spec.yaml
 To generate a complete RuleSet of every rule and all the configurations used, vacuum contains a `generate-ruleset` command
 that accepts an '**all**' option. This command only generates YAML files.
 
-```zsh
-vacuum generate-ruleset all my-ruleset
-```
+{{< terminal-window "generate ruleset" "vacuum" "generate-ruleset">}}vacuum generate-ruleset all my-ruleset{{< /terminal-window >}}
+
 
 Will generate '**my-ruleset-all.yaml**' and will be a complete listing of every rule available.
 

@@ -418,6 +418,29 @@ nav div.fixed-position a.quick-start-navigation::after {
 }
 
 
+
+.homepage-strapline {
+    font-size: 2.2rem;
+    text-align: center;
+    display:block;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 3px;
+    color: var(--tertiary-color);
+    background: var(--terminal-header-background)
+}
+
+
+.homepage-strapline strong {
+    font-size: 2.2rem;
+    font-style: italic;
+}
+
+section.homepage-body h2 {
+    border: none;
+    margin: 0;
+}
+
 /* mobile */
 
 @media only screen and (max-width: 600px) {
