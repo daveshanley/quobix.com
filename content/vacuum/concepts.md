@@ -19,7 +19,7 @@ There are three core concepts when it comes to vacuum.
 - Rule
 - RuleSet
 
-{{< inline-figure-path "/images/vacuum/concepts.svg" "Functions power Rules and Rules make up RuleSets" "Image of functions, rules and rulesets" >}}
+{{< inline-figure-path "/images/vacuum/concepts.png" "Functions power Rules and Rules make up RuleSets" "Image of functions, rules and rulesets" >}}
 
 
 ---

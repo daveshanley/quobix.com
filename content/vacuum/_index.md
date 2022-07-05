@@ -1,7 +1,7 @@
 ---
-title: "Vacuum"
+title: "vacuum"
 date: 2022-06-12T06:24:52-04:00
-strapline: "The world's **fastest** OpenAPI linter."
+strapline: "The world's **fastest** and most **scalable** OpenAPI linter."
 draft: false
 menu: main
 type: vacuum
@@ -21,7 +21,7 @@ written in go?
 
 ## > [Learn about vacuum](/vacuum/about)
 
-## > [Learn about the core concepts used](/vacuum/concepts)
+## > [Learn core concepts used](/vacuum/concepts)
 
 ## > [Why vacuum?](/vacuum/why)
 
