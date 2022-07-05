@@ -1,6 +1,6 @@
 ---
 title: "API Quick Start"
-linkTitle: "Quick Start"
+linkTitle: "API Quick Start"
 date: 2022-07-03T07:39:53-04:00
 description: Download, plug-in and start linting!
 strapline: "Download, plug-in and start linting!"
