@@ -133,7 +133,7 @@ You may still be thinking..
 
 > Cool story bro, but, mmm... nah, I will stick with React.
 
-I would ask you one question: 
+I would ask you a question: 
 
 > "Do you like slow service?"
 
