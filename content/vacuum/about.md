@@ -66,14 +66,14 @@ So I did.
 
 vacuum is much, **much** faster than both [Spectral](https://github.com/stoplightio/spectral) and [ReDocly](https://github.com/Redocly/redocly-cli).
 
-It's faster because it's written in golang, it's multi-threaded and uses an [index](/vacuum/api/spec-index) for complex rules.
+It's faster because it's written in golang, it's multi-threaded and uses an [index](/vacuum/api/spec-index/) for complex rules.
 
-It's also been designed as a [golang library](/vacuum/api/getting-started) from the ground up.
+It's also been designed as a [golang library](/vacuum/api/getting-started/) from the ground up.
 
 ## What makes vacuum different?
 
 It's been designed with enterprise & large scale use, as well as having a console UI, a rad, interactive HTML report as
-well as a '[vacuum sealed report](/vacuum/commands/report)' that allows re-rendering of any report in time, without losing any fidelity or re-running
+well as a '[vacuum sealed report](/vacuum/commands/report/)' that allows re-rendering of any report in time, without losing any fidelity or re-running
 new logic that could change results.
 
 
