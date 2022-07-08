@@ -17,6 +17,34 @@
                 {{- end}}
             </ul>
         </nav>
+        <mobile-nav>
+            <ul class="mobile-nav">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "main" . }}active-section{{ end }}">
+
+                {{ if .HasChildren }}
+                {{ .Name }}
+                {{ else }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+                {{ if .HasChildren }}
+                <ul>
+                    {{ range .Children }}
+                    {{- $f := .Page}}
+                    {{- if $f.Params.skip_nav }}<!--skip rendering -->{{ else }}
+                    <li class="mobile-nav {{ if $currentPage.IsMenuCurrent "main" . }}active-section{{ end }}">
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{end}}
+
+                    {{ end }}
+                </ul>
+                {{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </mobile-nav>
     </section>
     <hr id="top-nav-divider">
 </div>
