@@ -596,10 +596,6 @@ mobile-nav.hide {
 .quobix-header {
     height: initial;
 }
-#header-menu {
-    display: none;
-}
-
 
 /** mobile stuff */
 
@@ -626,6 +622,10 @@ li.mobile-nav::after {
 
 @media only screen and (max-width: 600px) {
 
+    #header-menu {
+        display: none;
+    }
+    
     .homepage-logo {
         width: 370px;
     }
