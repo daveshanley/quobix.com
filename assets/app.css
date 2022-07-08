@@ -589,15 +589,59 @@ section.article-body p code::after, section.article-body div.terminal-alert code
     content: none;
 }
 
+mobile-nav.hide {
+    top: -185px;
+}
+
+.quobix-header {
+    height: initial;
+}
+#header-menu {
+    display: none;
+}
+
 
 /** mobile stuff */
+
+mobile-nav {
+    display: none;
+}
+
+ul.mobile-nav {
+    margin: 0;
+    padding: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+li.mobile-nav {
+    margin: 0;
+    padding: 0;
+}
+
+li.mobile-nav::after {
+    content: "";
+}
+
 
 @media only screen and (max-width: 600px) {
 
     .homepage-logo {
         width: 370px;
     }
-    
+
+    mobile-nav {
+        display: block;
+        transition: top 0.3s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        font-size: 0.9rem;
+    }
+
+    ul.mobile-nav li > ul {
+        margin-left: 10px;
+        font-size: 0.7rem;
+    }
+
 
     .generated-timestamp {
         display: none;
@@ -609,12 +653,17 @@ section.article-body p code::after, section.article-body div.terminal-alert code
     figure {
         width: 100vw !important;
         margin-left: -10px!important;
+        height: initial;
     }
 
     .quobix-header {
-        max-width: 95vw;
-        width: 95vw;
-        
+        max-width: 100vw;
+        width: 100vw;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .quobix-header.hide {
+        top: -185px;
     }
 
     article-body {
@@ -632,7 +681,12 @@ section.article-body p code::after, section.article-body div.terminal-alert code
     .content-container h1.article-title {
         font-size: 30px;
     }
-    
+
+    .article-strapline, .article-strapline em {
+        font-size: 1.2rem;
+    }
+
+
     .page-item {
         width: 320px !important;
     }
@@ -667,22 +721,15 @@ section.article-body p code::after, section.article-body div.terminal-alert code
     }
     
     .quobix-header {
-        overflow-y: hidden;
         transition: top 0.3s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-        height: 150px;
     }
     
     #top-nav-divider {
         margin-top: 2px;
     
     }
-    
-    .quobix-header.hide { 
-        top: -185px;
-    }
-    
- 
+
     
     .image-grid img {
        
@@ -715,5 +762,14 @@ section.article-body p code::after, section.article-body div.terminal-alert code
         margin-left: -10px;
     }
 
-    
+    main.content-container {
+        margin-top: 20px;
+    }
+
+
+
+
+
+
+
 }
