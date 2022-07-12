@@ -1,0 +1,31 @@
+{{ define "mainblock" }}
+<div class="main-container">
+  <main class="content-container home">
+    {{ partial "vacuum/navigation" . }}
+    <section class="vacuum-content home">
+      <article class="framed-content">
+        <h1 class="article-title">{{.Title}}</h1>
+        <span class="homepage-strapline">
+                    {{ .Params.strapline | markdownify }}
+                </span>
+        <section class="article-body">
+          {{.Content}}
+        </section>
+
+        <section class="article-body">
+          <vacuum-online>
+            <h2>Submit the OpenAPI specification URL</h2>
+            <vacuum-url-input>
+            </vacuum-url-input>
+            <vacuum-linting-report>
+            </vacuum-linting-report>
+            <h2>Upload an OpenAPI specification</h2>
+            <vacuum-file-upload>
+            </vacuum-file-upload>
+          </vacuum-online>
+        </section>
+      </article>
+    </section>
+  </main>
+</div>
+{{end}}

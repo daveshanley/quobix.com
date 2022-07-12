@@ -10,6 +10,9 @@ import './vacuum/rules/rule-list/stats/function-panel.component';
 import './vacuum/terminal/terminal-window.component';
 import './vacuum/terminal/terminal-header.component';
 import './vacuum/terminal/terminal-command.component';
+import './vacuum/online/vacuum-online.component';
+import './vacuum/online/vacuum-url-input.component';
+import './vacuum/online/vacuum-file-upload.component';
 
 import { listenForScrolling } from './scroll';
 
