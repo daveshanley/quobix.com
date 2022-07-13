@@ -1,0 +1,23 @@
+{{ define "mainblock" }}
+<div class="main-container">
+  <main class="content-container home">
+    {{ partial "vacuum/navigation" . }}
+    <section class="vacuum-content home">
+      <article class="framed-content">
+        <h1 class="article-title">{{.Title}}</h1>
+        <span class="homepage-strapline">
+                    {{ .Params.strapline | markdownify }}
+                </span>
+        <section class="article-body">
+          {{.Content}}
+        </section>
+
+        <section class="article-body">
+          <vacuum-online>
+          </vacuum-online>
+        </section>
+      </article>
+    </section>
+  </main>
+</div>
+{{end}}
