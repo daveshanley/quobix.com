@@ -262,7 +262,7 @@ Let's create a new request via the `generateFabricRequest` method.
 {{< code-split >}}
 Now we can define the logic that will send our request over the bus to our stock ticker service that is listening at [transport-bus.io](https://transport-bus.io) on channel "**stock-ticker-service**".
 {{< /code-split >}}
-{{< highlight javascript>}}
+{{< highlight ts>}}
         // make the request over the bus and over to our broker at transport-bus.io
         bus.requestOnce(stockChannel, request).handle(
             (response) => {
@@ -312,7 +312,7 @@ Now we can define the logic that will send our request over the bus to our stock
 
 The `StockError` component only renders if the props contain an `errorMessage` property.
 
-{{< highlight js>}}
+{{< highlight jsx>}}
 function StockError(props) {
     if (props.errorMessage) {
         return (
@@ -330,7 +330,7 @@ function StockError(props) {
 Lastly, we define our `StockResult` component. Let's limit the price value to two decimal points to make it simpler to read. Then we can also extract the `lastRefreshed` and `symbol` properties. 
 
 
-{{< highlight javascript>}}
+{{< highlight jsx>}}
 function StockResult(props) {
     let price = props.closePrice?.toFixed(2);
     let lastRefreshed = props.lastRefreshed;

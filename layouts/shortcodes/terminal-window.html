@@ -1,0 +1,10 @@
+
+<terminal-window>
+  <terminal-header>{{ .Get 0 | markdownify }}</terminal-header>
+  <terminal-command
+    command="{{ .Inner }}"
+    cliName="{{ .Get 1 }}"
+    cliCommand="{{ .Get 2 }}"
+    flags="{{ .Get 3 }}">
+  </terminal-command>
+</terminal-window>

@@ -3,8 +3,34 @@
     <main class="content-container">
             {{ partial "vacuum/navigation" . }}
         <section class="vacuum-content">
-            {{ .Content }}
+            {{ partial "vacuum/breadcrumb" . }}
+
+            <h1 class="rules-list-title">{{ .Title}}</h1>
+            <section class="rules-list-content">{{ .Content | markdownify }}</section>
+            <hr>
+            {{ if .Params.showList }}<section class="list">
+
+                {{ range $index, $element := .Pages }}
+                {{ $x := 0}}
+                {{ if $element.Params.formats }}
+                   {{ $x = len $element.Params.formats  }}
+                    {{ $x = sub $x 1}}
+                {{end}}
+                <rule-item severity="{{ $element.Params.severity }}"
+                           name="{{ .Name }}"
+                           url='{{ .RelPermalink }}'
+                           description="{{ .Description }}"
+                           formats="{{ range $i, $n := $element.Params.formats }}{{ . }}{{ if lt $i $x }},{{end}}{{end}}"
+                           {{- if $element.Params.recommended }} recommended {{end -}}
+                           ruleType="{{ $element.Params.ruleType }}">
+                    <a href="{{ $element.Permalink}}">{{ $element.Title}}</a>
+                </rule-item>
+                {{ end }}
+
+            </section>
+            {{ end }}
         </section>
+
     </main>
 </div>
 {{end}}

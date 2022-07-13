@@ -1,0 +1,26 @@
+{{ define "mainblock" }}
+<div class="main-container">
+    <main class="content-container home">
+        {{ partial "vacuum/navigation" . }}
+        <section class="vacuum-content home">
+            <article class="framed-content">
+                <img src="/images/vacuum/logo.png" alt="vacuum logo" title="logo">
+                <span class="homepage-strapline">
+                    {{ .Params.strapline | markdownify }}
+                </span>
+                <section class="homepage-body">
+                    {{.Content}}
+                </section>
+            </article>
+        </section>
+        {{- if gt .WordCount 200 -}}
+        <div class="right-nav">
+            <asisde class="table-of-contents">
+                <p>What's on this page</p>
+                {{ .TableOfContents }}
+            </asisde>
+        </div>
+        {{- end -}}
+    </main>
+</div>
+{{end}}

@@ -1,0 +1,4 @@
+<figure class="inline-figure">
+  <a href="{{ .Get 0 }}"><img src="{{ .Get 0 }}" title="{{ .Get 1 }}" alt="{{ .Get 2 }}" /></a>
+  <figcaption>{{ .Get 1 | markdownify }}</figcaption>
+</figure>

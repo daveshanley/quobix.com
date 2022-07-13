@@ -4,53 +4,77 @@ linkTitle: "Installing"
 strapline: "Get up and running in no-time."
 date: 2022-06-12T06:25:04-04:00
 draft: false
-menu:
+menu: 
   vacuum:
-    parent: "main"
+    weight: 1
+type: vacuum
+
 ---
 
+## Install via homebrew.
+
+{{< info-box >}}
+This the _recommended_ approach.
+{{< /info-box >}}
+If you're on MacOS or Linux, the easiest way to install vacuum is via [homebrew](https://brew.sh/).
 
 
+{{< terminal-window
+"install"
+"brew"
+"install">}}brew install daveshanley/vacuum/vacuum{{< /terminal-window >}}
 
-## 1. Check out the code
+## Install via Docker.
 
-{{< highlight zsh >}}
-git clone https://github.com/daveshanley/vacuum.git  
-cd vacuum
-{{< /highlight >}}
-{{< code-split >}}Then change directory into `vacuum`{{< /code-split >}}
-{{< highlight zsh >}}
-cd vacuum
-{{< /highlight >}}
+vacuum is available as a container, pull the image from
+[Docker Hub](https://hub.docker.com/repository/docker/dshanley/vacuum/general).
+
+{{< terminal-window
+"docker pull"
+"docker" 
+"pull">}}docker pull dshanley/vacuum{{< /terminal-window >}}
+
+To run via docker, add `dshanley/vacuum` as the docker command, like so:
+
+{{< terminal-window
+"docker dshanley/vacuum lint"
+"dshanley/vacuum"
+"lint">}}docker dshanley/vacuum lint &lt;my-openapi-spec.yaml&gt;{{< /terminal-window >}}
+
+---
+
+## Checkout from source.
+
+{{< terminal-window
+"git clone"
+"git"
+"clone">}}git clone https://github.com/daveshanley/vacuum.git{{< /terminal-window >}}
+Then change directory into `vacuum`
+
+{{< terminal-window
+"change directory"
+"cd">}}cd vacuum{{< /terminal-window >}}
 
 
-## 2. Build the code
+### Build the code.
 
-{{< highlight zsh >}}
-go build vacuum.go
-{{< /highlight >}}
+{{< terminal-window
+"go build"
+"go" "build">}}go build vacuum.go{{< /terminal-window >}}
 
-## 3. Run the code
+### Run the code.
 
-{{< highlight zsh >}}
-./vacuum lint <your-openapi-spec.yaml>
-{{< /highlight >}}
+{{< terminal-window
+"vacuum lint"
+"./vacuum" "lint">}}./vacuum lint &lt;my-openapi-spec.yaml>{{< /terminal-window >}}
 
-## Running vacuum via Docker
+---
 
-vacuum is available as a container, you can pull the image from
-[Docker Hub](https://hub.docker.com/repository/docker/dshanley/vacuum/general)
+## Next Steps
 
-{{< highlight zsh >}}
-docker pull dshanley/vacuum
-{{< /highlight >}}
+[Read more about the linting command]({{< relref "/vacuum/commands/lint" >}}).
 
-To run via docker, just add `docker dshanley/vacuum` as your command, like so
-
-{{< highlight zsh >}}
-docker dshanley/vacuum lint <your-openapi-spec.yaml>
-{{< /highlight >}}
-
+---
 
 [Check out vacuum on GitHub](https://github.com/daveshanley/vacuum)
 
