@@ -716,6 +716,7 @@
     `}highlight(){const e=this.command.split(" "),t=[];for(let r=0;r<e.length;r++){const o=e[r];if(o!==this.cliName)if(o!==this.cliCommand){if(this.flags){let i=!1;const n=this.flags.split(",");for(let a=0;a<n.length;a++){const l=n[a];if(o===l){let o;0!==e[r+1].indexOf("-")&&r+1!==e.length-1&&(o=te`<span class="flag">${e[r+1]}</span
                 >&nbsp;`),t.push(te`<span class="flag">${l}</span>&nbsp;${o}`),i=!0,0!==e[r+1].indexOf("-")&&r+1!==e.length-1&&r++}}if(i)continue}t.push(te`<span class="input">${o}</span>&nbsp;`)}else t.push(te`<span class="command">${o}</span>&nbsp;`);else t.push(te`<span class="name">${o}</span>&nbsp;`)}return t}};ut.styles=pt,ht([y()],ut.prototype,"command",void 0),ht([y()],ut.prototype,"cliCommand",void 0),ht([y()],ut.prototype,"cliName",void 0),ht([y()],ut.prototype,"flags",void 0),ut=ht([m("terminal-command")],ut);const vt=E`
   vacuum-linting-report {
+    display: none;
     height: 0;
     opacity: 0;
     overflow: hidden;
@@ -723,6 +724,7 @@
   }
 
   .loading {
+    display: block;
     opacity: 1;
     height: 120px;
     overflow: visible;
@@ -829,9 +831,9 @@
   :host {
     background: var(--vacuum-online-results-background);
     border-radius: 3px;
-    padding: 40px 40px 20px 40px;
+    padding: 0 40px 0 40px;
     display: block;
-    margin-top: 20px;
+    margin-top: 60px;
     position: relative;
   }
 
@@ -981,7 +983,7 @@
   }
 
   .api-error {
-    margin-top: -40px;
+     margin-top: -20px;
   }
 
   @media only screen and (max-width: 600px) {
@@ -1000,7 +1002,7 @@
   }
 `;var $t=function(e,t,r,o){var i,n=arguments.length,a=n<3?t:null===o?o=Object.getOwnPropertyDescriptor(t,r):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,r,o);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,r,a):i(t,r))||a);return n>3&&a&&Object.defineProperty(t,r,a),a};let At=class extends xe{render(){var e,t,r,o,i,n,a,l;if(this.lintingError)return te`
         <div class='api-error'>
-          <h2><span class='emoji'>⛔<span> Computer says no. [Error: ${this.lintingError.status}]</h2>
+          <h2><span class='emoji'>⛔</span> <span class='error'>Computer said '<strong>nope</strong>': [Error: ${this.lintingError.status}]</span></h2>
           <p>
             ${this.lintingError.detail}
           </p>

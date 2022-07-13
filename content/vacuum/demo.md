@@ -1,7 +1,7 @@
 ---
 title: "Try vacuum online"
 linkTitle: "Online Demo 🪄"
-strapline: "Got an OpenAPI spec? Try vacuum online."
+strapline: "Got an OpenAPI spec? See how it really shapes up."
 date: 2022-07-11T06:25:04-04:00
 draft: false
 menu:
@@ -11,9 +11,6 @@ type: vacuum
 layout: demo
 ---
 
-Don't want to [Install vacuum](/vacuum/installing/)?
-
-**No Problem**.
 
 
 

@@ -25,11 +25,15 @@ export class VacuumLintingReportComponent extends LitElement {
   render() {
     if (this.lintingError) {
       return html`
-        <div class='api-error'>
-          <h2><span class='emoji'>⛔<span> Computer says no. [Error: ${this.lintingError.status}]</h2>
-          <p>
-            ${this.lintingError.detail}
-          </p>
+        <div class="api-error">
+          <h2>
+            <span class="emoji">⛔</span>
+            <span class="error"
+              >Computer said '<strong>nope</strong>': [Error:
+              ${this.lintingError.status}]</span
+            >
+          </h2>
+          <p>${this.lintingError.detail}</p>
         </div>
       `;
     }

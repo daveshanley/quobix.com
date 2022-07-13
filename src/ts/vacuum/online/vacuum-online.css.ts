@@ -2,6 +2,7 @@ import { css } from 'lit';
 
 export default css`
   vacuum-linting-report {
+    display: none;
     height: 0;
     opacity: 0;
     overflow: hidden;
@@ -9,6 +10,7 @@ export default css`
   }
 
   .loading {
+    display: block;
     opacity: 1;
     height: 120px;
     overflow: visible;

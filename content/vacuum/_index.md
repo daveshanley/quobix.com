@@ -10,6 +10,8 @@ layout: homepage
 
 ---
 
+<vacuum-online></vacuum-online>
+
 Are you looking for an **ultra-fast** and **_fully featured_** [OpenAPI](https://www.openapis.org) linter, and SDK
 written in go? 
 

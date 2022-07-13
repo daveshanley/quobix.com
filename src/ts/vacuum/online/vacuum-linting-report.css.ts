@@ -4,9 +4,9 @@ export default css`
   :host {
     background: var(--vacuum-online-results-background);
     border-radius: 3px;
-    padding: 40px 40px 20px 40px;
+    padding: 0 40px 0 40px;
     display: block;
-    margin-top: 20px;
+    margin-top: 60px;
     position: relative;
   }
 
@@ -156,7 +156,7 @@ export default css`
   }
 
   .api-error {
-    margin-top: -40px;
+    margin-top: -20px;
   }
 
   @media only screen and (max-width: 600px) {
