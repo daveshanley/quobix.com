@@ -983,7 +983,7 @@
   }
 
   .api-error {
-     margin-top: -20px;
+    margin-top: -20px;
   }
 
   @media only screen and (max-width: 600px) {
@@ -997,15 +997,19 @@
 
     .api-error {
       margin-top: -25px;
-      font-size: 0.65rem;
+      font-size: 0.70rem;
     }
   }
 `;var $t=function(e,t,r,o){var i,n=arguments.length,a=n<3?t:null===o?o=Object.getOwnPropertyDescriptor(t,r):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,r,o);else for(var l=e.length-1;l>=0;l--)(i=e[l])&&(a=(n<3?i(a):n>3?i(t,r,a):i(t,r))||a);return n>3&&a&&Object.defineProperty(t,r,a),a};let At=class extends xe{render(){var e,t,r,o,i,n,a,l;if(this.lintingError)return te`
-        <div class='api-error'>
-          <h2><span class='emoji'>⛔</span> <span class='error'>Computer said '<strong>nope</strong>': [Error: ${this.lintingError.status}]</span></h2>
-          <p>
-            ${this.lintingError.detail}
-          </p>
+        <div class="api-error">
+          <h2>
+            <span class="emoji">⛔</span>
+            <span class="error"
+              >Computer said '<strong>nope</strong>': [Error:
+              ${this.lintingError.status}]</span
+            >
+          </h2>
+          <p>${this.lintingError.detail}</p>
         </div>
       `;let s;if(this.lintingResults){const c=this.lintingResults.statistics.overallScore;s=te`
         <progress-bar value='${c}' label='${function(e){switch(!0){case e<=10:return"Terrible";case e>10&&e<20:return"Very, very poor";case e>=20&&e<30:return"Needs tons of work!";case e>=30&&e<40:return"Not great at all";case e>=40&&e<50:return"Not great";case e>=50&&e<65:return"Weak, but passable";case e>=65&&e<75:return"OK, not too bad";case e>=75&&e<95:return"Pretty good";case e>=95:return"Excellent";default:return""}}(c)}'></progress-bar>

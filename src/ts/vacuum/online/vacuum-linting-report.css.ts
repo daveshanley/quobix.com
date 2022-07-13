@@ -170,7 +170,7 @@ export default css`
 
     .api-error {
       margin-top: -25px;
-      font-size: 0.65rem;
+      font-size: 0.7rem;
     }
   }
 `;
