@@ -41,7 +41,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PizzaList'
+                $ref: '#/shared-components/schemas/PizzaList'
 components:
   schemas:
     IAmNotUsedByAnything:
@@ -62,7 +62,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PizzaList'
+                $ref: '#/shared-components/schemas/PizzaList'
 components:
   schemas:
     PizzaList:

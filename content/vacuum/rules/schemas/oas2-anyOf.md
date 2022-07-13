@@ -57,8 +57,8 @@ paths:
         name: whatCouldItBe
         schema:
           anyOf:
-            - $ref: "#/components/schemas/Meat"
-            - $ref: "#/components/schemas/Cake" 
+            - $ref: "#/shared-components/schemas/Meat"
+            - $ref: "#/shared-components/schemas/Cake" 
           ...
 ```
 ### Good Example
@@ -72,8 +72,8 @@ openapi: 3.1
         application/json:
           schema:
             anyOf:
-              - $ref: "#/components/schemas/Meat"
-              - $ref: "#/components/schemas/Cake"
+              - $ref: "#/shared-components/schemas/Meat"
+              - $ref: "#/shared-components/schemas/Cake"
 ```
 
 ## How do I fix this violation?

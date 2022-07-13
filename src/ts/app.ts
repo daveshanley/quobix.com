@@ -1,5 +1,6 @@
 import 'terminal.css';
 import '../css/site.css';
+import './vacuum/shared-components/progress-bar.component';
 import './vacuum/mobile-navigation/navigation.component';
 import './vacuum/desktop-navigation/navigation-item.component';
 import './vacuum/desktop-navigation/navigation.component';
@@ -13,6 +14,7 @@ import './vacuum/terminal/terminal-command.component';
 import './vacuum/online/vacuum-online.component';
 import './vacuum/online/vacuum-url-input.component';
 import './vacuum/online/vacuum-file-upload.component';
+import './vacuum/online/vacuum-linting-report.component';
 
 import { listenForScrolling } from './scroll';
 

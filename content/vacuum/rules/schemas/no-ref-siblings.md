@@ -45,7 +45,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PizzaList'
+                $ref: '#/shared-components/schemas/PizzaList'
                 description: "A list object contains a list of pizzas"
 components:
   schemas:
@@ -66,7 +66,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PizzaList'
+                $ref: '#/shared-components/schemas/PizzaList'
 components:
   schemas:
     PizzaList:
