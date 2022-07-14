@@ -67,7 +67,16 @@ export class VacuumOnlineComponent extends LitElement {
         this.lintingReport.lintingError = apiError;
       }
     } catch (error) {
-      // todo.
+      this.error = {
+        instance: 'https://quobix.com/vacuum/errors/500',
+        title: 'Failure, on the rocks please',
+        detail:
+          "Looks like things went south. Your request successfully tanked the service and now it's rebooting (only takes a second)" +
+          ' We will look into how your majestic specification, caused vacuum to blow up.',
+        status: 500,
+        type: 'https://quobix.com/vacuum/errors/500',
+      };
+      this.lintingReport.lintingError = this.error;
     }
   }
 }
