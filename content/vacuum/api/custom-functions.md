@@ -223,9 +223,7 @@ There should be message informing that vacuum has located a function plugin, and
 
 {{< warn-box >}}
 If you see a message like: _Unable to open custom functions: plugin.Open("./my-plugin"): plugin was built with a different version of package...'_ then it's
-because the version of the vacuum source pulled down from github is **NEWER** than the version of vacuum you have installed.
-
-Update vacuum using '**brew upgrade vacuum**'.
+because the version of go that you're using locally, is different to the one used to compile vacuum.
 {{< /warn-box >}}
 
 ---
