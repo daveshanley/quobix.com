@@ -1,19 +1,21 @@
 ---
-title: oasOpErrorResponse
-linkTitle: oasOpErrorResponse
-date: 2022-07-17T07:39:53-04:00
+title: noVerbsInPath
+linkTitle: noVerbsInPath
+date: 2022-07-19T06:29:53-04:00
 draft: false
-description: | 
-  Checks operations contain at least one 4xx HTTP responses.
+description: |
+  Check each verb for the presence of an HTTP verb
 type: vacuum
 layout: function
 
 ---
 
-`oasOpErrorResponse` will scan an OpenAPI specification looking at each operation, 
-and ensuring at least one `4xx` HTTP Error responses has been defined.
+`noVerbsInPath` will evaluate every path in the specification, and check that none of the path segments contain
+[HTTP Verbs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
 
 The function is used by
-the [operation-4xx-response]({{< relref "/vacuum/rules/operations/operation-4xx-response" >}}) Rule
+the [no-verbs-in-path]({{< relref "/vacuum/rules/operations/no-http-verbs-in-path" >}}) Rule
 
-[View Function Source](https://github.com/daveshanley/vacuum/blob/main/functions/openapi/operation_4x_response.go)
+---
+
+[View Function Source](https://github.com/daveshanley/vacuum/blob/main/functions/openapi/no_http_verbs_in_path.go)
