@@ -4,7 +4,7 @@ linkTitle: noVerbsInPath
 date: 2022-07-19T06:29:53-04:00
 draft: false
 description: |
-Check each verb for the presence of an HTTP verb
+  Check each verb for the presence of an HTTP verb
 type: vacuum
 layout: function
 
