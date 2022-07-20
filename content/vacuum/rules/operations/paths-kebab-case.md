@@ -5,7 +5,7 @@ date: 2022-07-19T09:00:17-04:00
 draft: false
 description: |
  Ensure all segments of a path are kebab-case
-severity: error
+severity: warn
 recommended: true
 ruleType: style
 functionType: openapi
