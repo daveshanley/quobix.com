@@ -24,6 +24,34 @@ If you're on MacOS or Linux, the easiest way to install vacuum is via [homebrew]
 "brew"
 "install">}}brew install daveshanley/vacuum/vacuum{{< /terminal-window >}}
 
+
+## Install via [NPM](https://npmjs.com)
+
+{{< terminal-window
+"npm install"
+"npm"
+"i" "-g">}}npm i -g @quobix/vacuum{{< /terminal-window >}}
+
+## Install via [yarn](https://yarnpkg.com/)
+
+{{< terminal-window
+"yarn install"
+"yarn"
+"global" "add">}}yarn global add @quobix/vacuum{{< /terminal-window >}}
+
+
+## Install via curl
+
+This is perhaps the most simple for CD/CD pipelines.
+
+{{< terminal-window
+"curl install"
+"curl"
+"-fsSL">}}curl -fsSL https://quobix.com/scripts/install_vacuum.sh | sh{{< /terminal-window >}}
+
+
+
+
 ## Install via Docker.
 
 vacuum is available as a container, pull the image from
